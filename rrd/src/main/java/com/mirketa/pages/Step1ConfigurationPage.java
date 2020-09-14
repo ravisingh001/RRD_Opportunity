@@ -1,13 +1,11 @@
 package com.mirketa.pages;
 
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
-
 import com.mirketa.utility.SyncElement;
 
 public class Step1ConfigurationPage {
@@ -26,14 +24,22 @@ public class Step1ConfigurationPage {
 	@FindBy(xpath="//tr//td[@class='rich-tabhdr-side-cell']//td[contains(text(),'Opportunity')]")
 	WebElement clickonOpportunity;
 	
+	@FindBy(xpath="//tr//td[@class='rich-tabhdr-side-cell']//td[contains(text(),'Lead')]")
+	WebElement clickonLead;
 
+	
 	@FindBy(xpath = "//input[@value='Edit']")
 	WebElement EditButton;
 
 	@FindBy(xpath = "//input[@value='Save']")
 	WebElement SaveButton;
+	
+	@FindBy(xpath = "//td//input[@id='j_id0:theForm:thePageBlockOne:j_id106:j_id107']")
+	WebElement QueueAssignment_checkbox;
 
-
+	@FindBy(xpath = "//td//input[@id='j_id0:theForm:thePageBlockOne:RBA_hideDiv_pb:RBA_hideDiv:enableCheckBox']")
+	WebElement RBAFilter_checkbox;
+	
 	@FindBy(xpath = "//iframe[@title='accessibility title']")
 	WebElement iframeStep1Config;
 
@@ -43,6 +49,9 @@ public class Step1ConfigurationPage {
 	@FindBy(xpath = "/descendant::select[@class='opp-drop'][2]")
 	WebElement select_Opp_User;
 	
+	@FindBy(xpath = "//*[@id=\"j_id0:theForm:thePageBlockOne:showpgaeblocksection\"]/div/table/tbody/tr/td[1]/select")
+	WebElement select_Lead_RRDUser;
+	
 	@FindBy(xpath = "//select[@name='j_id0:theForm:thePageBlockOne:j_id257:j_id258']")
 	WebElement SelectUserDisableMode;
 
@@ -51,12 +60,21 @@ public class Step1ConfigurationPage {
 	
 	@FindBy(xpath = "(//select[contains(@name,'j_id0:theForm:thePageBlockOne:showpgaeblocksectionOpp1:j_id')])[2]")
 	WebElement Opp_OwnerNotification;
+	
+	@FindBy(xpath = "(//select[contains(@name,'j_id0:theForm:thePageBlockOne:showpgaeblocksection:j_id')])[2]")
+	WebElement Lead_OwnerNotification;
 
 	@FindBy(xpath = "(//td[@class='dataCol first']//select[starts-with(@name,'j_id0:theForm:thePageBlockOne:j_id') and @class='drop'])[1]")
 	WebElement Relationship_Based_Asignment;
 	
 	@FindBy(xpath = "(//select[contains(@name,'j_id0:theForm:thePageBlockOne:showpgaeblocksectionOppNotification:j_id')])[1]")
 	WebElement Opp_Relationship_Based_Asignment;
+	
+	@FindBy(xpath = "(//select[contains(@name,'j_id0:theForm:thePageBlockOne:RBA_hideDiv_pb:j_id110:assignment_type')])")
+	WebElement Lead_Relationship_Based_Asignment;
+	
+	@FindBy(xpath = "//td//select[@name='j_id0:theForm:thePageBlockOne:showRBA:j_id127:j_id128']")
+	WebElement Lead_Relationship_Based_Asignment_LeadField;
 
 	@FindBy(xpath = "//td[@class='dataCol']//input[starts-with(@id,'j_id0:theForm:thePageBlockOne:j_id') and @type='checkbox']")
 	WebElement QueueAssignmentCheckbox;
@@ -113,6 +131,13 @@ public class Step1ConfigurationPage {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 	
+	public void clickOnLeads() throws InterruptedException {
+		SyncElement.TobeClickable(driver, clickonLead, 30);
+		clickonLead.click();
+		Thread.sleep(2000);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	}
+	
 	public void navigatetoIframeCaseConfig() {
 		driver.switchTo().frame(iframeStep1Config);
 	}
@@ -126,6 +151,15 @@ public class Step1ConfigurationPage {
 		SyncElement.isElementPresnt(driver, Opp_OwnerNotification, 20);
 		Select sel = new Select(Opp_OwnerNotification);
 		Opp_OwnerNotification.click();
+		sel.selectByVisibleText(owner);
+		Thread.sleep(4000);
+
+	}
+	
+	public void Lead_OwnerNotification(String owner) throws InterruptedException {
+		SyncElement.isElementPresnt(driver, Lead_OwnerNotification, 20);
+		Select sel = new Select(Lead_OwnerNotification);
+		Lead_OwnerNotification.click();
 		sel.selectByVisibleText(owner);
 		Thread.sleep(4000);
 
@@ -156,6 +190,17 @@ public class Step1ConfigurationPage {
 		Thread.sleep(4000);
 	}
 	
+	public void select_lead_RRDUser(String user) throws InterruptedException {
+		SyncElement.isElementPresnt(driver, select_Lead_RRDUser, 20);
+		Select sel = new Select(select_Lead_RRDUser);
+		select_Lead_RRDUser.click();
+		sel.selectByVisibleText(user);
+		Thread.sleep(4000);
+	}
+	
+	
+	
+	
 	public String getSelectedUserValue()
 	{
 		Select sel = new Select(SelectUserDisableMode);
@@ -177,6 +222,22 @@ public class Step1ConfigurationPage {
 		SyncElement.isElementPresnt(driver, Opp_Relationship_Based_Asignment, 20);
 		Select sel = new Select(Opp_Relationship_Based_Asignment);
 		Opp_Relationship_Based_Asignment.click();
+		sel.selectByVisibleText(str);
+		Thread.sleep(2000);
+	}
+	
+	public void Select_Lead_Relationship_Based_Asignment(String str) throws InterruptedException {
+		SyncElement.isElementPresnt(driver, Lead_Relationship_Based_Asignment, 20);
+		Select sel = new Select(Lead_Relationship_Based_Asignment);
+		Lead_Relationship_Based_Asignment.click();
+		sel.selectByVisibleText(str);
+		Thread.sleep(2000);
+	}
+	
+	public void Select_Lead_Relationship_Based_Asignment_LeadField(String str) throws InterruptedException {
+		SyncElement.isElementPresnt(driver, Lead_Relationship_Based_Asignment_LeadField, 20);
+		Select sel = new Select(Lead_Relationship_Based_Asignment_LeadField);
+		Lead_Relationship_Based_Asignment_LeadField.click();
 		sel.selectByVisibleText(str);
 		Thread.sleep(2000);
 	}
@@ -238,6 +299,53 @@ public class Step1ConfigurationPage {
 		Thread.sleep(3000);
 	}
 
+	public void QueueAssignment_Checked() throws InterruptedException {
+		Thread.sleep(4000);
+		
+		if(!QueueAssignment_checkbox.isSelected()) {
+			QueueAssignment_checkbox.click();
+			System.out.println("Checkbox is now selected");
+		}else {
+			System.out.println("CheckBox is selected on default");
+		}	
+	}
+	
+	public void QueueAssignment_Unchecked() throws InterruptedException {
+		Thread.sleep(4000);
+		
+		if(QueueAssignment_checkbox.isSelected()) {
+			System.out.println("Checkbox is selected on default");
+			Thread.sleep(2000);
+			QueueAssignment_checkbox.click();
+			System.out.println("Checkbox is now unchecked");
+		}else {
+			System.out.println("Checkbox is Unchecked");
+		}	
+	}
+	
+	public void Leads_RBAFilter_Checked() throws InterruptedException {
+		Thread.sleep(4000);
+		
+		if(!RBAFilter_checkbox.isSelected()) {
+			RBAFilter_checkbox.click();
+			System.out.println("Checkbox is now selected");
+		}else {
+			System.out.println("CheckBox is selected on default");
+		}	
+	}
+	
+	public void Leads_RBAFilter_Unchecked() throws InterruptedException {
+		Thread.sleep(4000);
+		
+		if(RBAFilter_checkbox.isSelected()) {
+			System.out.println("Checkbox is selected on default");
+			Thread.sleep(2000);
+			RBAFilter_checkbox.click();
+			System.out.println("Checkbox is now unchecked");
+		}else {
+			System.out.println("Checkbox is Unchecked");
+		}	
+	}
 
 	
 }
