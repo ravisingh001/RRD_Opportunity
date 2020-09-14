@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Enable_RRD_User_All]">
+  <test thread-count="5" name="EnableRRDUserAll(failed)">
+    <classes>
+      <class name="Scenario_EnableRRD_All.Casecreated_All">
+        <methods>
+          <include name="setUp"/>
+          <include name="teardown"/>
+          <include name="CaseCreationTest"/>
+        </methods>
+      </class> <!-- Scenario_EnableRRD_All.Casecreated_All -->
+    </classes>
+  </test> <!-- EnableRRDUserAll(failed) -->
+</suite> <!-- Failed suite [Enable_RRD_User_All] -->

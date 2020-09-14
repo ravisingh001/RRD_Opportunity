@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Scenario1]">
+  <test thread-count="5" name="QAscenariotest1(failed)">
+    <classes>
+      <class name="QAT67_CaseCreation.Casecreatedscenario">
+        <methods>
+          <include name="CaseCreationTest"/>
+          <include name="teardown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- QAT67_CaseCreation.Casecreatedscenario -->
+    </classes>
+  </test> <!-- QAscenariotest1(failed) -->
+</suite> <!-- Failed suite [Scenario1] -->

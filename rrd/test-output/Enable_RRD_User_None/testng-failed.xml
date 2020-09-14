@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Enable_RRD_User_None]">
+  <test thread-count="5" name="EnableRRDUSERNone(failed)">
+    <classes>
+      <class name="Scenario_none_EnableRRD.CaseScenario2">
+        <methods>
+          <include name="setUp"/>
+          <include name="teardown"/>
+          <include name="CaseCreationTest"/>
+        </methods>
+      </class> <!-- Scenario_none_EnableRRD.CaseScenario2 -->
+      <class name="Scenario_none_EnableRRD.DefineTeamsetup">
+        <methods>
+          <include name="TestCaseRRDUserCreation"/>
+          <include name="setUp"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- Scenario_none_EnableRRD.DefineTeamsetup -->
+    </classes>
+  </test> <!-- EnableRRDUSERNone(failed) -->
+</suite> <!-- Failed suite [Enable_RRD_User_None] -->

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="244385" started-at="2020-09-11T12:46:48 IST" finished-at="2020-09-11T12:50:52 IST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="244385" started-at="2020-09-11T12:46:48 IST" finished-at="2020-09-11T12:50:52 IST">
+      <class name="Lead_Creation_Allocation.Leads_Allocation_config3">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:Lead_Creation_Allocation.Leads_Allocation_config3@6acdbdf5]" name="setUp" is-config="true" duration-ms="45580" started-at="2020-09-11T12:46:48 IST" finished-at="2020-09-11T12:47:33 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="LeadCreation_config3()[pri:0, instance:Lead_Creation_Allocation.Leads_Allocation_config3@6acdbdf5]" name="LeadCreation_config3" duration-ms="198038" started-at="2020-09-11T12:47:33 IST" finished-at="2020-09-11T12:50:51 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LeadCreation_config3 -->
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:Lead_Creation_Allocation.Leads_Allocation_config3@6acdbdf5]" name="teardown" is-config="true" duration-ms="739" started-at="2020-09-11T12:50:51 IST" finished-at="2020-09-11T12:50:52 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=LeadCreation_config3 status=SUCCESS method=Leads_Allocation_config3.LeadCreation_config3()[pri:0, instance:Lead_Creation_Allocation.Leads_Allocation_config3@6acdbdf5] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- Lead_Creation_Allocation.Leads_Allocation_config3 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Opportunity_scenario_84">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="Opp_Configuration.Opp_caseconfig2"/>
+   	 <class name="OppCreation_Allocation.Pre_OppAllocation_config84"/>
+      <class name="Opp_Configuration.Opp_caseconfig84"/>
+      <class name="OppCreation_Allocation.Opp_Allocation_config84"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+
