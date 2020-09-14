@@ -75,6 +75,12 @@ public class Step1ConfigurationPage {
 	
 	@FindBy(xpath = "//td//select[@name='j_id0:theForm:thePageBlockOne:showRBA:j_id127:j_id128']")
 	WebElement Lead_Relationship_Based_Asignment_LeadField;
+	
+	@FindBy(xpath = "//td//select[@name='j_id0:theForm:thePageBlockOne:j_id135:j_id137:j_id138']")
+	WebElement Lead_ExistingOpportunity_RBA_LeadField;
+	
+	@FindBy(xpath = "//td//select[@name='j_id0:theForm:thePageBlockOne:j_id135:j_id144:j_id145']")
+	WebElement Lead_ExistingOpportunity_RBA_OpportunityField;
 
 	@FindBy(xpath = "//td[@class='dataCol']//input[starts-with(@id,'j_id0:theForm:thePageBlockOne:j_id') and @type='checkbox']")
 	WebElement QueueAssignmentCheckbox;
@@ -238,6 +244,22 @@ public class Step1ConfigurationPage {
 		SyncElement.isElementPresnt(driver, Lead_Relationship_Based_Asignment_LeadField, 20);
 		Select sel = new Select(Lead_Relationship_Based_Asignment_LeadField);
 		Lead_Relationship_Based_Asignment_LeadField.click();
+		sel.selectByVisibleText(str);
+		Thread.sleep(2000);
+	}
+	
+	public void Select_Lead_RBA_ExistingOpportunity_LeadField(String str) throws InterruptedException {
+		SyncElement.isElementPresnt(driver, Lead_ExistingOpportunity_RBA_LeadField, 20);
+		Select sel = new Select(Lead_ExistingOpportunity_RBA_LeadField);
+		Lead_ExistingOpportunity_RBA_LeadField.click();
+		sel.selectByVisibleText(str);
+		Thread.sleep(2000);
+	}
+	
+	public void Select_Lead_RBA_ExistingOpportunity_OpportunityField(String str) throws InterruptedException {
+		SyncElement.isElementPresnt(driver, Lead_ExistingOpportunity_RBA_OpportunityField, 20);
+		Select sel = new Select(Lead_ExistingOpportunity_RBA_OpportunityField);
+		Lead_ExistingOpportunity_RBA_OpportunityField.click();
 		sel.selectByVisibleText(str);
 		Thread.sleep(2000);
 	}
