@@ -1,0 +1,12 @@
+QAT67_CaseCreation
+RRDHomepagetestcase67
+Scenario_DefTeam_Case
+Scenario_EnableQueueassignment
+Scenario_EnableRRD_All
+Scenario_none_EnableRRD
+com.mirketa.addRRDuser
+com.mirketa.teamnewcriteria
+com.mirketa.teamsetupQAT67
+com.mirketa.testcase.login
+com.mirketa.testcase.qat54
+com.mirketa.testcase.qat55

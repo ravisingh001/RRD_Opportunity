@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Queue_Assignment_Check]">
+  <test thread-count="5" name="Queue_Assignment_Check(failed)">
+    <classes>
+      <class name="Scenario_EnableQueueassignment.Casecreationqueue">
+        <methods>
+          <include name="CaseCreationTest"/>
+          <include name="teardown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- Scenario_EnableQueueassignment.Casecreationqueue -->
+    </classes>
+  </test> <!-- Queue_Assignment_Check(failed) -->
+</suite> <!-- Failed suite [Queue_Assignment_Check] -->

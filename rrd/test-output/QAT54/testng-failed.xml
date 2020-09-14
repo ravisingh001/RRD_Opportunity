@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [QAT54]">
+  <test thread-count="5" name="QAscenariotest(failed)">
+    <classes>
+      <class name="testcheck.scenario1">
+        <methods>
+          <include name="teardown"/>
+          <include name="setUp"/>
+          <include name="CaseCreationTest"/>
+        </methods>
+      </class> <!-- testcheck.scenario1 -->
+      <class name="com.mirketa.addRRDuser.addRRDUser">
+        <methods>
+          <include name="teardown"/>
+          <include name="setUp"/>
+          <include name="TestCaseRRDUserCreation" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.mirketa.addRRDuser.addRRDUser -->
+    </classes>
+  </test> <!-- QAscenariotest(failed) -->
+</suite> <!-- Failed suite [QAT54] -->

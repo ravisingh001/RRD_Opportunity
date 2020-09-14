@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [DefineTeam_Case]">
+  <test thread-count="5" name="DefineTeam_Case(failed)">
+    <classes>
+      <class name="Scenario_DefTeam_Case.Casecreation">
+        <methods>
+          <include name="teardown"/>
+          <include name="setUp"/>
+          <include name="CaseCreationTest"/>
+        </methods>
+      </class> <!-- Scenario_DefTeam_Case.Casecreation -->
+    </classes>
+  </test> <!-- DefineTeam_Case(failed) -->
+</suite> <!-- Failed suite [DefineTeam_Case] -->
