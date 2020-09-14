@@ -94,7 +94,8 @@ public class Step1ConfigurationPage {
 	@FindBy(xpath = "//td[@class='dataCol']//input[@type='text']")
 	WebElement CasePriorityInputBox;
 
-	
+	@FindBy(xpath = "//a[contains(text(),'Del')]")
+	WebElement ConfigCriteria_DeleteBtn;
 	
 	public void clickonstepconfig()
 	{
@@ -375,4 +376,15 @@ public class Step1ConfigurationPage {
 		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 		Thread.sleep(2000);
 	}
+	
+	public void Leads_ConfigCriteria_Delete() throws InterruptedException {
+		Thread.sleep(2000);
+		if (ConfigCriteria_DeleteBtn.isDisplayed()) {
+			ConfigCriteria_DeleteBtn.click();
+			System.out.println("Previous criteria is removed successfully");
+		} else {
+			System.out.println("Criteria is not present");
+		}
+	}
+
 }
