@@ -1,17 +1,13 @@
 package com.mirketa.pages;
 
-import java.util.List;
-import java.util.concurrent.TimeUnit;
 
+import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 import com.mirketa.utility.SyncElement;
 
 public class TeamNewCriteriapage {
@@ -29,15 +25,26 @@ WebDriver driver;
 	@FindBy(xpath="//input[@class='btn'][@title='New Criteria']")
 	WebElement Newcriterabtn;
 	
+	@FindBy(xpath="(//input[@value='New Criteria'])[2]")
+	WebElement Leads_Newcriterabtn;
+	
 	@FindBy(xpath="//table/tbody/tr//td//select[@name='j_id0:frm:pb:pbs:j_id8']")
 	WebElement SelectField;
 	
+	@FindBy(xpath="//select[@name='j_id0:theForm:thePageBlockOne:j_id150:pg:table:0:j_id155']")
+	WebElement SelectFieldLabel;
 	
 	@FindBy(xpath="//table/tbody/tr//td//select[@name='j_id0:frm:pb:pbs:j_id12']")
 	WebElement SelectOperator;
 	
+	@FindBy(xpath="//select[@name='j_id0:theForm:thePageBlockOne:j_id150:pg:table:0:j_id158']")
+	WebElement LeadConfig_SelectOperator;
+	
 	@FindBy(xpath="//table/tbody/tr//td//input[@type='text']")
 	WebElement Field_value;
+	
+	@FindBy(xpath="//input[@name='j_id0:theForm:thePageBlockOne:j_id150:pg:table:0:j_id161']")
+	WebElement LC_Field_value;
 	
 	@FindBy(xpath="//table/tbody/tr//td//input[@type='submit' and @value='Save']")
 	WebElement save;
@@ -57,6 +64,9 @@ WebDriver driver;
 	
 	@FindBy(xpath="//input[@name='j_id0:criteriaForm:pg:customFilterLogic' and @type='text']")
 	WebElement AddcriteriaLogicfield;
+	
+	@FindBy(xpath="//input[@name='j_id0:theForm:thePageBlockOne:j_id150:pg:customFilterLogic']")
+	WebElement LC_criteriaLogicfield;
 	
 	@FindBy(xpath="//input[@name='j_id0:criteriaForm:pg:submitCustomLogic' and @class='btn' and @value='Submit']") 
 	WebElement submit;
@@ -117,6 +127,17 @@ WebDriver driver;
 		
 	}
 	
+
+	public void LeadConfig_CriteriaLogic(String logic) throws InterruptedException
+	{
+		SyncElement.isElementPresnt(driver, LC_criteriaLogicfield, 20);
+		
+		LC_criteriaLogicfield.sendKeys(logic);
+		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+		Thread.sleep(5000);
+		
+	}
+	
 	public void okalert() throws InterruptedException
 	{
 		driver.switchTo().alert().accept();
@@ -130,8 +151,7 @@ WebDriver driver;
 	}
 	
 	public void ClickonNewcriteria() throws InterruptedException
-	{
-		try
+	{try
 		{
 		 if(Newcriterabtn.isDisplayed())
 			 
@@ -140,17 +160,29 @@ WebDriver driver;
 		}
 		 catch(Exception e)
 		 {
-			
-			  CriteriaField.click();
+			 CriteriaField.click();
 			  Thread.sleep(3000);
 			  Newcriterabtn.click();
 			  Thread.sleep(5000);
-	        		 
-        	   
-		 }
-		         	
-        
-	}
+	     }}
+	
+	public void ClickonLeads_NewcriteriaBtn() throws InterruptedException
+	{try
+		{
+		 if(Leads_Newcriterabtn.isDisplayed())
+			 
+		  { Leads_Newcriterabtn.click(); }
+		 Thread.sleep(5000);
+		}
+		 catch(Exception e)
+		 {
+			 Leads_Newcriterabtn.click();
+			  Thread.sleep(3000);
+			  Leads_Newcriterabtn.click();
+			  Thread.sleep(5000);
+	     }}
+	
+	
 	
 	public void SelectfromField(String criteria) throws InterruptedException
 	{
@@ -162,6 +194,17 @@ WebDriver driver;
 		Thread.sleep(5000);
 	}
 	
+	public void Select_LEADConfig_fromField(String criteria) throws InterruptedException
+	{
+		SyncElement.isElementPresnt(driver, SelectFieldLabel, 20);
+		Select sel=new Select(SelectFieldLabel);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		sel.selectByVisibleText(criteria);
+		Thread.sleep(5000);
+	}
+	
+	
+	
 	public void SelectfromOPerator(String operator) throws InterruptedException
 	{
 		SyncElement.isElementPresnt(driver, SelectOperator, 20);
@@ -172,10 +215,26 @@ WebDriver driver;
 		Thread.sleep(5000);
 	}
 	
+	public void Select_LEADConfig_fromOPerator(String operator) throws InterruptedException
+	{
+		SyncElement.isElementPresnt(driver, LeadConfig_SelectOperator, 20);
+		Select sel=new Select(LeadConfig_SelectOperator);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		sel.selectByVisibleText(operator);
+		Thread.sleep(5000);
+	}
+	
 	public void Enterthefieldval(String field) throws InterruptedException
 	{
 		SyncElement.isElementPresnt(driver, Field_value, 20); 	
 		Field_value.sendKeys(field);
+		Thread.sleep(5000);
+	}
+	
+	public void Enterthe_LEADConfig_fieldval(String field) throws InterruptedException
+	{
+		SyncElement.isElementPresnt(driver, LC_Field_value, 20); 	
+		LC_Field_value.sendKeys(field);
 		Thread.sleep(5000);
 	}
 	

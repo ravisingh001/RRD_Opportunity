@@ -369,5 +369,10 @@ public class Step1ConfigurationPage {
 		}	
 	}
 
-	
+	public void okalert() throws InterruptedException
+	{
+		driver.switchTo().alert().accept();
+		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+		Thread.sleep(2000);
+	}
 }
