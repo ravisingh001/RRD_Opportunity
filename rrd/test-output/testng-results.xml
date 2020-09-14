@@ -2,31 +2,31 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="144453" started-at="2020-09-14T17:15:13 IST" finished-at="2020-09-14T17:17:38 IST">
+  <suite name="Default suite" duration-ms="148076" started-at="2020-09-14T17:57:38 IST" finished-at="2020-09-14T18:00:06 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="144453" started-at="2020-09-14T17:15:13 IST" finished-at="2020-09-14T17:17:38 IST">
-      <class name="Leads_Configurations.Lead_Config16">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:Leads_Configurations.Lead_Config16@167fdd33]" name="setUp" is-config="true" duration-ms="59101" started-at="2020-09-14T17:15:13 IST" finished-at="2020-09-14T17:16:12 IST">
+    <test name="Default test" duration-ms="148076" started-at="2020-09-14T17:57:38 IST" finished-at="2020-09-14T18:00:06 IST">
+      <class name="Leads_Configurations.Lead_Config17">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:Leads_Configurations.Lead_Config17@167fdd33]" name="setUp" is-config="true" duration-ms="57666" started-at="2020-09-14T17:57:38 IST" finished-at="2020-09-14T17:58:36 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="Test_Config16()[pri:0, instance:Leads_Configurations.Lead_Config16@167fdd33]" name="Test_Config16" duration-ms="84568" started-at="2020-09-14T17:16:12 IST" finished-at="2020-09-14T17:17:37 IST">
+        <test-method status="PASS" signature="Test_Config17()[pri:0, instance:Leads_Configurations.Lead_Config17@167fdd33]" name="Test_Config17" duration-ms="89624" started-at="2020-09-14T17:58:36 IST" finished-at="2020-09-14T18:00:05 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Test_Config16 -->
-        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:Leads_Configurations.Lead_Config16@167fdd33]" name="teardown" is-config="true" duration-ms="754" started-at="2020-09-14T17:17:37 IST" finished-at="2020-09-14T17:17:38 IST">
+        </test-method> <!-- Test_Config17 -->
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:Leads_Configurations.Lead_Config17@167fdd33]" name="teardown" is-config="true" duration-ms="755" started-at="2020-09-14T18:00:05 IST" finished-at="2020-09-14T18:00:06 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=Test_Config16 status=SUCCESS method=Lead_Config16.Test_Config16()[pri:0, instance:Leads_Configurations.Lead_Config16@167fdd33] output={null}]]]>
+                <![CDATA[[TestResult name=Test_Config17 status=SUCCESS method=Lead_Config17.Test_Config17()[pri:0, instance:Leads_Configurations.Lead_Config17@167fdd33] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- Leads_Configurations.Lead_Config16 -->
+      </class> <!-- Leads_Configurations.Lead_Config17 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
