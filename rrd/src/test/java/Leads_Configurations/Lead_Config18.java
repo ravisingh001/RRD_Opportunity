@@ -16,6 +16,7 @@ import com.mirketa.pages.HomePage;
 import com.mirketa.pages.RRDSearchpage;
 import com.mirketa.pages.SalesForceLoginPage;
 import com.mirketa.pages.Step1ConfigurationPage;
+import com.mirketa.pages.TeamNewCriteriapage;
 import com.mirketa.utility.Helper;
 import com.mirketa.utility.Xls_Reader;
 import com.relevantcodes.extentreports.ExtentReports;
@@ -29,6 +30,10 @@ public class Lead_Config18 {
 	Properties pro;
 	public String Lead_Testdata_sheet_path = System.getProperty("user.dir") + File.separator + "AppData"
 			+ File.separator + "Lead_ConfigData.xlsx";
+	
+	public String Lead_ConfigCriteria_sheet_path = System.getProperty("user.dir") + File.separator + "AppData"
+			+ File.separator + "Lead_Config_CriteriaLogic.xlsx";
+
 
 	@BeforeMethod
 	public void setUp() throws FileNotFoundException, InterruptedException {
@@ -61,16 +66,15 @@ public class Lead_Config18 {
 	@Test
 	public void Test_Config18() throws InterruptedException {
 
+
 		Xls_Reader reader = new Xls_Reader(Lead_Testdata_sheet_path);
 
 		int rowCount = reader.getRowCount("Lead_Config18");
 		for (int rowNum = 2; rowNum <= rowCount; rowNum++) {
-
 			String sUser1 = reader.getCellData("Lead_Config18", "Enable_RRD_Users", rowNum);
 			String sOwnerNotification = reader.getCellData("Lead_Config18", "ownerNotification", rowNum);
 			String sReleationshipBasedAssignment = reader.getCellData("Lead_Config18", "Rel_Based_Asgmt", rowNum);
-			String EO_RBA_LeadField = reader.getCellData("Lead_Config18", "EO_Lead Fields", rowNum);
-			String EO_RBA_OpportunityField = reader.getCellData("Lead_Config18", "EO_Opportunity Fields", rowNum);
+			String RBA_LeadField = reader.getCellData("Lead_Config18", "Lead Fields", rowNum);
 
 			HomePage homePage = PageFactory.initElements(driver, HomePage.class);
 
@@ -99,27 +103,65 @@ public class Lead_Config18 {
 
 			step1ConfigPage.Select_Lead_Relationship_Based_Asignment(sReleationshipBasedAssignment);
 			logger.log(LogStatus.INFO, "Select Relationship based assignment value from drop down");
-			
-			step1ConfigPage.Leads_RBAFilter_Unchecked();
+
+			step1ConfigPage.Leads_RBAFilter_Checked();
 			logger.log(LogStatus.INFO, "Selecting RBA Filter Checkbox");
+
+			step1ConfigPage.Select_Lead_Relationship_Based_Asignment_LeadField(RBA_LeadField);
+			logger.log(LogStatus.INFO, "Select Relationship based assignment Lead Field value from drop down");
+
+			Xls_Reader Reader = new Xls_Reader(Lead_ConfigCriteria_sheet_path);
+			int Criteriacount = Reader.getRowCount("Lead_Config18_CL");
 			
-			step1ConfigPage.Select_Lead_RBA_ExistingOpportunity_LeadField(EO_RBA_LeadField);
-			logger.log(LogStatus.INFO, "Select Relationship based assignment Existing Opportunity Leads Field value from drop down");
+			step1ConfigPage.Leads_ConfigCriteria_Delete();
+			logger.log(LogStatus.INFO, "Succesfully removed criteria ");
+			Thread.sleep(3000);
 			
-			step1ConfigPage.Select_Lead_RBA_ExistingOpportunity_OpportunityField(EO_RBA_OpportunityField);
-			logger.log(LogStatus.INFO, "Select Relationship based assignment Exisiting opportunity based opportunity Field value from drop down");
-			
+			for (int rownumt = 2; rownumt <= Criteriacount; rownumt++) {
+				try {
+				String Scriteria = Reader.getCellData("Lead_Config18_CL", "RRD_Crieteria", rownumt);
+				String Soperator = Reader.getCellData("Lead_Config18_CL", "RRD_operator", rownumt);
+				String Sfieldval = Reader.getCellData("Lead_Config18_CL", "RRD_fieldvalue", rownumt);
+				//String logic = Reader.getCellData("Lead_Config18_CL", "CriteriaLogic", rownumt);
+
+				TeamNewCriteriapage teamcriteria = PageFactory.initElements(driver, TeamNewCriteriapage.class);
+				logger.log(LogStatus.INFO, "Succesfully directed to the team details page");
+				
+				teamcriteria.ClickonLeads_NewcriteriaBtn();
+				logger.log(LogStatus.INFO, "Succesfully new criteria form has opened ");
+
+				teamcriteria.Select_LEADConfig_fromField(Scriteria);
+				logger.log(LogStatus.INFO, "Succesfully selected the criteria ");
+
+				teamcriteria.Select_LEADConfig_fromOPerator(Soperator);
+				logger.log(LogStatus.INFO, "Succesfully selected the Operator ");
+
+				teamcriteria.Enterthe_LEADConfig_fieldval(Sfieldval);
+				logger.log(LogStatus.INFO, "Succesfully entered the field value ");
+
+				/*
+				 * teamcriteria.LeadConfig_CriteriaLogic(logic); logger.log(LogStatus.INFO,
+				 * "Succesfully entered the criteria logic ");
+				 */
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
 			step1ConfigPage.clickOnSaveButton();
 			logger.log(LogStatus.INFO, "click on save button to save data");
+			/*
+			 * Thread.sleep(2000); step1ConfigPage.okalert();
+			 */
 			try {
-				Assert.assertTrue(step1ConfigPage.isEditButtonVisible(),"Lead Configuration data was  not submitted successfully");
+				Assert.assertTrue(step1ConfigPage.isEditButtonVisible(),
+						"Lead Configuration data was  not submitted successfully");
 			} catch (Exception e) {
 				System.out.println("Assertion is not working");
 			}
 			Thread.sleep(2000);
 			logger.log(LogStatus.PASS, "Lead configuration data saved successfully");
-
-		}
+		}}
 	}
 
 	@AfterMethod
