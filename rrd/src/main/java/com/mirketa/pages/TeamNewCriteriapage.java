@@ -32,18 +32,27 @@ public class TeamNewCriteriapage {
 
 	@FindBy(xpath = "//select[@name='j_id0:theForm:thePageBlockOne:j_id150:pg:table:0:j_id155']")
 	WebElement SelectFieldLabel;
+	
+	@FindBy(xpath = "//select[@name='j_id0:theForm:thePageBlockOne:j_id150:pg:table:1:j_id155']")
+	WebElement SelectFieldLabel_2;
 
 	@FindBy(xpath = "//table/tbody/tr//td//select[@name='j_id0:frm:pb:pbs:j_id12']")
 	WebElement SelectOperator;
 
 	@FindBy(xpath = "//select[@name='j_id0:theForm:thePageBlockOne:j_id150:pg:table:0:j_id158']")
 	WebElement LeadConfig_SelectOperator;
+	
+	@FindBy(xpath = "//select[@name='j_id0:theForm:thePageBlockOne:j_id150:pg:table:1:j_id158']")
+	WebElement LeadConfig_SelectOperator_2;
 
 	@FindBy(xpath = "//table/tbody/tr//td//input[@type='text']")
 	WebElement Field_value;
 
 	@FindBy(xpath = "//input[@name='j_id0:theForm:thePageBlockOne:j_id150:pg:table:0:j_id161']")
 	WebElement LC_Field_value;
+
+	@FindBy(xpath = "//input[@name='j_id0:theForm:thePageBlockOne:j_id150:pg:table:1:j_id161']")
+	WebElement LC_Field_value_2;
 
 	@FindBy(xpath = "//table/tbody/tr//td//input[@type='submit' and @value='Save']")
 	WebElement save;
@@ -182,6 +191,14 @@ public class TeamNewCriteriapage {
 		sel.selectByVisibleText(criteria);
 		Thread.sleep(5000);
 	}
+	
+	public void Select_LEADConfig_fromField_2(String criteria) throws InterruptedException {
+		SyncElement.isElementPresnt(driver, SelectFieldLabel_2, 20);
+		Select sel = new Select(SelectFieldLabel_2);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		sel.selectByVisibleText(criteria);
+		Thread.sleep(5000);
+	}
 
 	public void SelectfromOPerator(String operator) throws InterruptedException {
 		SyncElement.isElementPresnt(driver, SelectOperator, 20);
@@ -199,6 +216,15 @@ public class TeamNewCriteriapage {
 		sel.selectByVisibleText(operator);
 		Thread.sleep(5000);
 	}
+	
+	public void Select_LEADConfig_fromOPerator_2(String operator) throws InterruptedException {
+		SyncElement.isElementPresnt(driver, LeadConfig_SelectOperator_2, 20);
+		Select sel = new Select(LeadConfig_SelectOperator_2);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		sel.selectByVisibleText(operator);
+		Thread.sleep(5000);
+	}
+
 
 	public void Enterthefieldval(String field) throws InterruptedException {
 		SyncElement.isElementPresnt(driver, Field_value, 20);
@@ -209,6 +235,12 @@ public class TeamNewCriteriapage {
 	public void Enterthe_LEADConfig_fieldval(String field) throws InterruptedException {
 		SyncElement.isElementPresnt(driver, LC_Field_value, 20);
 		LC_Field_value.sendKeys(field);
+		Thread.sleep(5000);
+	}
+	
+	public void Enterthe_LEADConfig_fieldval_2(String field) throws InterruptedException {
+		SyncElement.isElementPresnt(driver, LC_Field_value_2, 20);
+		LC_Field_value_2.sendKeys(field);
 		Thread.sleep(5000);
 	}
 

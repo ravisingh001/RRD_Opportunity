@@ -1,6 +1,8 @@
 package com.mirketa.pages;
 
 import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -379,12 +381,22 @@ public class Step1ConfigurationPage {
 	
 	public void Leads_ConfigCriteria_Delete() throws InterruptedException {
 		Thread.sleep(2000);
-		if (ConfigCriteria_DeleteBtn.isDisplayed()) {
+		/*if (ConfigCriteria_DeleteBtn.isDisplayed()) {
+			ConfigCriteria_DeleteBtn.click();
+			System.out.println("Previous criteria is removed successfully");}
+			else if(!ConfigCriteria_DeleteBtn.isDisplayed()) {
+			System.out.println("Criteria is not present");
+		} else {
+			System.out.println("Criteria is not matching");
+			
+		}
+	}*/
+		if(driver.findElements(By.xpath("//a[contains(text(),'Del')]")).size() != 0){
 			ConfigCriteria_DeleteBtn.click();
 			System.out.println("Previous criteria is removed successfully");
-		} else {
-			System.out.println("Criteria is not present");
-		}
+			}else{
+				System.out.println("Criteria is not present");
+			}
+	
 	}
-
 }
