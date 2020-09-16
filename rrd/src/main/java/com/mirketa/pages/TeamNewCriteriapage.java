@@ -132,6 +132,16 @@ public class TeamNewCriteriapage {
 		Thread.sleep(5000);
 
 	}
+	
+	public void LeadConfig_CriteriaLogic_ClearField() throws InterruptedException {
+		SyncElement.isElementPresnt(driver, LC_criteriaLogicfield, 20);
+
+		LC_criteriaLogicfield.clear();
+		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+		Thread.sleep(5000);
+
+	}
+
 
 	public void okalert() throws InterruptedException {
 		driver.switchTo().alert().accept();

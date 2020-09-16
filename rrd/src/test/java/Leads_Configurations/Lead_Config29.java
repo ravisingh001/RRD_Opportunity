@@ -16,6 +16,7 @@ import com.mirketa.pages.HomePage;
 import com.mirketa.pages.RRDSearchpage;
 import com.mirketa.pages.SalesForceLoginPage;
 import com.mirketa.pages.Step1ConfigurationPage;
+import com.mirketa.pages.TeamNewCriteriapage;
 import com.mirketa.utility.Helper;
 import com.mirketa.utility.Xls_Reader;
 import com.relevantcodes.extentreports.ExtentReports;
@@ -29,6 +30,9 @@ public class Lead_Config29 {
 	Properties pro;
 	public String Lead_Testdata_sheet_path = System.getProperty("user.dir") + File.separator + "AppData"
 			+ File.separator + "Lead_ConfigData.xlsx";
+
+	public String Lead_ConfigCriteria_sheet_path = System.getProperty("user.dir") + File.separator + "AppData"
+			+ File.separator + "Lead_Config_CriteriaLogic.xlsx";
 
 	@BeforeMethod
 	public void setUp() throws FileNotFoundException, InterruptedException {
@@ -53,8 +57,9 @@ public class Lead_Config29 {
 		logger.log(LogStatus.INFO, "Succesfully search the RRD");
 
 		rrdsearch.RRDdrpdwnselection();
-		logger.log(LogStatus.INFO,"Succesfully  RRD selection from Dropdown and Directed to RRDHome page successfully");
-		Thread.sleep(29000);
+		logger.log(LogStatus.INFO,
+				"Succesfully  RRD selection from Dropdown and Directed to RRDHome page successfully");
+		Thread.sleep(15000);
 
 	}
 
@@ -100,7 +105,7 @@ public class Lead_Config29 {
 			step1ConfigPage.Select_Lead_Relationship_Based_Asignment(sReleationshipBasedAssignment);
 			logger.log(LogStatus.INFO, "Select Relationship based assignment value from drop down");
 			
-			step1ConfigPage.Leads_RBAFilter_Unchecked();
+			step1ConfigPage.Leads_RBAFilter_Checked();
 			logger.log(LogStatus.INFO, "Selecting RBA Filter Checkbox");
 			
 			step1ConfigPage.Select_Lead_RBA_ExistingOpportunity_LeadField(EO_RBA_LeadField);
@@ -109,16 +114,94 @@ public class Lead_Config29 {
 			step1ConfigPage.Select_Lead_RBA_ExistingOpportunity_OpportunityField(EO_RBA_OpportunityField);
 			logger.log(LogStatus.INFO, "Select Relationship based assignment Exisiting opportunity based opportunity Field value from drop down");
 			
+
+			Xls_Reader Reader = new Xls_Reader(Lead_ConfigCriteria_sheet_path);
+			int Criteriacount = Reader.getRowCount("Lead_Config29_1_CL");
+
+			step1ConfigPage.Leads_ConfigCriteria_Delete();
+			logger.log(LogStatus.INFO, "Succesfully removed criteria ");
+			Thread.sleep(3000);
+
+			for (int rownumt = 2; rownumt <= Criteriacount; rownumt++) {
+				try {
+					String Scriteria = Reader.getCellData("Lead_Config29_1_CL", "RRD_Crieteria", rownumt);
+					String Soperator = Reader.getCellData("Lead_Config29_1_CL", "RRD_operator", rownumt);
+					String Sfieldval = Reader.getCellData("Lead_Config29_1_CL", "RRD_fieldvalue", rownumt);
+					 //String logic = Reader.getCellData("Lead_Config29_1_CL", "CriteriaLogic", rownumt);
+
+					TeamNewCriteriapage teamcriteria = PageFactory.initElements(driver, TeamNewCriteriapage.class);
+					logger.log(LogStatus.INFO, "Succesfully directed to the team details page");
+
+					teamcriteria.ClickonLeads_NewcriteriaBtn();
+					logger.log(LogStatus.INFO, "Succesfully new criteria form has opened ");
+
+					teamcriteria.Select_LEADConfig_fromField(Scriteria);
+					logger.log(LogStatus.INFO, "Succesfully selected the criteria ");
+
+					teamcriteria.Select_LEADConfig_fromOPerator(Soperator);
+					logger.log(LogStatus.INFO, "Succesfully selected the Operator ");
+
+					teamcriteria.Enterthe_LEADConfig_fieldval(Sfieldval);
+					logger.log(LogStatus.INFO, "Succesfully entered the field value ");
+
+					
+					/*
+					 * teamcriteria.LeadConfig_CriteriaLogic(logic);
+					 * logger.log(LogStatus.INFO,"Succesfully entered the criteria logic ");
+					 */
+					 
+
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			
+			for (int rownumt = 2; rownumt <= Criteriacount; rownumt++) {
+				try {
+					String Scriteria = Reader.getCellData("Lead_Config29_2_CL", "RRD_Crieteria", rownumt);
+					String Soperator = Reader.getCellData("Lead_Config29_2_CL", "RRD_operator", rownumt);
+					String Sfieldval = Reader.getCellData("Lead_Config29_2_CL", "RRD_fieldvalue", rownumt);
+					 String logic = Reader.getCellData("Lead_Config29_2_CL", "CriteriaLogic", rownumt);
+
+					TeamNewCriteriapage teamcriteria = PageFactory.initElements(driver, TeamNewCriteriapage.class);
+					logger.log(LogStatus.INFO, "Succesfully directed to the team details page");
+
+					teamcriteria.ClickonLeads_NewcriteriaBtn();
+					logger.log(LogStatus.INFO, "Succesfully new criteria form has opened ");
+
+					teamcriteria.Select_LEADConfig_fromField_2(Scriteria);
+					logger.log(LogStatus.INFO, "Succesfully selected the criteria second");
+
+					teamcriteria.Select_LEADConfig_fromOPerator_2(Soperator);
+					logger.log(LogStatus.INFO, "Succesfully selected the Operator second");
+
+					teamcriteria.Enterthe_LEADConfig_fieldval_2(Sfieldval);
+					logger.log(LogStatus.INFO, "Succesfully entered the field value second");
+
+					teamcriteria.LeadConfig_CriteriaLogic_ClearField();
+					logger.log(LogStatus.INFO, "Succesfully cleared the criteria logic ");
+					
+					 teamcriteria.LeadConfig_CriteriaLogic(logic); 
+					 logger.log(LogStatus.INFO,"Succesfully entered the criteria logic ");
+					 
+
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
 			step1ConfigPage.clickOnSaveButton();
 			logger.log(LogStatus.INFO, "click on save button to save data");
+			/*
+			 * Thread.sleep(2000); step1ConfigPage.okalert();
+			 */
 			try {
-				Assert.assertTrue(step1ConfigPage.isEditButtonVisible(),"Lead Configuration data was  not submitted successfully");
+				Assert.assertTrue(step1ConfigPage.isEditButtonVisible(),
+						"Lead Configuration data was  not submitted successfully");
 			} catch (Exception e) {
 				System.out.println("Assertion is not working");
 			}
 			Thread.sleep(2000);
 			logger.log(LogStatus.PASS, "Lead configuration data saved successfully");
-
 		}
 	}
 
