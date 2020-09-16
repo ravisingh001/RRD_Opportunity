@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Opportunity_MultipleSuite">
+
+<test thread-count="5" name="Opportunity_DefineTeam">
+    <classes>
+      <class name="Opp_DefineTeamSetUp.Opp_DefineTeams.java"/>
+    </classes>
+  </test> <!-- Test -->
+
+<suite-files>
+    <suite-file path="Opportunity_Config1.xml"></suite-file>
+    <suite-file path="Opportunity_Config2.xml"></suite-file>
+    <suite-file path="Opportunity_Config3.xml"></suite-file>
+     <suite-file path="Opportunity_Config4.xml"></suite-file>
+      <suite-file path="Opportunity_Config5.xml"></suite-file>
+       <suite-file path="Opportunity_Config6.xml"></suite-file>
+        <suite-file path="Opportunity_Config7.xml"></suite-file>
+         <suite-file path="Opportunity_Config80.xml"></suite-file>
+          <suite-file path="Opportunity_Config81.xml"></suite-file>
+           <suite-file path="Opportunity_Config82.xml"></suite-file>
+            <suite-file path="Opportunity_Config83.xml"></suite-file>
+             <suite-file path="Opportunity_Config84.xml"></suite-file>
+              <suite-file path="Opportunity_Config85.xml"></suite-file>
+</suite-files>
+</suite> <!-- Suite -->
+
