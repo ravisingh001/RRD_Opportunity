@@ -96,8 +96,11 @@ public class Step1ConfigurationPage {
 	@FindBy(xpath = "//td[@class='dataCol']//input[@type='text']")
 	WebElement CasePriorityInputBox;
 
-	@FindBy(xpath = "//a[contains(text(),'Del')]")
-	WebElement ConfigCriteria_DeleteBtn;
+	@FindBy(xpath = "(//a[contains(text(),'Del')])[1]")
+	WebElement ConfigCriteria_DeleteBtn_1;
+	
+	@FindBy(xpath = "(//a[contains(text(),'Del')])[2]")
+	WebElement ConfigCriteria_DeleteBtn_2;
 	
 	public void clickonstepconfig()
 	{
@@ -381,22 +384,32 @@ public class Step1ConfigurationPage {
 	
 	public void Leads_ConfigCriteria_Delete() throws InterruptedException {
 		Thread.sleep(2000);
-		/*if (ConfigCriteria_DeleteBtn.isDisplayed()) {
-			ConfigCriteria_DeleteBtn.click();
-			System.out.println("Previous criteria is removed successfully");}
-			else if(!ConfigCriteria_DeleteBtn.isDisplayed()) {
-			System.out.println("Criteria is not present");
-		} else {
-			System.out.println("Criteria is not matching");
-			
-		}
-	}*/
-		if(driver.findElements(By.xpath("//a[contains(text(),'Del')]")).size() != 0){
-			ConfigCriteria_DeleteBtn.click();
-			System.out.println("Previous criteria is removed successfully");
-			}else{
-				System.out.println("Criteria is not present");
-			}
+		 /* if (ConfigCriteria_DeleteBtn_1.isDisplayed()) {
+			  ConfigCriteria_DeleteBtn_1.click();
+		  System.out.println("Previous criteria is removed successfully");} 
+		 Thread.sleep(2000);
+		  if(ConfigCriteria_DeleteBtn_1.isDisplayed()) {
+			  ConfigCriteria_DeleteBtn_1.click();
+		  System.out.println("Criteria is not present"); } 
+		  else {
+		  System.out.println("Criteria is not matching");
+		  }  }*/
+		 
+			 if(driver.findElements(By.xpath("//a[contains(text(),'Del')]")).size()!= 0){ 
+			ConfigCriteria_DeleteBtn_1.click();
+			  System.out.println("Previous criteria is removed successfully"); } 
+			 Thread.sleep(3000);
+			 if(driver.findElements(By.xpath("//a[contains(text(),'Del')]")).size()!= 0){ 
+					ConfigCriteria_DeleteBtn_1.click();
+					  System.out.println("Previous criteria is removed successfully"); } 
+			 else{
+			  System.out.println("Criteria is not present"); }
+	
+	} 
+	
+	
+
+			 
 	
 	}
-}
+

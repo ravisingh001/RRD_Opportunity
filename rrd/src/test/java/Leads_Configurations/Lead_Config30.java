@@ -16,6 +16,7 @@ import com.mirketa.pages.HomePage;
 import com.mirketa.pages.RRDSearchpage;
 import com.mirketa.pages.SalesForceLoginPage;
 import com.mirketa.pages.Step1ConfigurationPage;
+import com.mirketa.pages.TeamNewCriteriapage;
 import com.mirketa.utility.Helper;
 import com.mirketa.utility.Xls_Reader;
 import com.relevantcodes.extentreports.ExtentReports;
@@ -78,6 +79,7 @@ public class Lead_Config30 {
 			logger.log(LogStatus.INFO, "click on step1 configuration tab");
 
 			Step1ConfigurationPage step1ConfigPage = PageFactory.initElements(driver, Step1ConfigurationPage.class);
+			
 
 			step1ConfigPage.navigatetoIframeCaseConfig();
 			logger.log(LogStatus.INFO, "Navigate to iframe");
@@ -100,7 +102,7 @@ public class Lead_Config30 {
 			step1ConfigPage.Select_Lead_Relationship_Based_Asignment(sReleationshipBasedAssignment);
 			logger.log(LogStatus.INFO, "Select Relationship based assignment value from drop down");
 			
-			step1ConfigPage.Leads_RBAFilter_Unchecked();
+			step1ConfigPage.Leads_RBAFilter_Checked();
 			logger.log(LogStatus.INFO, "Selecting RBA Filter Checkbox");
 			
 			step1ConfigPage.Select_Lead_RBA_ExistingOpportunity_LeadField(EO_RBA_LeadField);
@@ -109,8 +111,18 @@ public class Lead_Config30 {
 			step1ConfigPage.Select_Lead_RBA_ExistingOpportunity_OpportunityField(EO_RBA_OpportunityField);
 			logger.log(LogStatus.INFO, "Select Relationship based assignment Exisiting opportunity based opportunity Field value from drop down");
 			
+			step1ConfigPage.Leads_ConfigCriteria_Delete();
+			logger.log(LogStatus.INFO, "Succesfully removed criteria ");
+			Thread.sleep(3000);
+			
+			TeamNewCriteriapage teamcriteria = PageFactory.initElements(driver, TeamNewCriteriapage.class);
+			logger.log(LogStatus.INFO, "Succesfully directed to the team details page");
+			teamcriteria.LeadConfig_CriteriaLogic_ClearField();
+			logger.log(LogStatus.INFO, "Succesfully cleared the criteria logic ");
+			 
 			step1ConfigPage.clickOnSaveButton();
 			logger.log(LogStatus.INFO, "click on save button to save data");
+			
 			try {
 				Assert.assertTrue(step1ConfigPage.isEditButtonVisible(),"Lead Configuration data was  not submitted successfully");
 			} catch (Exception e) {
