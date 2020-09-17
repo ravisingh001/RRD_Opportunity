@@ -110,6 +110,9 @@ WebDriver driver;
 	@FindBy(xpath="//input[@placeholder='Country']")
 	WebElement Country;
 	
+	@FindBy(xpath="//input[@placeholder='City']")
+	WebElement City;
+	
 	@FindBy(xpath="//input[@title='Search Contacts']")
 	WebElement Searchcontact;
 	
@@ -446,6 +449,13 @@ WebDriver driver;
 	 {
 		 SyncElement.isElementPresnt(driver, Country, 30);
 		 Country.sendKeys(country +"\n");
+		 Thread.sleep(5000);
+	 }
+	 
+	 public void pickCity(String city) throws InterruptedException
+	 {
+		 SyncElement.isElementPresnt(driver, City, 30);
+		 City.sendKeys(city +"\n");
 		 Thread.sleep(5000);
 	 }
 	 
