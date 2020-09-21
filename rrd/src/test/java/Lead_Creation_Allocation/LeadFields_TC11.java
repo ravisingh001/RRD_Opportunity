@@ -76,7 +76,7 @@ public class LeadFields_TC11 {
 				String Phone = reader.getCellData("LeadFields_TC11_1", "Phone", rowNum);
 				String LastName = reader.getCellData("LeadFields_TC11_1", "Last Name", rowNum);
 				String Company = reader.getCellData("LeadFields_TC11_1", "Company", rowNum);
-				String Email = reader.getCellData("LeadFields_TC11_1", "Email", rowNum);
+				String Employee = reader.getCellData("LeadFields_TC11_1", "No. of Employees", rowNum);
 				String LeadStatus = reader.getCellData("LeadFields_TC11_1", "Lead Status", rowNum);
 				String Country = reader.getCellData("LeadFields_TC11_1", "Country", rowNum);
 				String Discription = reader.getCellData("LeadFields_TC11_1", "Discription", rowNum);
@@ -103,7 +103,7 @@ public class LeadFields_TC11 {
 				Leadobj.pickLeadStatus(LeadStatus);
 				logger.log(LogStatus.INFO, "Successfully picked Lead Status");
 				
-				Leadobj.pickEmail(Email);
+				Leadobj.pickEmployee(Employee);
 				logger.log(LogStatus.INFO, "Successfully picked Lead Email");
 				
 				// scrolling
@@ -172,7 +172,7 @@ public class LeadFields_TC11 {
 				String LastName = reader.getCellData("LeadFields_TC11_2", "Last Name", rowNum);
 				String Company = reader.getCellData("LeadFields_TC11_2", "Company", rowNum);
 				String LeadStatus = reader.getCellData("LeadFields_TC11_2", "Lead Status", rowNum);
-				String Email = reader.getCellData("LeadFields_TC11_2", "Email", rowNum);
+				String Employee = reader.getCellData("LeadFields_TC11_1", "No. of Employees", rowNum);
 				String Country = reader.getCellData("LeadFields_TC11_2", "Country", rowNum);
 				String Discription = reader.getCellData("LeadFields_TC11_2", "Discription", rowNum);
 				String ExpectedResult = reader.getCellData("LeadFields_TC11_2", "ExpectedResult", rowNum);
@@ -198,7 +198,7 @@ public class LeadFields_TC11 {
 				Leadobj.pickLeadStatus(LeadStatus);
 				logger.log(LogStatus.INFO, "Successfully picked Lead Status");
 				
-				Leadobj.pickEmail(Email);
+				Leadobj.pickEmployee(Employee);
 				logger.log(LogStatus.INFO, "Successfully picked Lead Email");
 				
 				// scrolling
