@@ -115,6 +115,9 @@ WebDriver driver;
 	
 	@FindBy(xpath="//input[@class=' input'][@type='email']")
 	WebElement Email;
+
+	@FindBy(xpath="(//input[@data-aura-class='uiInputSmartNumber'])[2]")
+	WebElement EmployeeField;
 	
 	@FindBy(xpath="//input[@title='Search Contacts']")
 	WebElement Searchcontact;
@@ -466,6 +469,13 @@ WebDriver driver;
 	 {
 		 SyncElement.isElementPresnt(driver, Email, 30);
 		 Email.sendKeys(email +"\n");
+		 Thread.sleep(5000);
+	 }
+	 
+	 public void pickEmployee(String Emp) throws InterruptedException
+	 {
+		 SyncElement.isElementPresnt(driver, EmployeeField, 30);
+		 EmployeeField.sendKeys(Emp +"\n");
 		 Thread.sleep(5000);
 	 }
 	 
