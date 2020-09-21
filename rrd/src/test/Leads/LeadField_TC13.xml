@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Lead_scenario_1">
+  <test thread-count="5" name="Lead_Field_TC01">
+    <classes>
+      <class name="Leads_Configurations.Lead_Config10"/>
+      <class name="Lead_Creation_Allocation.LeadFields_TC13"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

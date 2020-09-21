@@ -22,7 +22,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
-public class LeadFields_TC11 {
+public class LeadFields_TC12 {
 	WebDriver driver;
 	ExtentReports report;
 	ExtentTest logger;
@@ -35,8 +35,8 @@ public class LeadFields_TC11 {
 
 	@BeforeMethod
 	public void setUp() throws FileNotFoundException, InterruptedException {
-		report = new ExtentReports("./Report/LeadCreation_LeadFields_TC11.html");
-		logger = report.startTest("Verify Lead Creation LeadFields_TC11");
+		report = new ExtentReports("./Report/LeadCreation_LeadFields_TC12.html");
+		logger = report.startTest("Verify Lead Creation LeadFields_TC12");
 		logger.log(LogStatus.INFO, "Open Browser and type url in address bar");
 		driver = BrowserFactory.getBrowser("chrome");
 		logger.log(LogStatus.INFO, "Salesforce login page is loading.");
@@ -64,23 +64,23 @@ public class LeadFields_TC11 {
 	}
 
 	@Test
-	public void LeadCreation_LeadFields_TC11() throws InterruptedException {
+	public void LeadCreation_LeadFields_TC12() throws InterruptedException {
 
 		RRD_New_Case_page Leadobj = PageFactory.initElements(driver, RRD_New_Case_page.class);
 		Xls_Reader reader = new Xls_Reader(Lead_Testdata_sheet_path);
 
-		int rowCount = reader.getRowCount("LeadFields_TC11_1");
+		int rowCount = reader.getRowCount("LeadFields_TC12_1");
 		for (int rowNum = 2; rowNum <= rowCount; rowNum++) {
 
 			try {
-				String Phone = reader.getCellData("LeadFields_TC11_1", "Phone", rowNum);
-				String LastName = reader.getCellData("LeadFields_TC11_1", "Last Name", rowNum);
-				String Company = reader.getCellData("LeadFields_TC11_1", "Company", rowNum);
-				String Employee = reader.getCellData("LeadFields_TC11_1", "No. of Employees", rowNum);
-				String LeadStatus = reader.getCellData("LeadFields_TC11_1", "Lead Status", rowNum);
-				String Country = reader.getCellData("LeadFields_TC11_1", "Country", rowNum);
-				String Discription = reader.getCellData("LeadFields_TC11_1", "Discription", rowNum);
-				String ExpectedResult = reader.getCellData("LeadFields_TC11_1", "ExpectedResult", rowNum);
+				String Phone = reader.getCellData("LeadFields_TC12_1", "Phone", rowNum);
+				String LastName = reader.getCellData("LeadFields_TC12_1", "Last Name", rowNum);
+				String Company = reader.getCellData("LeadFields_TC12_1", "Company", rowNum);
+				String Rating = reader.getCellData("LeadFields_TC12_1", "Rating", rowNum);
+				String LeadStatus = reader.getCellData("LeadFields_TC12_1", "Lead Status", rowNum);
+				String Country = reader.getCellData("LeadFields_TC12_1", "Country", rowNum);
+				String Discription = reader.getCellData("LeadFields_TC12_1", "Discription", rowNum);
+				String ExpectedResult = reader.getCellData("LeadFields_TC12_1", "ExpectedResult", rowNum);
 
 				Thread.sleep(5000);
 				Leadobj.clickOn_Leads();
@@ -103,8 +103,8 @@ public class LeadFields_TC11 {
 				Leadobj.pickLeadStatus(LeadStatus);
 				logger.log(LogStatus.INFO, "Successfully picked Lead Status");
 				
-				Leadobj.pickEmployee(Employee);
-				logger.log(LogStatus.INFO, "Successfully picked Lead Email");
+				Leadobj.pickRating(Rating);
+				logger.log(LogStatus.INFO, "Successfully picked Lead Rating");
 				
 				// scrolling
 
@@ -156,7 +156,7 @@ public class LeadFields_TC11 {
 				System.out.println("To Be Assigned record of lead from sheet - " + ChangedOwner);
 				String Ownername = Leadobj.AssignedLead_RRDHover.getText();
 				System.out.println("Changed Owner Name is- " + Ownername);
-				Thread.sleep(1100);
+				Thread.sleep(1200);
 				softassert.assertTrue(Ownername.equalsIgnoreCase(ChangedOwner),
 						"To Be changed owner is not matching");
 			} catch (Exception e) {
@@ -164,18 +164,18 @@ public class LeadFields_TC11 {
 				e.printStackTrace();
 		}}
 		
-		int RowCount = reader.getRowCount("LeadFields_TC11_2");
+		int RowCount = reader.getRowCount("LeadFields_TC12_2");
 		for (int rowNum = 2; rowNum <= RowCount; rowNum++) {
 
 			try {
-				String Phone = reader.getCellData("LeadFields_TC11_2", "Phone", rowNum);
-				String LastName = reader.getCellData("LeadFields_TC11_2", "Last Name", rowNum);
-				String Company = reader.getCellData("LeadFields_TC11_2", "Company", rowNum);
-				String LeadStatus = reader.getCellData("LeadFields_TC11_2", "Lead Status", rowNum);
-				String Employee = reader.getCellData("LeadFields_TC11_2", "No. of Employees", rowNum);
-				String Country = reader.getCellData("LeadFields_TC11_2", "Country", rowNum);
-				String Discription = reader.getCellData("LeadFields_TC11_2", "Discription", rowNum);
-				String ExpectedResult = reader.getCellData("LeadFields_TC11_2", "ExpectedResult", rowNum);
+				String Phone = reader.getCellData("LeadFields_TC12_2", "Phone", rowNum);
+				String LastName = reader.getCellData("LeadFields_TC12_2", "Last Name", rowNum);
+				String Company = reader.getCellData("LeadFields_TC12_2", "Company", rowNum);
+				String LeadStatus = reader.getCellData("LeadFields_TC12_2", "Lead Status", rowNum);
+				String Rating = reader.getCellData("LeadFields_TC12_1", "Rating", rowNum);
+				String Country = reader.getCellData("LeadFields_TC12_2", "Country", rowNum);
+				String Discription = reader.getCellData("LeadFields_TC12_2", "Discription", rowNum);
+				String ExpectedResult = reader.getCellData("LeadFields_TC12_2", "ExpectedResult", rowNum);
 
 				Thread.sleep(5000);
 				Leadobj.clickOn_Leads();
@@ -198,8 +198,8 @@ public class LeadFields_TC11 {
 				Leadobj.pickLeadStatus(LeadStatus);
 				logger.log(LogStatus.INFO, "Successfully picked Lead Status");
 				
-				Leadobj.pickEmployee(Employee);
-				logger.log(LogStatus.INFO, "Successfully picked Lead Email");
+				Leadobj.pickRating(Rating);
+				logger.log(LogStatus.INFO, "Successfully picked Lead Rating");
 				
 				// scrolling
 
