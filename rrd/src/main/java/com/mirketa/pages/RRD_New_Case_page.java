@@ -119,6 +119,12 @@ WebDriver driver;
 	@FindBy(xpath="(//input[@data-aura-class='uiInputSmartNumber'])[2]")
 	WebElement EmployeeField;
 	
+	@FindBy(xpath="(//a[@class='select'])[5]")
+	WebElement Rating;
+
+	@FindBy(xpath="(//input[@class=' input'])[5]")
+	WebElement Title;
+	
 	@FindBy(xpath="//input[@title='Search Contacts']")
 	WebElement Searchcontact;
 	
@@ -479,6 +485,19 @@ WebDriver driver;
 		 Thread.sleep(5000);
 	 }
 	 
+	 public void pickRating(String rating) throws InterruptedException
+	 {
+		 SyncElement.isElementPresnt(driver, Rating, 30);
+		 Rating.sendKeys(rating +"\n");
+		 Thread.sleep(5000);
+	 }
+	 
+	 public void pickTitle(String title) throws InterruptedException
+	 {
+		 SyncElement.isElementPresnt(driver, Title, 30);
+		 Title.sendKeys(title +"\n");
+		 Thread.sleep(5000);
+	 }
 	 
 	 public void clickcearchcontact() throws InterruptedException
 	 {
