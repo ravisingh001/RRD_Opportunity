@@ -113,6 +113,9 @@ WebDriver driver;
 	@FindBy(xpath="//input[@placeholder='City']")
 	WebElement City;
 	
+	@FindBy(xpath="//input[@class=' input'][@type='email']")
+	WebElement Email;
+	
 	@FindBy(xpath="//input[@title='Search Contacts']")
 	WebElement Searchcontact;
 	
@@ -458,6 +461,14 @@ WebDriver driver;
 		 City.sendKeys(city +"\n");
 		 Thread.sleep(5000);
 	 }
+	 
+	 public void pickEmail(String email) throws InterruptedException
+	 {
+		 SyncElement.isElementPresnt(driver, Email, 30);
+		 Email.sendKeys(email +"\n");
+		 Thread.sleep(5000);
+	 }
+	 
 	 
 	 public void clickcearchcontact() throws InterruptedException
 	 {
