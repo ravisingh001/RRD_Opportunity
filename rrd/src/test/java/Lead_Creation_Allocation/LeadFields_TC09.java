@@ -15,6 +15,7 @@ import com.mirketa.factory.DataProviderFactory;
 import com.mirketa.pages.RRDSearchpage;
 import com.mirketa.pages.RRD_New_Case_page;
 import com.mirketa.pages.SalesForceLoginPage;
+import com.mirketa.pages.TeamPage;
 import com.mirketa.utility.Helper;
 import com.mirketa.utility.Xls_Reader;
 import com.relevantcodes.extentreports.ExtentReports;
@@ -68,19 +69,18 @@ public class LeadFields_TC09 {
 		RRD_New_Case_page Leadobj = PageFactory.initElements(driver, RRD_New_Case_page.class);
 		Xls_Reader reader = new Xls_Reader(Lead_Testdata_sheet_path);
 
-		int rowCount = reader.getRowCount("LeadFields_TC09");
+		int rowCount = reader.getRowCount("LeadFields_TC09_1");
 		for (int rowNum = 2; rowNum <= rowCount; rowNum++) {
 
 			try {
-				String Phone = reader.getCellData("LeadFields_TC09", "Phone", rowNum);
-				String LastName = reader.getCellData("LeadFields_TC09", "Last Name", rowNum);
-				String Company = reader.getCellData("LeadFields_TC09", "Company", rowNum);
-				String LeadStatus = reader.getCellData("LeadFields_TC09", "Lead Status", rowNum);
-				String Country = reader.getCellData("LeadFields_TC09", "Country", rowNum);
-				String Discription = reader.getCellData("LeadFields_TC09", "Discription", rowNum);
-				String ExpectedResult = reader.getCellData("LeadFields_TC09", "ExpectedResult", rowNum);
-				String City = reader.getCellData("LeadFields_TC09", "City", rowNum);
-				//String ToBeAssigned = reader.getCellData("LeadFields_TC09", "ToBeAssigned", rowNum);
+				String Phone = reader.getCellData("LeadFields_TC09_1", "Phone", rowNum);
+				String LastName = reader.getCellData("LeadFields_TC09_1", "Last Name", rowNum);
+				String Company = reader.getCellData("LeadFields_TC09_1", "Company", rowNum);
+				String LeadStatus = reader.getCellData("LeadFields_TC09_1", "Lead Status", rowNum);
+				String Country = reader.getCellData("LeadFields_TC09_1", "Country", rowNum);
+				String City = reader.getCellData("LeadFields_TC09_1", "City", rowNum);
+				String Discription = reader.getCellData("LeadFields_TC09_1", "Discription", rowNum);
+				String ExpectedResult = reader.getCellData("LeadFields_TC09_1", "ExpectedResult", rowNum);
 
 				Thread.sleep(5000);
 				Leadobj.clickOn_Leads();
@@ -107,7 +107,7 @@ public class LeadFields_TC09 {
 				Leadobj.scrolldowntoViewDiscription();
 				
 				Leadobj.pickCity(City);
-				logger.log(LogStatus.INFO, "Successfully picked Lead city");
+				logger.log(LogStatus.INFO, "Successfully picked Lead country");
 				
 				Leadobj.pickCountry(Country);
 				logger.log(LogStatus.INFO, "Successfully picked Lead country");
@@ -119,7 +119,7 @@ public class LeadFields_TC09 {
 				logger.log(LogStatus.INFO, "Successfully saved  the new added lead and Directed to lead Details page ");
 
 				driver.navigate().refresh();
-				Thread.sleep(10000);
+				Thread.sleep(6000);
 
 				driver.navigate().refresh();
 				Thread.sleep(6000);
@@ -138,13 +138,105 @@ public class LeadFields_TC09 {
 					String Username = Leadobj.AssignedLead_RRDHover.getText();
 					System.out.println("Assigned case owner is:" + Username);
 					softassert.assertTrue(Username.equalsIgnoreCase(ExpectedResult),"Assigned RRD user name is not matching");
-				}
+				}		
+		}finally {
+			// ... cleanup that will execute whether or not an error occurred ...
+		}
+			
+		// Clone
+			TeamPage teamobj = PageFactory.initElements(driver, TeamPage.class);
+			String ChangedOwner = reader.getCellData("ChangeOwner_SECURITY", "Changed Owner", rowCount);
+			Thread.sleep(5000);
+			teamobj.clickonChangeOwner_SecurityUser();
+			logger.log(LogStatus.INFO, "Successfully Changed the owner");
 
+			try {
+
+				System.out.println("To Be Assigned record of lead from sheet - " + ChangedOwner);
+				String Ownername = teamobj.Ownername.getText();
+				System.out.println("Changed Owner Name is- " + Ownername);
+				Thread.sleep(1000);
+				softassert.assertTrue(Ownername.equalsIgnoreCase(ChangedOwner),
+						"To Be changed owner is not matching");
+			} catch (Exception e) {
+				System.out.println("Assertion issue");
+				e.printStackTrace();
+		}}
+		
+		int RowCount = reader.getRowCount("LeadFields_TC09_2");
+		for (int rowNum = 2; rowNum <= RowCount; rowNum++) {
+
+			try {
+				String Phone = reader.getCellData("LeadFields_TC09_2", "Phone", rowNum);
+				String LastName = reader.getCellData("LeadFields_TC09_2", "Last Name", rowNum);
+				String Company = reader.getCellData("LeadFields_TC09_2", "Company", rowNum);
+				String LeadStatus = reader.getCellData("LeadFields_TC09_2", "Lead Status", rowNum);
+				String Country = reader.getCellData("LeadFields_TC09_2", "Country", rowNum);
+				String City = reader.getCellData("LeadFields_TC09_2", "City", rowNum);
+				String Discription = reader.getCellData("LeadFields_TC09_2", "Discription", rowNum);
+				String ExpectedResult = reader.getCellData("LeadFields_TC09_2", "ExpectedResult", rowNum);
+
+				Thread.sleep(5000);
+				Leadobj.clickOn_Leads();
+				logger.log(LogStatus.INFO, "Successfully clicked on Define Leads Tab");
+				Thread.sleep(4000);
+
+				Leadobj.clickOnNew_Leads();
+				logger.log(LogStatus.INFO, "Successfully clicked on New Lead");
+				Thread.sleep(3000);
 				
+				Leadobj.pickPhone(Phone);
+				logger.log(LogStatus.INFO, "Successfully picked phone from list ");
+
+				Leadobj.pickLastName(LastName);
+				logger.log(LogStatus.INFO, "Successfully picked Last Name ");
+
+				Leadobj.pickcompany(Company);
+				logger.log(LogStatus.INFO, "Successfully picked Company");
+
+				Leadobj.pickLeadStatus(LeadStatus);
+				logger.log(LogStatus.INFO, "Successfully picked Lead Status");
+				// scrolling
+
+				Leadobj.scrolldowntoViewDiscription();
+				
+				Leadobj.pickCity(City);
+				logger.log(LogStatus.INFO, "Successfully picked Lead country");
+				
+				
+				Leadobj.pickCountry(Country);
+				logger.log(LogStatus.INFO, "Successfully picked Lead country");
+
+				Leadobj.TypeDescription(Discription);
+				logger.log(LogStatus.INFO, "Successfully entered the description");
+
+				Leadobj.clickOnSave();
+				logger.log(LogStatus.INFO, "Successfully saved  the new added lead and Directed to lead Details page ");
+
+				driver.navigate().refresh();
+				Thread.sleep(6000);
+
+				driver.navigate().refresh();
+				Thread.sleep(6000);
+				Leadobj.clickOnDetailsTab();
+				logger.log(LogStatus.INFO, "Successfully switched to lead Details page ");
+				
+				try {
+					System.out.println("Assigned RRD user  from sheet - " + ExpectedResult);
+					String Username = Leadobj.AssignedLead_RRDHover.getText();
+					System.out.println("Assigned case owner is:" + Username);
+					softassert.assertTrue(Username.equalsIgnoreCase(ExpectedResult),"Assigned RRD user name is not matching");
+				}
+				catch (Exception e)
+				{
+					System.out.println("Assigned RRD user  from sheet - " + ExpectedResult);
+					String Username = Leadobj.AssignedLead_RRDHover.getText();
+					System.out.println("Assigned case owner is:" + Username);
+					softassert.assertTrue(Username.equalsIgnoreCase(ExpectedResult),"Assigned RRD user name is not matching");
+				}		
 		}finally {
 			// ... cleanup that will execute whether or not an error occurred ...
 		}}
-
 	}
 
 	@AfterMethod
