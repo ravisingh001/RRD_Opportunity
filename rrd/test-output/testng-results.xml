@@ -2,31 +2,31 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="420838" started-at="2020-09-21T16:39:59 IST" finished-at="2020-09-21T16:47:00 IST">
+  <suite name="Default suite" duration-ms="431457" started-at="2020-09-22T18:22:54 IST" finished-at="2020-09-22T18:30:05 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="420838" started-at="2020-09-21T16:39:59 IST" finished-at="2020-09-21T16:47:00 IST">
-      <class name="Lead_Creation_Allocation.LeadFields_TC13">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:Lead_Creation_Allocation.LeadFields_TC13@6acdbdf5]" name="setUp" is-config="true" duration-ms="41759" started-at="2020-09-21T16:39:59 IST" finished-at="2020-09-21T16:40:41 IST">
+    <test name="Default test" duration-ms="431457" started-at="2020-09-22T18:22:54 IST" finished-at="2020-09-22T18:30:05 IST">
+      <class name="Lead_Creation_Allocation.LeadRBAFilters_TC12">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:Lead_Creation_Allocation.LeadRBAFilters_TC12@6acdbdf5]" name="setUp" is-config="true" duration-ms="50653" started-at="2020-09-22T18:22:54 IST" finished-at="2020-09-22T18:23:45 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="LeadCreation_LeadFields_TC13()[pri:0, instance:Lead_Creation_Allocation.LeadFields_TC13@6acdbdf5]" name="LeadCreation_LeadFields_TC13" duration-ms="378298" started-at="2020-09-21T16:40:41 IST" finished-at="2020-09-21T16:46:59 IST">
+        <test-method status="PASS" signature="LeadCreation_LeadRBAFilter_TC12()[pri:0, instance:Lead_Creation_Allocation.LeadRBAFilters_TC12@6acdbdf5]" name="LeadCreation_LeadRBAFilter_TC12" duration-ms="379992" started-at="2020-09-22T18:23:45 IST" finished-at="2020-09-22T18:30:04 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- LeadCreation_LeadFields_TC13 -->
-        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:Lead_Creation_Allocation.LeadFields_TC13@6acdbdf5]" name="teardown" is-config="true" duration-ms="756" started-at="2020-09-21T16:46:59 IST" finished-at="2020-09-21T16:47:00 IST">
+        </test-method> <!-- LeadCreation_LeadRBAFilter_TC12 -->
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:Lead_Creation_Allocation.LeadRBAFilters_TC12@6acdbdf5]" name="teardown" is-config="true" duration-ms="784" started-at="2020-09-22T18:30:05 IST" finished-at="2020-09-22T18:30:05 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=LeadCreation_LeadFields_TC13 status=SUCCESS method=LeadFields_TC13.LeadCreation_LeadFields_TC13()[pri:0, instance:Lead_Creation_Allocation.LeadFields_TC13@6acdbdf5] output={null}]]]>
+                <![CDATA[[TestResult name=LeadCreation_LeadRBAFilter_TC12 status=SUCCESS method=LeadRBAFilters_TC12.LeadCreation_LeadRBAFilter_TC12()[pri:0, instance:Lead_Creation_Allocation.LeadRBAFilters_TC12@6acdbdf5] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- Lead_Creation_Allocation.LeadFields_TC13 -->
+      </class> <!-- Lead_Creation_Allocation.LeadRBAFilters_TC12 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

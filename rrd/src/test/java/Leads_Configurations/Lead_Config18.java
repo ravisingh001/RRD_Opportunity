@@ -139,6 +139,9 @@ public class Lead_Config18 {
 				teamcriteria.Enterthe_LEADConfig_fieldval(Sfieldval);
 				logger.log(LogStatus.INFO, "Succesfully entered the field value ");
 
+				teamcriteria.LeadConfig_CriteriaLogic_ClearField();
+				logger.log(LogStatus.INFO, "Succesfully cleared the criteria logic ");
+				/*
 				/*
 				 * teamcriteria.LeadConfig_CriteriaLogic(logic); logger.log(LogStatus.INFO,
 				 * "Succesfully entered the criteria logic ");
