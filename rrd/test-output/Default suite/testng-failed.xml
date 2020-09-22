@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Leads_Configurations.Lead_Config27">
+      <class name="Leads_Configurations.Lead_Config16">
         <methods>
-          <include name="Test_Config27"/>
+          <include name="Test_Config16"/>
           <include name="setUp"/>
           <include name="teardown"/>
         </methods>
-      </class> <!-- Leads_Configurations.Lead_Config27 -->
+      </class> <!-- Leads_Configurations.Lead_Config16 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

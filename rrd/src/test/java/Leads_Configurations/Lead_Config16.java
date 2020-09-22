@@ -108,8 +108,14 @@ public class Lead_Config16 {
 
 			step1ConfigPage.Select_Lead_Relationship_Based_Asignment_LeadField(RBA_LeadField);
 			logger.log(LogStatus.INFO, "Select Relationship based assignment Lead Field value from drop down");
-
+			
+			
+			
 			Xls_Reader Reader = new Xls_Reader(Lead_ConfigCriteria_sheet_path);
+			step1ConfigPage.Leads_ConfigCriteria_Delete();
+			logger.log(LogStatus.INFO, "Succesfully removed criteria ");
+			Thread.sleep(3000);
+
 			int Criteriacount = Reader.getRowCount("Lead_Config16_CL");
 			for (int rownumt = 2; rownumt <= Criteriacount; rownumt++) {
 				try {
@@ -131,8 +137,10 @@ public class Lead_Config16 {
 				logger.log(LogStatus.INFO, "Succesfully selected the Operator ");
 
 				teamcriteria.Enterthe_LEADConfig_fieldval(Sfieldval);
-				logger.log(LogStatus.INFO, "Succesfully entered the field value ");
+				logger.log(LogStatus.INFO, "Succesfully entered the field value");
 
+				teamcriteria.LeadConfig_CriteriaLogic_ClearField();
+				logger.log(LogStatus.INFO, "Succesfully cleared the criteria logic ");
 				/*
 				 * teamcriteria.LeadConfig_CriteriaLogic(logic); logger.log(LogStatus.INFO,
 				 * "Succesfully entered the criteria logic ");
