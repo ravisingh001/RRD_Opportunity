@@ -72,7 +72,8 @@ WebDriver driver;
 	@FindBy(xpath="//input[contains(@placeholder,'Last Name')]")
 	WebElement LastName;
 	
-	
+	@FindBy(xpath="//input[contains(@placeholder,'First Name')]")
+	WebElement FirstName;
 	
 	@FindBy(xpath="(//div[@class='uiInput uiInputText uiInput--default uiInput--input']//input[@class=' input'])[1]")
 	WebElement OpportunityName;
@@ -106,6 +107,9 @@ WebDriver driver;
 	
 	@FindBy(xpath="(//a[@class='select'])[4]")
 	WebElement LeadStatus;
+	
+	@FindBy(xpath="(//a[@class='select'])[2]")
+	WebElement LeadSource;
 	
 	@FindBy(xpath="//input[@placeholder='Country']")
 	WebElement Country;
@@ -382,6 +386,14 @@ WebDriver driver;
 		 Thread.sleep(2000);
 		 }
 	 
+	 public void pickFirstName(String firstname) throws InterruptedException
+	 {
+		 WebDriverWait wait = new WebDriverWait(driver, 20);
+		 wait.until(ExpectedConditions.elementToBeClickable(FirstName));
+		 
+		 FirstName.sendKeys(firstname+"\n");
+		 Thread.sleep(2000);
+		 }
 	 
 	 public void pickOpportunityName(String ON) throws InterruptedException
 	 {
@@ -454,6 +466,13 @@ WebDriver driver;
 	 {
 		 SyncElement.isElementPresnt(driver, LeadStatus, 30);
 		 LeadStatus.sendKeys(LS +"\n");
+		 Thread.sleep(5000);
+	 }
+	 
+	 public void pickLeadSource(String LS) throws InterruptedException
+	 {
+		 SyncElement.isElementPresnt(driver, LeadSource, 30);
+		 LeadSource.sendKeys(LS +"\n");
 		 Thread.sleep(5000);
 	 }
 	 
