@@ -3,6 +3,8 @@ package Lead_Creation_Allocation;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Properties;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.ITestResult;
@@ -22,7 +24,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
-public class LeadRBAFilters_TC10 {
+public class LeadRBAFilters_TC14 {
 	WebDriver driver;
 	ExtentReports report;
 	ExtentTest logger;
@@ -35,8 +37,8 @@ public class LeadRBAFilters_TC10 {
 
 	@BeforeMethod
 	public void setUp() throws FileNotFoundException, InterruptedException {
-		report = new ExtentReports("./Report/LeadCreation_LeadRBAFilters_TC10.html");
-		logger = report.startTest("Verify Lead Creation LeadRBAFilters_TC10");
+		report = new ExtentReports("./Report/LeadCreation_LeadRBAFilters_TC14.html");
+		logger = report.startTest("Verify Lead Creation LeadRBAFilters_TC14");
 		logger.log(LogStatus.INFO, "Open Browser and type url in address bar");
 		driver = BrowserFactory.getBrowser("chrome");
 		logger.log(LogStatus.INFO, "Salesforce login page is loading.");
@@ -64,23 +66,22 @@ public class LeadRBAFilters_TC10 {
 	}
 
 	@Test
-	public void LeadCreation_LeadRBAFilter_TC10() throws InterruptedException {
+	public void LeadCreation_LeadRBAFilter_TC14() throws InterruptedException {
 
 		RRD_New_Case_page Leadobj = PageFactory.initElements(driver, RRD_New_Case_page.class);
 		Xls_Reader reader = new Xls_Reader(Lead_Testdata_sheet_path);
 
-		int rowCount = reader.getRowCount("LeadRBAFilters_TC10_1");
+		int rowCount = reader.getRowCount("LeadRBAFilters_TC14_1");
 		for (int rowNum = 2; rowNum <= rowCount; rowNum++) {
 
 			try {
-				String Phone = reader.getCellData("LeadRBAFilters_TC10_1", "Phone", rowNum);
-				String LastName = reader.getCellData("LeadRBAFilters_TC10_1", "Last Name", rowNum);
-				String Company = reader.getCellData("LeadRBAFilters_TC10_1", "Company", rowNum);
-				String LeadStatus = reader.getCellData("LeadRBAFilters_TC10_1", "Lead Status", rowNum);
-				String City = reader.getCellData("LeadRBAFilters_TC10_1", "City", rowNum);
-				String Country = reader.getCellData("LeadRBAFilters_TC10_1", "Country", rowNum);
-				String Discription = reader.getCellData("LeadRBAFilters_TC10_1", "Discription", rowNum);
-				String ExpectedResult = reader.getCellData("LeadRBAFilters_TC10_1", "ExpectedResult", rowNum);
+				String Phone = reader.getCellData("LeadRBAFilters_TC14_1", "Phone", rowNum);
+				String LastName = reader.getCellData("LeadRBAFilters_TC14_1", "Last Name", rowNum);
+				String Company = reader.getCellData("LeadRBAFilters_TC14_1", "Company", rowNum);
+				String LeadStatus = reader.getCellData("LeadRBAFilters_TC14_1", "Lead Status", rowNum);
+				String Country = reader.getCellData("LeadRBAFilters_TC14_1", "Country", rowNum);
+				String Discription = reader.getCellData("LeadRBAFilters_TC14_1", "Discription", rowNum);
+				String ExpectedResult = reader.getCellData("LeadRBAFilters_TC14_1", "ExpectedResult", rowNum);
 
 				Thread.sleep(5000);
 				Leadobj.clickOn_Leads();
@@ -103,13 +104,9 @@ public class LeadRBAFilters_TC10 {
 				Leadobj.pickLeadStatus(LeadStatus);
 				logger.log(LogStatus.INFO, "Successfully picked Lead Status");
 				
-				
 				// scrolling
 
 				Leadobj.scrolldowntoViewDiscription();
-				
-				Leadobj.pickCity(City);
-				logger.log(LogStatus.INFO, "Successfully picked Lead City");
 				
 				Leadobj.pickCountry(Country);
 				logger.log(LogStatus.INFO, "Successfully picked Lead country");
@@ -140,12 +137,17 @@ public class LeadRBAFilters_TC10 {
 					String Username = Leadobj.AssignedLead_RRDHover.getText();
 					System.out.println("Assigned case owner is:" + Username);
 					softassert.assertTrue(Username.equalsIgnoreCase(ExpectedResult),"Assigned RRD user name is not matching");
-				}		
+				}	
+				if(driver.findElements(By.xpath("//span[@class='uiOutputTextArea']")).size()!= 0){ 
+						 System.out.println("Lead assigment is done through RBA"); } 
+					 else{
+					  System.out.println("Lead assigment is done not through RBA"); }
+				
 		}finally {
 			// ... cleanup that will execute whether or not an error occurred ...
 		}
 			
-		// Clone
+
 			TeamPage teamobj = PageFactory.initElements(driver, TeamPage.class);
 			String ChangedOwner = reader.getCellData("ChangeOwner_SECURITY", "Changed Owner", rowCount);
 			Thread.sleep(5000);
@@ -165,18 +167,17 @@ public class LeadRBAFilters_TC10 {
 				e.printStackTrace();
 		}}
 		
-		int RowCount = reader.getRowCount("LeadRBAFilters_TC10_2");
+		int RowCount = reader.getRowCount("LeadRBAFilters_TC14_2");
 		for (int rowNum = 2; rowNum <= RowCount; rowNum++) {
 
 			try {
-				String Phone = reader.getCellData("LeadRBAFilters_TC10_2", "Phone", rowNum);
-				String LastName = reader.getCellData("LeadRBAFilters_TC10_2", "Last Name", rowNum);
-				String Company = reader.getCellData("LeadRBAFilters_TC10_2", "Company", rowNum);
-				String LeadStatus = reader.getCellData("LeadRBAFilters_TC10_2", "Lead Status", rowNum);
-				String City = reader.getCellData("LeadRBAFilters_TC10_2", "City", rowNum);
-				String Country = reader.getCellData("LeadRBAFilters_TC10_2", "Country", rowNum);
-				String Discription = reader.getCellData("LeadRBAFilters_TC10_2", "Discription", rowNum);
-				String ExpectedResult = reader.getCellData("LeadRBAFilters_TC10_2", "ExpectedResult", rowNum);
+				String Phone = reader.getCellData("LeadRBAFilters_TC14_2", "Phone", rowNum);
+				String LastName = reader.getCellData("LeadRBAFilters_TC14_2", "Last Name", rowNum);
+				String Company = reader.getCellData("LeadRBAFilters_TC14_2", "Company", rowNum);
+				String LeadStatus = reader.getCellData("LeadRBAFilters_TC14_2", "Lead Status", rowNum);
+				String Country = reader.getCellData("LeadRBAFilters_TC14_2", "Country", rowNum);
+				String Discription = reader.getCellData("LeadRBAFilters_TC14_2", "Discription", rowNum);
+				String ExpectedResult = reader.getCellData("LeadRBAFilters_TC14_2", "ExpectedResult", rowNum);
 
 				Thread.sleep(5000);
 				Leadobj.clickOn_Leads();
@@ -199,13 +200,9 @@ public class LeadRBAFilters_TC10 {
 				Leadobj.pickLeadStatus(LeadStatus);
 				logger.log(LogStatus.INFO, "Successfully picked Lead Status");
 				
-				
 				// scrolling
 
 				Leadobj.scrolldowntoViewDiscription();
-				
-				Leadobj.pickCity(City);
-				logger.log(LogStatus.INFO, "Successfully picked Lead city");
 				
 				Leadobj.pickCountry(Country);
 				logger.log(LogStatus.INFO, "Successfully picked Lead country");
@@ -236,7 +233,12 @@ public class LeadRBAFilters_TC10 {
 					String Username = Leadobj.AssignedLead_RRDHover.getText();
 					System.out.println("Assigned case owner is:" + Username);
 					softassert.assertTrue(Username.equalsIgnoreCase(ExpectedResult),"Assigned RRD user name is not matching");
-				}		
+				}	
+				
+				if(driver.findElements(By.xpath("//span[@class='uiOutputTextArea']")).size()!= 0){ 
+					 System.out.println("Lead assigment is done through RBA"); } 
+				 else{
+				  System.out.println("Lead assigment is done not through RBA"); }
 		}finally {
 			// ... cleanup that will execute whether or not an error occurred ...
 		}}

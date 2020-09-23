@@ -3,13 +3,20 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Lead_scenario_1]">
   <test thread-count="5" name="Lead_Field_TC01(failed)">
     <classes>
-      <class name="Lead_Creation_Allocation.LeadFields_TC08">
+      <class name="Leads_Configurations.Lead_Config20">
         <methods>
-          <include name="LeadCreation_LeadFields_TC08"/>
           <include name="teardown"/>
+          <include name="Test_Config20"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- Lead_Creation_Allocation.LeadFields_TC08 -->
+      </class> <!-- Leads_Configurations.Lead_Config20 -->
+      <class name="Lead_Creation_Allocation.LeadFields_TC13">
+        <methods>
+          <include name="teardown"/>
+          <include name="LeadCreation_LeadFields_TC13"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- Lead_Creation_Allocation.LeadFields_TC13 -->
     </classes>
   </test> <!-- Lead_Field_TC01(failed) -->
 </suite> <!-- Failed suite [Lead_scenario_1] -->
