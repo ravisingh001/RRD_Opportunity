@@ -174,11 +174,11 @@ public class ExistingOpportunity_TC06 {
 					softassert.assertTrue(Username.equalsIgnoreCase(ExpectedResult),"Assigned RRD user name is not matching");
 				}}finally {
 				// ... cleanup that will execute whether or not an error occurred ...
-			}
+			}}
 		
 		Xls_Reader Reader = new Xls_Reader(Lead_Testdata_sheet_path);
 
-		int RowCount = reader.getRowCount("ExistingOpportunity_TC06");
+		int RowCount = Reader.getRowCount("ExistingOpportunity_TC06");
 		for (int RowNum = 2; RowNum <= RowCount; RowNum++) {
 
 			try {
@@ -186,7 +186,7 @@ public class ExistingOpportunity_TC06 {
 				String FirstName = Reader.getCellData("ExistingOpportunity_TC06", "First Name", RowNum);
 				String LastName = Reader.getCellData("ExistingOpportunity_TC06", "Last Name", RowNum);
 				String Company = Reader.getCellData("ExistingOpportunity_TC06", "Company", RowNum);
-				String title = reader.getCellData("ExistingOpportunity_TC06", "Title", rowNum);
+				String title = reader.getCellData("ExistingOpportunity_TC06", "Title", RowNum);
 				String LeadStatus = Reader.getCellData("ExistingOpportunity_TC06", "Lead Status", RowNum);
 				String Discription = Reader.getCellData("ExistingOpportunity_TC06", "Discription", RowNum);
 				String ExpectedResult = Reader.getCellData("ExistingOpportunity_TC06", "ExpectedResult", RowNum);
@@ -252,11 +252,11 @@ public class ExistingOpportunity_TC06 {
 				if(driver.findElements(By.xpath("//span[@class='uiOutputTextArea']")).size()!= 0){ 
 						 System.out.println("Lead assigment is done through RBA"); } 
 					 else{
-					  System.out.println("Lead assigment is done not through RBA"); }
+					  System.out.println("Lead assigment is not done  through RBA"); }
 				
 		}finally {
 			// ... cleanup that will execute whether or not an error occurred ...
-		}}}
+		}}
 	}
 
 	@AfterMethod

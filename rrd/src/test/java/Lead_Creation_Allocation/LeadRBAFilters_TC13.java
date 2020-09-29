@@ -3,6 +3,8 @@ package Lead_Creation_Allocation;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Properties;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.ITestResult;
@@ -137,9 +139,13 @@ public class LeadRBAFilters_TC13 {
 				{
 					System.out.println("Assigned RRD user  from sheet - " + ExpectedResult);
 					String Username = Leadobj.AssignedLead_RRDHover.getText();
-					System.out.println("Assigned case owner is:" + Username);
+					System.out.println("Assigned Lead owner is:" + Username);
 					softassert.assertTrue(Username.equalsIgnoreCase(ExpectedResult),"Assigned RRD user name is not matching");
 				}		
+				if(driver.findElements(By.xpath("//span[@class='uiOutputTextArea']")).size()!= 0){ 
+					 System.out.println("Lead assigment is done through RBA"); } 
+				 else{
+				  System.out.println("Lead assigment is not done  through RBA"); }
 		}finally {
 			// ... cleanup that will execute whether or not an error occurred ...
 		}
@@ -224,7 +230,7 @@ public class LeadRBAFilters_TC13 {
 				try {
 					System.out.println("Assigned RRD user  from sheet - " + ExpectedResult);
 					String Username = Leadobj.AssignedLead_RRDHover.getText();
-					System.out.println("Assigned case owner is:" + Username);
+					System.out.println("Assigned Lead owner is:" + Username);
 					softassert.assertTrue(Username.equalsIgnoreCase(ExpectedResult),"Assigned RRD user name is not matching");
 				}
 				catch (Exception e)
@@ -233,7 +239,11 @@ public class LeadRBAFilters_TC13 {
 					String Username = Leadobj.AssignedLead_RRDHover.getText();
 					System.out.println("Assigned case owner is:" + Username);
 					softassert.assertTrue(Username.equalsIgnoreCase(ExpectedResult),"Assigned RRD user name is not matching");
-				}		
+				}
+				if(driver.findElements(By.xpath("//span[@class='uiOutputTextArea']")).size()!= 0){ 
+					 System.out.println("Lead assigment is done through RBA"); } 
+				 else{
+				  System.out.println("Lead assigment is not done  through RBA"); }
 		}finally {
 			// ... cleanup that will execute whether or not an error occurred ...
 		}}

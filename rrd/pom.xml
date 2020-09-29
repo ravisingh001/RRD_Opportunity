@@ -17,13 +17,7 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
-
-  
-  
   <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
-
-  
-  
     <dependencies>
     <dependency>
     <groupId>commons-io</groupId>
@@ -87,17 +81,18 @@
         <plugin>
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.0.2</version>
-        </plugin>
+        </plugin>      
         <plugin>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.8.0</version>
-          <configuration>
-			<verbose>true</verbose>
-			<fork>true</fork>
-			<executable>${java.home}</executable>
-			<compilerVersion>1.8</compilerVersion>
-			
-		</configuration>
+          
+          
+           <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+                
         </plugin>
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
@@ -124,7 +119,11 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>2.20.1</version>
-        
+        <configuration>
+          <suiteXmlFiles>
+            <suiteXmlFile>src/test/Leads/LeadField_TC13.xml</suiteXmlFile>
+          </suiteXmlFiles>
+        </configuration>
       </plugin>
       </plugins>
     </pluginManagement>

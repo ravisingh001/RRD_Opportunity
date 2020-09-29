@@ -4,7 +4,7 @@
   <test thread-count="5" name="Lead_Field_TC01">
     <classes>
       <class name="Leads_Configurations.Lead_Config11"/>
-      <class name="Lead_Creation_Allocation.ExistingAccount_TC03"/>
+      <class name="Lead_Creation_Allocation.ExistingAccount_TC04"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
