@@ -108,6 +108,9 @@ WebDriver driver;
 	@FindBy(xpath="(//a[@class='select'])[4]")
 	WebElement LeadStatus;
 	
+	@FindBy(xpath="(//a[@class='select'])[3]")
+	WebElement LeadIndustry;
+	
 	@FindBy(xpath="(//a[@class='select'])[2]")
 	WebElement LeadSource;
 	
@@ -213,7 +216,7 @@ WebDriver driver;
 	@FindBy(xpath="(//span[@class='flex-wrap-ie11 owner-name slds-truncate slds-grow']//div[@class='slds-grid'])[2]/a")
 	public  WebElement AssignedOpportunityRRDHover;
 	
-	@FindBy(xpath="//slot[@name='outputField']//slot//span//div//div")
+	@FindBy(xpath="//slot[@name='outputField']//slot//span//div//div//a")
 	public  WebElement AssignedLead_RRDHover;
 	
 	@FindBy(xpath="//label[@class='slds-checkbox__label uiLabel']//span[@class='slds-checkbox--faux']")
@@ -468,6 +471,14 @@ WebDriver driver;
 		 LeadStatus.sendKeys(LS +"\n");
 		 Thread.sleep(5000);
 	 }
+	 
+	 public void pickLeadIndustry(String industry) throws InterruptedException
+	 {
+		 SyncElement.isElementPresnt(driver, LeadIndustry, 30);
+		 LeadIndustry.sendKeys(industry +"\n");
+		 Thread.sleep(5000);
+	 }
+	 
 	 
 	 public void pickLeadSource(String LS) throws InterruptedException
 	 {

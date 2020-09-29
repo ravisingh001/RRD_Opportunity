@@ -36,8 +36,8 @@ public class Opp_Allocation_config2 {
 
 	@BeforeMethod
 	public void setUp() throws FileNotFoundException, InterruptedException {
-		report = new ExtentReports("./Report/opportunityCreation.html");
-		logger = report.startTest("Verify opportunity Creation");
+		report = new ExtentReports("./Report/opportunityCreation2.html");
+		logger = report.startTest("Verify opportunity Creation2");
 		logger.log(LogStatus.INFO, "Open Browser and type url in address bar");
 		driver = BrowserFactory.getBrowser("chrome");
 		logger.log(LogStatus.INFO, "Salesforce login page is loading.");

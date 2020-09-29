@@ -174,18 +174,18 @@ public class ExistingOpportunity_TC07 {
 					softassert.assertTrue(Username.equalsIgnoreCase(ExpectedResult),"Assigned RRD user name is not matching");
 				}}finally {
 				// ... cleanup that will execute whether or not an error occurred ...
-			}
+			}}
 		
 		Xls_Reader Reader = new Xls_Reader(Lead_Testdata_sheet_path);
 
-		int RowCount = reader.getRowCount("ExistingOpportunity_TC07");
+		int RowCount = Reader.getRowCount("ExistingOpportunity_TC07");
 		for (int RowNum = 2; RowNum <= RowCount; RowNum++) {
 
 			try {
 				String Phone = Reader.getCellData("ExistingOpportunity_TC07", "Phone", RowNum);
 				String LastName = Reader.getCellData("ExistingOpportunity_TC07", "Last Name", RowNum);
 				String Company = Reader.getCellData("ExistingOpportunity_TC07", "Company", RowNum);
-				String LeadSource = reader.getCellData("ExistingOpportunity_TC07", "Lead Source", rowNum);
+				String LeadSource = reader.getCellData("ExistingOpportunity_TC07", "Lead Source", RowNum);
 				String LeadStatus = Reader.getCellData("ExistingOpportunity_TC07", "Lead Status", RowNum);
 				String Discription = Reader.getCellData("ExistingOpportunity_TC07", "Discription", RowNum);
 				String ExpectedResult = Reader.getCellData("ExistingOpportunity_TC07", "ExpectedResult", RowNum);
@@ -252,7 +252,7 @@ public class ExistingOpportunity_TC07 {
 				
 		}finally {
 			// ... cleanup that will execute whether or not an error occurred ...
-		}}}
+		}}
 	}
 
 	@AfterMethod

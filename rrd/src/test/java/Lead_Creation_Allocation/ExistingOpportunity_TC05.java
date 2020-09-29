@@ -172,13 +172,14 @@ public class ExistingOpportunity_TC05 {
 					String Username = Leadobj.AssignedOpportunityRRDHover.getText();
 					System.out.println("Assigned case owner is:" + Username);
 					softassert.assertTrue(Username.equalsIgnoreCase(ExpectedResult),"Assigned RRD user name is not matching");
-				}}finally {
+				}
+				}finally {
 				// ... cleanup that will execute whether or not an error occurred ...
-			}
+			}}
 		
 		Xls_Reader Reader = new Xls_Reader(Lead_Testdata_sheet_path);
 
-		int RowCount = reader.getRowCount("ExistingOpportunity_TC05");
+		int RowCount = Reader.getRowCount("ExistingOpportunity_TC05");
 		for (int RowNum = 2; RowNum <= RowCount; RowNum++) {
 
 			try {
@@ -248,11 +249,11 @@ public class ExistingOpportunity_TC05 {
 				if(driver.findElements(By.xpath("//span[@class='uiOutputTextArea']")).size()!= 0){ 
 						 System.out.println("Lead assigment is done through RBA"); } 
 					 else{
-					  System.out.println("Lead assigment is done not through RBA"); }
+					  System.out.println("Lead assigment is not done  through RBA"); }
 				
 		}finally {
 			// ... cleanup that will execute whether or not an error occurred ...
-		}}}
+		}}
 	}
 
 	@AfterMethod

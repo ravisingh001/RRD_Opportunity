@@ -32,8 +32,8 @@ public class Accountpage {
 	List<WebElement> Picklistrating;
 	
 	
-	@FindBy(xpath="//button[contains(@class,'slds-button slds-button--neutral uiButton--default uiButton--brand uiButton forceActionButton')]//span[contains(@class,'label bBody')][contains(text(),'Save')]")
-     WebElement Save;
+	@FindBy(xpath="//button[@title='Save']")
+	WebElement Save;
 	
 	public void clickOnNewAccount() throws InterruptedException
 	{
