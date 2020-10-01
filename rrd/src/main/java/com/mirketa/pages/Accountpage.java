@@ -2,6 +2,7 @@ package com.mirketa.pages;
 
 import java.util.List;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -32,7 +33,7 @@ public class Accountpage {
 	List<WebElement> Picklistrating;
 	
 	
-	@FindBy(xpath="//button[@title='Save']")
+	@FindBy(xpath="//button[3]/span[contains(text(),'Save')]")
 	WebElement Save;
 	
 	public void clickOnNewAccount() throws InterruptedException
@@ -72,7 +73,10 @@ public class Accountpage {
 	
 	public void clickonsave() throws InterruptedException
 	{
-		SyncElement.TobeClickable(driver, Save, 20);
+		/*
+		 * JavascriptExecutor executor = (JavascriptExecutor) driver;
+		 * executor.executeScript("arguments[0].scrollIntoView();", Save);
+		 */
 		Save.click();
 		Thread.sleep(4000);
 	}

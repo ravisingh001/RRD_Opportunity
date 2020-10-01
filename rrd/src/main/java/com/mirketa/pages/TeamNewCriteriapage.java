@@ -24,7 +24,7 @@ public class TeamNewCriteriapage {
 	@FindBy(xpath = "//input[@class='btn'][@title='New Criteria']")
 	WebElement Newcriterabtn;
 
-	@FindBy(xpath = "(//input[@value='New Criteria'])[2]")
+	@FindBy(xpath = "//div[@id='j_id0:theForm:thePageBlockOne:j_id150']//input[@value='New Criteria']")
 	WebElement Leads_Newcriterabtn;
 
 	@FindBy(xpath = "//table/tbody/tr//td//select[@name='j_id0:frm:pb:pbs:j_id8']")

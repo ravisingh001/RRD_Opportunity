@@ -2,31 +2,31 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="192825" started-at="2020-09-29T15:21:09 IST" finished-at="2020-09-29T15:24:22 IST">
+  <suite name="Default suite" duration-ms="382859" started-at="2020-10-01T14:48:59 IST" finished-at="2020-10-01T14:55:22 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="192825" started-at="2020-09-29T15:21:09 IST" finished-at="2020-09-29T15:24:22 IST">
-      <class name="Lead_Creation_Allocation.ExistingAccount_TC05">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:Lead_Creation_Allocation.ExistingAccount_TC05@56aac163]" name="setUp" is-config="true" duration-ms="42197" started-at="2020-09-29T15:21:09 IST" finished-at="2020-09-29T15:21:52 IST">
+    <test name="Default test" duration-ms="382859" started-at="2020-10-01T14:48:59 IST" finished-at="2020-10-01T14:55:22 IST">
+      <class name="Lead_Creation_Allocation.ExistingAccountFilter_TC11">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:Lead_Creation_Allocation.ExistingAccountFilter_TC11@56aac163]" name="setUp" is-config="true" duration-ms="47785" started-at="2020-10-01T14:48:59 IST" finished-at="2020-10-01T14:49:47 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="LeadCreation_ExistingAccount_TC05()[pri:0, instance:Lead_Creation_Allocation.ExistingAccount_TC05@56aac163]" name="LeadCreation_ExistingAccount_TC05" duration-ms="149843" started-at="2020-09-29T15:21:52 IST" finished-at="2020-09-29T15:24:21 IST">
+        <test-method status="PASS" signature="LeadCreation_ExistingAccountFilter_TC11()[pri:0, instance:Lead_Creation_Allocation.ExistingAccountFilter_TC11@56aac163]" name="LeadCreation_ExistingAccountFilter_TC11" duration-ms="334282" started-at="2020-10-01T14:49:47 IST" finished-at="2020-10-01T14:55:21 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- LeadCreation_ExistingAccount_TC05 -->
-        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:Lead_Creation_Allocation.ExistingAccount_TC05@56aac163]" name="teardown" is-config="true" duration-ms="760" started-at="2020-09-29T15:24:21 IST" finished-at="2020-09-29T15:24:22 IST">
+        </test-method> <!-- LeadCreation_ExistingAccountFilter_TC11 -->
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:Lead_Creation_Allocation.ExistingAccountFilter_TC11@56aac163]" name="teardown" is-config="true" duration-ms="765" started-at="2020-10-01T14:55:21 IST" finished-at="2020-10-01T14:55:22 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=LeadCreation_ExistingAccount_TC05 status=SUCCESS method=ExistingAccount_TC05.LeadCreation_ExistingAccount_TC05()[pri:0, instance:Lead_Creation_Allocation.ExistingAccount_TC05@56aac163] output={null}]]]>
+                <![CDATA[[TestResult name=LeadCreation_ExistingAccountFilter_TC11 status=SUCCESS method=ExistingAccountFilter_TC11.LeadCreation_ExistingAccountFilter_TC11()[pri:0, instance:Lead_Creation_Allocation.ExistingAccountFilter_TC11@56aac163] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- Lead_Creation_Allocation.ExistingAccount_TC05 -->
+      </class> <!-- Lead_Creation_Allocation.ExistingAccountFilter_TC11 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
