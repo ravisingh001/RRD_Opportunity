@@ -121,7 +121,7 @@
         <version>2.20.1</version>
         <configuration>
           <suiteXmlFiles>
-            <suiteXmlFile>src/test/Leads/LeadField_TC13.xml</suiteXmlFile>
+            <suiteXmlFile>src/test/Leads/Lead_Config1.xml</suiteXmlFile>
           </suiteXmlFiles>
         </configuration>
       </plugin>

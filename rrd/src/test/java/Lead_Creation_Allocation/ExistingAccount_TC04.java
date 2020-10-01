@@ -185,15 +185,14 @@ public class ExistingAccount_TC04 {
 				try {
 					System.out.println("Assigned RRD user  from sheet - " + ExpectedResult);
 					String Username = Leadobj.AssignedLead_RRDHover.getText();
-					System.out.println("Assigned case owner is:" + Username);
+					System.out.println("Assigned Lead owner is:" + Username);
 					softassert.assertTrue(Username.equalsIgnoreCase(ExpectedResult),
 							"Assigned RRD user name is not matching");
 				} catch (Exception e) {
 					System.out.println("Assigned RRD user  from sheet - " + ExpectedResult);
 					String Username = Leadobj.AssignedLead_RRDHover.getText();
-					System.out.println("Assigned case owner is:" + Username);
-					softassert.assertTrue(Username.equalsIgnoreCase(ExpectedResult),
-							"Assigned RRD user name is not matching");
+					System.out.println("Assigned Lead owner is:" + Username);
+					softassert.assertTrue(Username.equalsIgnoreCase(ExpectedResult),"Assigned RRD user name is not matching");
 				}
 				if (driver.findElements(By.xpath("//span[@class='uiOutputTextArea']")).size() != 0) {
 					System.out.println("Lead assigment is done through RBA");

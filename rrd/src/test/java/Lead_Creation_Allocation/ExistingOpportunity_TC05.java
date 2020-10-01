@@ -162,7 +162,7 @@ public class ExistingOpportunity_TC05 {
 				try {
 					System.out.println("Assigned RRD user  from sheet - " + ExpectedResult);
 					String Username = Leadobj.AssignedOpportunityRRDHover.getText();
-					System.out.println("Assigned case owner is:" + Username);
+					System.out.println("Assigned Opportunity owner is:" + Username);
 					softassert.assertTrue(Username.equalsIgnoreCase(ExpectedResult),"Assigned RRD user name is not matching");
 				}
 
@@ -170,7 +170,7 @@ public class ExistingOpportunity_TC05 {
 				{
 					System.out.println("Assigned RRD user  from sheet - " + ExpectedResult);
 					String Username = Leadobj.AssignedOpportunityRRDHover.getText();
-					System.out.println("Assigned case owner is:" + Username);
+					System.out.println("Assigned Opportunity owner is:" + Username);
 					softassert.assertTrue(Username.equalsIgnoreCase(ExpectedResult),"Assigned RRD user name is not matching");
 				}
 				}finally {
@@ -236,14 +236,14 @@ public class ExistingOpportunity_TC05 {
 				try {
 					System.out.println("Assigned RRD user  from sheet - " + ExpectedResult);
 					String Username = Leadobj.AssignedLead_RRDHover.getText();
-					System.out.println("Assigned case owner is:" + Username);
+					System.out.println("Assigned Lead owner is:" + Username);
 					softassert.assertTrue(Username.equalsIgnoreCase(ExpectedResult),"Assigned RRD user name is not matching");
 				}
 				catch (Exception e)
 				{
 					System.out.println("Assigned RRD user  from sheet - " + ExpectedResult);
 					String Username = Leadobj.AssignedLead_RRDHover.getText();
-					System.out.println("Assigned case owner is:" + Username);
+					System.out.println("Assigned Lead owner is:" + Username);
 					softassert.assertTrue(Username.equalsIgnoreCase(ExpectedResult),"Assigned RRD user name is not matching");
 				}	
 				if(driver.findElements(By.xpath("//span[@class='uiOutputTextArea']")).size()!= 0){ 
