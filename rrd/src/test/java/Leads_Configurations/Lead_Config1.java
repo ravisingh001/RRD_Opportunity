@@ -22,6 +22,13 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
+
 public class Lead_Config1 {
 	WebDriver driver;
 	ExtentReports report;
@@ -60,6 +67,11 @@ public class Lead_Config1 {
 	}
 
 	@Test
+	@Description("Configure this Test for Lead Configuration 1")
+	@Epic("TC01")
+	@Feature("Lead configuration")
+	@Story("To configure leads as per the requirement")
+	@Severity(SeverityLevel.NORMAL)
 	public void Test_Config1() throws InterruptedException{
 
 		Xls_Reader reader = new Xls_Reader(Lead_Testdata_sheet_path);
