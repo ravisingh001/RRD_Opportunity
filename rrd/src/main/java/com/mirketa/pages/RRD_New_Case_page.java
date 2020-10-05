@@ -1,6 +1,8 @@
 package com.mirketa.pages;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,6 +20,7 @@ WebDriver driver;
 		this.driver = ldriver;
 		
 	}
+	
 	@FindBy(xpath="//one-app-nav-bar-item-root[7]//one-app-nav-bar-item-dropdown[1]//div[1]//one-app-nav-bar-menu-button[1]//a[1]//lightning-icon[1]//lightning-primitive-icon[1]//*[local-name()='svg']")
 	WebElement Definecasedropdown;
 	
@@ -204,6 +207,9 @@ WebDriver driver;
 	@FindBy(xpath="//a[contains(text(),'Details')]")
 	WebElement DeatilsTab;
 	
+	@FindBy(xpath = "//button[@name='refreshButton']//lightning-primitive-icon")
+	WebElement refreshButton;
+	
 	@FindBy(xpath="//slot//force-owner-lookup//div//span//force-lookup//div//span[@class='displayLabel']")
 	public  WebElement AssignedRRD;
 	
@@ -219,8 +225,20 @@ WebDriver driver;
 	@FindBy(xpath="//slot[@name='outputField']//slot//span//div//div//a")
 	public  WebElement AssignedLead_RRDHover;
 	
+	@FindBy(xpath="//span[@class='displayLabel']")
+	public  WebElement QueueAssignedLead_RRDHover;
+	
 	@FindBy(xpath="//label[@class='slds-checkbox__label uiLabel']//span[@class='slds-checkbox--faux']")
     WebElement Send_notification_email_to_contact;
+	
+	@FindBy(xpath="//*[@type='search'][@name='rrde__RRD_Teams__c-search-input']")
+	 WebElement SearchTeam;
+	
+	@FindBy(xpath="//input[@placeholder='Search this list...']")
+	 WebElement SearchLead;
+	
+	@FindBy(xpath="//a[starts-with(@class,'slds-truncate outputLookupLink slds-truncate outputLookupLink')]")
+	 WebElement clickonTeamId;
 	
 	//div[@class="slds-grid"]//a[@id='window']
 	
@@ -723,9 +741,23 @@ WebDriver driver;
 	}
 	
 	
+	public void ProcessonSearchLead(String str) throws InterruptedException
+	{
+		    SyncElement.isElementPresnt(driver,SearchLead, 10);
+		    SearchLead.clear();
+		    SearchLead.sendKeys(str);
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+			refreshButton.click();
+			Thread.sleep(2000);
+	}
 	
 
-	
+	public void clickonLeadname()
+	{
+		 SyncElement.TobeClickable(driver,clickonTeamId, 10);
+		 clickonTeamId.click();
+		 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+	}
 	
 	 
 

@@ -33,7 +33,7 @@ public class Accountpage {
 	List<WebElement> Picklistrating;
 	
 	
-	@FindBy(xpath="//button[3]/span[contains(text(),'Save')]")
+	@FindBy(xpath="(//button[3]/span[contains(text(),'Save')])[2]")
 	WebElement Save;
 	
 	public void clickOnNewAccount() throws InterruptedException
