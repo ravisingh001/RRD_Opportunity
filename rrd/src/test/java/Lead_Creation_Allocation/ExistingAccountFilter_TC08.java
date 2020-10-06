@@ -101,7 +101,7 @@ public class ExistingAccountFilter_TC08 {
 
 				Accobj.pickrating(Rating);
 				logger.log(LogStatus.INFO, "Picked  Rating Type");
-				Accobj.clickonsave();
+				Accobj.clickonAccounts_save();
 				logger.log(LogStatus.INFO, "Successfully clicked on save");
 				driver.navigate().refresh();
 				Thread.sleep(10000);
@@ -137,7 +137,7 @@ public class ExistingAccountFilter_TC08 {
 				String LastName = Reader.getCellData("ExistingAccountFilter_TC08", "Last Name", RowNum);
 				String Company = Reader.getCellData("ExistingAccountFilter_TC08", "Company", RowNum);
 				String LeadStatus = Reader.getCellData("ExistingAccountFilter_TC08", "Lead Status", RowNum);
-				String City = reader.getCellData("ExistingAccountFilter_TC08", "City", RowNum);
+				String City = Reader.getCellData("ExistingAccountFilter_TC08", "City", RowNum);
 				String Discription = Reader.getCellData("ExistingAccountFilter_TC08", "Discription", RowNum);
 				String ExpectedResult = Reader.getCellData("ExistingAccountFilter_TC08", "ExpectedResult", RowNum);
 
