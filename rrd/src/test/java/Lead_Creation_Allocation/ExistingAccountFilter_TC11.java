@@ -101,7 +101,7 @@ public class ExistingAccountFilter_TC11 {
 
 				Accobj.pickrating(Rating);
 				logger.log(LogStatus.INFO, "Picked  Rating Type");
-				Accobj.clickonsave();
+				Accobj.clickonAccounts_save();
 				logger.log(LogStatus.INFO, "Successfully clicked on save");
 				driver.navigate().refresh();
 				Thread.sleep(11000);

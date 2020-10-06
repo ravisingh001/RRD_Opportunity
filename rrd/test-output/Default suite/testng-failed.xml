@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Lead_Creation_Allocation.ExistingOpportunity_TC07">
+      <class name="Lead_Creation_Allocation.ExistingAccountFilter_TC08">
         <methods>
+          <include name="LeadCreation_ExistingAccountFilter_TC08"/>
           <include name="setUp"/>
           <include name="teardown"/>
-          <include name="LeadCreation_ExistingOpportunity_TC07"/>
         </methods>
-      </class> <!-- Lead_Creation_Allocation.ExistingOpportunity_TC07 -->
+      </class> <!-- Lead_Creation_Allocation.ExistingAccountFilter_TC08 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
