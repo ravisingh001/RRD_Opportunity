@@ -60,8 +60,7 @@ public class LeadRBAFilters_TC14 {
 		logger.log(LogStatus.INFO, "Succesfully search the RRD");
 
 		rrdsearch.RRDdrpdwnselection();
-		logger.log(LogStatus.INFO,
-				"Succesfully  RRD selection from Dropdown and Directed to RRDHome page successfully");
+		logger.log(LogStatus.INFO,"Succesfully  RRD selection from Dropdown and Directed to RRDHome page successfully");
 
 	}
 
@@ -140,9 +139,11 @@ public class LeadRBAFilters_TC14 {
 				}	
 				
 				if(driver.findElements(By.xpath("//span[@class='uiOutputTextArea']")).size()!= 0){ 
-						 System.out.println("Lead assigment is done through RBA"); } 
+						 System.out.println("Lead assigment is done through RBA");
+						 System.out.printf("%n");} 
 					 else{
-					  System.out.println("Lead assigment is not done  through RBA"); }
+					  System.out.println("Lead assigment is not done  through RBA");
+					  System.out.printf("%n");}
 				
 		}finally {
 			// ... cleanup that will execute whether or not an error occurred ...
@@ -161,10 +162,11 @@ public class LeadRBAFilters_TC14 {
 				String Ownername = Leadobj.AssignedLead_RRDHover.getText();
 				System.out.println("Changed Owner Name is- " + Ownername);
 				Thread.sleep(3000);
-				softassert.assertTrue(Ownername.equalsIgnoreCase(ChangedOwner),
-						"To Be changed owner is not matching");
+				softassert.assertTrue(Ownername.equalsIgnoreCase(ChangedOwner),"To Be changed owner is not matching");
+				System.out.printf("%n");
 			} catch (Exception e) {
 				System.out.println("Assertion issue");
+				System.out.printf("%n");
 				e.printStackTrace();
 		}}
 		
@@ -239,9 +241,11 @@ public class LeadRBAFilters_TC14 {
 				}	
 				
 				if(driver.findElements(By.xpath("//span[@class='uiOutputTextArea']")).size()!= 0){ 
-					 System.out.println("Lead assigment is done through RBA"); } 
+					 System.out.println("Lead assigment is done through RBA");
+					 System.out.printf("%n");} 
 				 else{
-				  System.out.println("Lead assigment is not done through RBA"); }
+				  System.out.println("Lead assigment is not done through RBA"); 
+				  System.out.printf("%n");}
 		}finally {
 			// ... cleanup that will execute whether or not an error occurred ...
 		}}

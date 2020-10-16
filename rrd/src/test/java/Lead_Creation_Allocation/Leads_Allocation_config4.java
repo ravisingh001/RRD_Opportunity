@@ -199,8 +199,10 @@ public class Leads_Allocation_config4 {
 					System.out.println("Team count is- " + teamcount);
 					Thread.sleep(1000);
 					softassert.assertTrue(teamcount.equalsIgnoreCase(ToBeAssigned),"To Be Assigned count is not matching");
+					System.out.printf("%n");
 				} catch (Exception e) {
 					System.out.println("Assertion issue");
+					System.out.printf("%n");
 					e.printStackTrace();
 				}
 			} finally {
@@ -341,8 +343,10 @@ public class Leads_Allocation_config4 {
 						System.out.println("Team count is- " + teamcount);
 						Thread.sleep(1000);
 						softassert.assertTrue(teamcount.equalsIgnoreCase(ToBeAssigned),"To Be Assigned count is not matching");
+						System.out.printf("%n");
 					} catch (Exception e) {
 						System.out.println("Assertion issue");
+						System.out.printf("%n");
 						e.printStackTrace();
 					}
 				} finally {

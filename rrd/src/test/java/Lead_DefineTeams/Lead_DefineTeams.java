@@ -124,7 +124,7 @@ import com.relevantcodes.extentreports.LogStatus;
  * 22.Fill the Record limit
  * </p>
  * <p>
- * 22.Fill the Allowed no. of open cases
+ * 22.Fill the Allowed no. of open Leads
  * </p>
  * <p>
  * .Clicks on save that rendering to the Team details page.
@@ -221,10 +221,10 @@ public class Lead_DefineTeams {
 						logger.log(LogStatus.INFO, "Succesfully Enter Max Intake value");
 
 						teamobj.click_save_button();
-						logger.log(LogStatus.INFO, "Succesfully save the team for case criteria");
+						logger.log(LogStatus.INFO, "Succesfully save the team for Lead criteria");
 
 						driver.navigate().refresh();
-						Thread.sleep(4000);
+						Thread.sleep(7000);
 						try {
 							System.out.println("Team Name is from sheet - " + SteamName);
 							String tempteam = teamobj.teamInfo.getText();
@@ -232,9 +232,10 @@ public class Lead_DefineTeams {
 							System.out.println("Team Name is from element - " + tempteam);
 							Assert.assertTrue(tempteam.equalsIgnoreCase(SteamName), "Team name is not matching");
 							driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-
+							System.out.printf("%n");
 						} catch (Exception e) {
 							System.out.println("Assertion issue");
+							System.out.printf("%n");
 						}
 					}
 

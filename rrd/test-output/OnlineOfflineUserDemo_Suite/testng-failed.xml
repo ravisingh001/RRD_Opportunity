@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [OnlineOfflineUserDemo_Suite]">
+  <test thread-count="5" name="OnlineOfflineUserDemo(failed)">
+    <classes>
+      <class name="Onlineofflinescenario.Makeuseroffline3">
+        <methods>
+          <include name="setUp"/>
+          <include name="teardown"/>
+          <include name="Makeuseroffline3"/>
+        </methods>
+      </class> <!-- Onlineofflinescenario.Makeuseroffline3 -->
+      <class name="Onlineofflinescenario.CaseConfig4">
+        <methods>
+          <include name="teardown"/>
+          <include name="setUp"/>
+          <include name="TestCaseConfig4"/>
+        </methods>
+      </class> <!-- Onlineofflinescenario.CaseConfig4 -->
+      <class name="Onlineofflinescenario.CaseConfig2">
+        <methods>
+          <include name="TestCaseConfig2"/>
+          <include name="teardown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- Onlineofflinescenario.CaseConfig2 -->
+    </classes>
+  </test> <!-- OnlineOfflineUserDemo(failed) -->
+</suite> <!-- Failed suite [OnlineOfflineUserDemo_Suite] -->

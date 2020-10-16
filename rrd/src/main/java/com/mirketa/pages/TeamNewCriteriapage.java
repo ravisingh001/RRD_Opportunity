@@ -267,7 +267,7 @@ public class TeamNewCriteriapage {
 		SyncElement.TobeClickable(driver, Field_value, 20);
 		save.click();
 		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
-		Thread.sleep(5000);
+		Thread.sleep(6000);
 	}
 
 	public void newCriteriaTeam() {

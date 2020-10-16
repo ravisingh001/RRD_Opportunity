@@ -127,11 +127,11 @@ package Caseconfiguration;
 				step1ConfigPage.navigatetoIframeCaseConfig();
 				logger.log(LogStatus.INFO, "Navigate to iframe");
 				
-				step1ConfigPage.clickOnCase();
-				logger.log(LogStatus.INFO, "click on case tab");
-				
 				step1ConfigPage.clickOnEditButton();
 				logger.log(LogStatus.INFO, "click on edit button");
+				
+				step1ConfigPage.clickOnCase();
+				logger.log(LogStatus.INFO, "click on case tab");
 				
 				step1ConfigPage.selectUser(sUser1);
 				logger.log(LogStatus.INFO, "Select user from drop down value that is All");

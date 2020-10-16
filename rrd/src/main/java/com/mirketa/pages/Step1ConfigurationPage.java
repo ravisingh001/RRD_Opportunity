@@ -84,10 +84,22 @@ public class Step1ConfigurationPage {
 	@FindBy(xpath = "//td//select[@name='j_id0:theForm:thePageBlockOne:j_id135:j_id144:j_id145']")
 	WebElement Lead_ExistingOpportunity_RBA_OpportunityField;
 
-	@FindBy(xpath = "//td[@class='dataCol']//input[starts-with(@id,'j_id0:theForm:thePageBlockOne:j_id') and @type='checkbox']")
+	/*
+	 * @FindBy(xpath =
+	 * "//td[@class='dataCol']//input[starts-with(@id,'j_id0:theForm:thePageBlockOne:j_id') and @type='checkbox']"
+	 * ) WebElement QueueAssignmentCheckbox;
+	 */
+	
+	@FindBy(xpath = "(//td[@class='dataCol']//input[starts-with(@id,'j_id0:theForm:thePageBlockOne:j_id') and @type='checkbox'])[1]")
 	WebElement QueueAssignmentCheckbox;
 
-	@FindBy(xpath = "//td[@class='dataCol last']//input[starts-with(@id,'j_id0:theForm:thePageBlockOne:j_id121:j_id132') and @type='checkbox']")
+	/*
+	 * @FindBy(xpath =
+	 * "//td[@class='dataCol last']//input[starts-with(@id,'j_id0:theForm:thePageBlockOne:j_id121:j_id132') and @type='checkbox']"
+	 * ) WebElement HandleManualAssignmentCheckbox;
+	 */
+	
+	@FindBy(xpath = "//td[@class='dataCol last']//input[starts-with(@id,'j_id0:theForm:thePageBlockOne:j_id209:j_id220') and @type='checkbox']")
 	WebElement HandleManualAssignmentCheckbox;
 
 	@FindBy(xpath = "//td[@class='dataCol first']//input[starts-with(@id,'j_id0:theForm:thePageBlockOne:j_id') and @type='checkbox']")

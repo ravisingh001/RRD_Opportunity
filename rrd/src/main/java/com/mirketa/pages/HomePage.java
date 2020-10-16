@@ -30,6 +30,10 @@ public class HomePage {
 	
 	@FindBy(xpath="//a[@href='/001/e?sObjectName=Account&save_new_url=%2F001%2Fe&navigationLocation=LIST_VIEW']")
 	WebElement Newaccdrpdownval;
+	
+	@FindBy(xpath="//span[@class='slds-truncate'][contains(text(),'Accounts')]")
+	WebElement Account;
+	
 
 	public String getTitle() {
 		return driver.getTitle();
@@ -71,5 +75,13 @@ public class HomePage {
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
 		 //NewTeam.click(); 
 	}
+	
+public void clickOnAccounttab() throws InterruptedException {
+		
+		SyncElement.TobeClickable(driver, Account, 50);
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", Account);
+		Thread.sleep(5000);
+}
 
 }

@@ -4,7 +4,7 @@
   <test thread-count="5" name="Lead_Config_1">
     <classes>
       <class name="Leads_Configurations.Lead_Config1"/>
-     <!--  <class name="Lead_Creation_Allocation.Leads_Allocation_config1"/> -->
+      <class name="Lead_Creation_Allocation.Leads_Allocation_config1"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

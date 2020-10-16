@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="OnlineOfflineUserDemo_Suite">
+  <test thread-count="5" name="OnlineOfflineUserDemo">
+    <classes>
+      <class name="Onlineofflinescenario.CaseConfig2"/>
+      <class name="Onlineofflinescenario.DefineTeam_Case"/>
+      <class name="Onlineofflinescenario.Makeuseroffline3"/>
+      <class name="Onlineofflinescenario.CaseAllocation_config3"/>
+      <class name="Onlineofflinescenario.CaseConfig4"/>
+      <class name="Onlineofflinescenario.CaseAllocation_configRba"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

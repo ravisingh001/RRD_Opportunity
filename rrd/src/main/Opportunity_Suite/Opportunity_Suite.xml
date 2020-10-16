@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Opportunity_MultipleSuite">
+<suite name="Opportunity_Suite">
 
-<test thread-count="5" name="Opportunity_DefineTeam">
+<!-- <test thread-count="5" name="Opportunity_DefineTeam">
     <classes>
       <class name="Opp_DefineTeamSetUp.Opp_DefineTeams.java"/>
     </classes>
-  </test> <!-- Test -->
+  </test> Test -->
 
 <suite-files>
     <suite-file path="Opportunity_Config1.xml"></suite-file>
