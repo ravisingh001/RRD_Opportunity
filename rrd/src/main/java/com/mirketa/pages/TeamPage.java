@@ -95,6 +95,9 @@ public class TeamPage
 	@FindBy(xpath="//div[@title='Security User']")
 	WebElement SelectOwner_SecurityUser;
 	
+	@FindBy(xpath="//span[@class='slds-radio--faux']")
+	List<WebElement> Teamsrecordtype;
+	
 	@FindBy(xpath="//button[contains(@name,'change owner')]")
 	WebElement ChangeOwnerButton;
 	
@@ -112,6 +115,9 @@ public class TeamPage
 	
 	@FindBy(xpath="(//force-hoverable-link//div[@class='slds-grid']//a)[2]")
     public WebElement Ownername;
+	
+	@FindBy(xpath="(//div[@class='slds-form-element slds-hint-parent test-id__output-root slds-form-element_readonly slds-form-element_stacked']//slot//lightning-formatted-number)[6]")
+	public WebElement AccountTobeAssigned;
 	
    public void clickOnDefineTeam() throws InterruptedException {
 		/*
@@ -145,6 +151,14 @@ public class TeamPage
 		 //NewTeam.click();
 	  
 	 }
+	 
+	 public void clickonrecordtypeAccount() throws InterruptedException
+	   {
+		   
+		   Teamsrecordtype.get(1).click();
+		   Thread.sleep(3000);
+	   }
+	   
 	 
 	 public void clickonLeadsCriteria_RadioButton()
 	 {
@@ -346,5 +360,13 @@ public class TeamPage
 		 Thread.sleep(5000);
 	}
 	
+	public void scrolldowntoAccountteamrecord() throws InterruptedException
+	 {
+		 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+		 JavascriptExecutor js = (JavascriptExecutor) driver;
+		 js.executeScript("arguments[0].scrollIntoView();",AccountTobeAssigned );
+		 SyncElement.isElementPresnt(driver,AccountTobeAssigned, 20);
+		 Thread.sleep(2000);
+	 }
 	
 }

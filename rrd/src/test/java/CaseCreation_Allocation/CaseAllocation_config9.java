@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Properties;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.ITestResult;
@@ -20,6 +22,7 @@ import com.mirketa.pages.RRDSearchpage;
 import com.mirketa.pages.RRD_New_Case_page;
 import com.mirketa.pages.SalesForceLoginPage;
 import com.mirketa.pages.TeamPage;
+import com.mirketa.pages.caseDetailspage;
 import com.mirketa.pages.contactPage;
 import com.mirketa.utility.Helper;
 import com.mirketa.utility.Xls_Reader;
@@ -167,198 +170,180 @@ public class CaseAllocation_config9 {
 	@Test
 	public void CaseCreation_config9() throws InterruptedException {
 
-		
-		/*
-		 * Xls_Reader reader = new Xls_Reader(Testdata_sheet_path);
-		 * 
-		 * int rowCount = reader.getRowCount("CaseAllocation_config9"); for (int rowNum
-		 * = 2; rowNum <= rowCount; rowNum++) { String
-		 * Status=reader.getCellData("CaseAllocation_config9", "Status", rowNum); String
-		 * Priority=reader.getCellData("CaseAllocation_config9", "Priority", rowNum);
-		 * String CaseOrigin=reader.getCellData("CaseAllocation_config9", "CaseOrigin",
-		 * rowNum); String saluationtest=reader.getCellData("CaseAllocation_config9",
-		 * "Salutation", rowNum); String
-		 * firstname=reader.getCellData("CaseAllocation_config9", "Firstname", rowNum);
-		 * String lastName=reader.getCellData("CaseAllocation_config9", "LastName",
-		 * rowNum); String Account=reader.getCellData("CaseAllocation_config9",
-		 * "Account", rowNum); String
-		 * Ratingval=reader.getCellData("CaseAllocation_config9", "Ratingtype", rowNum);
-		 * String RRDType=reader.getCellData("CaseAllocation_config9", "RRDType",
-		 * rowNum); String RRDCaseReason=reader.getCellData("CaseAllocation_config9",
-		 * "RRDCaseReason", rowNum); String
-		 * WebEmailtext=reader.getCellData("CaseAllocation_config9", "WebEmailtext",
-		 * rowNum); String Subject=reader.getCellData("CaseAllocation_config9",
-		 * "Subject", rowNum); String
-		 * Description=reader.getCellData("CaseAllocation_config9", "Description",
-		 * rowNum); String Internalcommnet=reader.getCellData("CaseAllocation_config9",
-		 * "Internal comment", rowNum); String
-		 * Assigneduser=reader.getCellData("CaseAllocation_config9", "ExpectedResult",
-		 * rowNum); String Teamname=reader.getCellData("CaseAllocation_config9",
-		 * "TeamName", rowNum); String
-		 * ToBecount=reader.getCellData("CaseAllocation_config9", "ToBeAssigned",
-		 * rowNum);
-		 * 
-		 * 
-		 * RRD_New_Case_page caseobj = PageFactory.initElements(driver,
-		 * RRD_New_Case_page.class); caseobj.clickOnDefineCase();
-		 * logger.log(LogStatus.INFO, "Successfully clicked on Define case");
-		 * 
-		 * caseobj.clickOnNew(); logger.log(LogStatus.INFO,
-		 * "Successfully clicked on New case");
-		 * 
-		 * 
-		 * caseobj.pickstatus(Status); logger.log(LogStatus.INFO,
-		 * "Successfully picked status from list ");
-		 * 
-		 * caseobj.pickpriority();
-		 * 
-		 * caseobj.pickpriorityfromlist(Priority); logger.log(LogStatus.INFO,
-		 * "Successfully picked priority ");
-		 * 
-		 * caseobj.clickcaseorigin(); logger.log(LogStatus.INFO,
-		 * "Successfully clicked on case origin ");
-		 * 
-		 * caseobj.pickcaseorigin(CaseOrigin); logger.log(LogStatus.INFO,
-		 * "Successfully picked case origin ");
-		 * 
-		 * caseobj.clickcearchcontact(); logger.log(LogStatus.INFO,
-		 * "Successfully clicked on search contact ");
-		 * 
-		 * contactPage contactobj = PageFactory.initElements(driver, contactPage.class);
-		 * contactobj.clickOnContact(); logger.log(LogStatus.INFO,
-		 * "Successfully clicked on New contact and pop up opens");
-		 * 
-		 * contactobj.clickonsaluation(); logger.log(LogStatus.INFO,
-		 * "Successfully clicked on Salutation");
-		 * 
-		 * contactobj.picksaluationfromlist(saluationtest); logger.log(LogStatus.INFO,
-		 * "Successfully picked from Salutation");
-		 * 
-		 * contactobj.sendfirstname(firstname); logger.log(LogStatus.INFO,
-		 * "Successfully enter firstname");
-		 * 
-		 * contactobj.sendLastname(lastName);
-		 * 
-		 * logger.log(LogStatus.INFO, "Successfully enter firstname");
-		 * contactobj.clickonsave();
-		 * 
-		 * logger.log(LogStatus.INFO, "Successfully clicked on save"); //scrolling
-		 * 
-		 * caseobj.scrolldowntosearchAcc();
-		 * 
-		 * caseobj.clicksearchAcc(); logger.log(LogStatus.INFO,
-		 * "Successfully clicked the search Account value ");
-		 * 
-		 * Accountpage Accobj = PageFactory.initElements(driver, Accountpage.class);
-		 * Accobj.clickOnNewAccount(); logger.log(LogStatus.INFO,
-		 * "Successfully clicked on New  Account ");
-		 * 
-		 * Accobj.ClickonAccountName(Account); logger.log(LogStatus.INFO,
-		 * "Enter account name");
-		 * 
-		 * Accobj.clickingRating(); logger.log(LogStatus.INFO, "click on Rating Type");
-		 * 
-		 * Accobj.pickrating(Ratingval); logger.log(LogStatus.INFO,
-		 * "Picked  Rating Type");
-		 * 
-		 * Accobj.clickonsave(); logger.log(LogStatus.INFO,
-		 * "Successfully clicked on save"); //scrolling caseobj.scrolldowntopicktype();
-		 * logger.log(LogStatus.INFO, "Scroll down to pick Type from drop down");
-		 * 
-		 * caseobj.pickfromType(RRDType); logger.log(LogStatus.INFO,
-		 * "Successfully picked from type ");
-		 * 
-		 * caseobj.scrolldowntopickcasereason(); logger.log(LogStatus.INFO,
-		 * "Scroll down to pick Case Reason from drop down");
-		 * 
-		 * 
-		 * caseobj.pickfromcasereason(RRDCaseReason); logger.log(LogStatus.INFO,
-		 * "Successfully picked from case reason ");
-		 * 
-		 * caseobj.scrolldowntoviewwebinfo(); logger.log(LogStatus.INFO,
-		 * "Scroll down to View Web Info details");
-		 * 
-		 * caseobj.TypeWebemail(WebEmailtext); logger.log(LogStatus.INFO,
-		 * "Successfully entered the email ");
-		 * 
-		 * 
-		 * 
-		 * 
-		 * caseobj.scrolldowntoviewdescinfo(); logger.log(LogStatus.INFO,
-		 * "Scroll down to View Description Info ");
-		 * 
-		 * caseobj.Typesubject(Subject); logger.log(LogStatus.INFO,
-		 * "Successfully entered the subject");
-		 * 
-		 * caseobj.TypeDescription(Description); logger.log(LogStatus.INFO,
-		 * "Successfully entered the description");
-		 * 
-		 * caseobj.TypeInternalComments(Internalcommnet); logger.log(LogStatus.INFO,
-		 * "Successfully entered the Internal comments");
-		 * 
-		 * caseobj.clickOnSave(); logger.log(LogStatus.INFO,
-		 * "Successfully saved  the new added case and Directed to Case Details page ");
-		 * 
-		 * driver.navigate().refresh(); Thread.sleep(10000);
-		 * 
-		 * driver.navigate().refresh();
-		 * 
-		 * 
-		 * 
-		 * try { System.out.println("Assigned RRD user  from sheet - "+Assigneduser);
-		 * String Username=caseobj.AssignedRRDHover.getText();
-		 * System.out.println("Assigned case owner is:"+Username);
-		 * softassert.assertTrue(Username.equalsIgnoreCase(Assigneduser)
-		 * ,"Assigned RRD user name is not matching"); }
-		 * 
-		 * 
-		 * 
-		 * catch(Exception e)
-		 * 
-		 * { System.out.println("Assigned RRD user  from sheet - "+Assigneduser); String
-		 * Username=caseobj.AssignedRRD.getText();
-		 * System.out.println("Assigned case owner is:"+Username);
-		 * softassert.assertTrue(Username.equalsIgnoreCase(Assigneduser)
-		 * ,"Assigned RRD user name is not matching"); }
-		 * 
-		 * 
-		 * TeamPage teamobj = PageFactory.initElements(driver, TeamPage.class);
-		 * 
-		 * teamobj.clickonDefineTeamtab(); logger.log(LogStatus.INFO,
-		 * "Successfully clicked on Define Team tab"); Thread.sleep(2000);
-		 * 
-		 * teamobj.ProcessonSearchTeam(Teamname); logger.log(LogStatus.INFO,
-		 * "Successfully searched the  Team name and get the value");
-		 * teamobj.clickonTeamname(); logger.log(LogStatus.INFO,
-		 * "Successfully clicked on TeamId and Directed to Team details page");
-		 * teamobj.scrolldowntoteamrecord(); logger.log(LogStatus.INFO,
-		 * "Successfully scroll down to verify Team Count");
-		 * 
-		 * 
-		 * try {
-		 * 
-		 * System.out.println("To Be Assigned record of Team from sheet - "+ToBecount);
-		 * String teamcount=teamobj.TobeAssignedcount.getText();
-		 * System.out.println("Team count is- "+teamcount); Thread.sleep(1000);
-		 * softassert.assertTrue(teamcount.equalsIgnoreCase(ToBecount)
-		 * ,"To Be Assigned count is not matching"); Thread.sleep(3000); }
-		 * catch(Exception e) { System.out.println("Assertion issue");
-		 * e.printStackTrace(); }
-		 * 
-		 * }
-		 */
+		Xls_Reader reader = new Xls_Reader(Testdata_sheet_path);
 
-		ManualDistributionPage manualdistribution = PageFactory.initElements(driver, ManualDistributionPage.class);
-		manualdistribution.clickOnManualdistribution();
-		logger.log(LogStatus.INFO, "Clicked on ManualDistribution");
+		int rowCount = reader.getRowCount("CaseAllocation_config9");
 		
+		reader.addColumn("CaseAllocation_config9", "CaseNo");
+		Thread.sleep(5000);
+		logger.log(LogStatus.INFO, "Add the new col Case no.");
 		
-		//manualdistribution.switchtoframe();
-		//manualdistribution.countofframe();
-		manualdistribution.clickonDistributecase();
-		logger.log(LogStatus.INFO, "Clicked on Distribute case button to distribute the case successfully");
-		driver.navigate().refresh();
-		Thread.sleep(4000);
+		for (int rowNum = 2; rowNum <= rowCount; rowNum++) {
+			String Status = reader.getCellData("CaseAllocation_config9", "Status", rowNum);
+			String Priority = reader.getCellData("CaseAllocation_config9", "Priority", rowNum);
+			String CaseOrigin = reader.getCellData("CaseAllocation_config9", "CaseOrigin", rowNum);
+			String saluationtest = reader.getCellData("CaseAllocation_config9", "Salutation", rowNum);
+			String firstname = reader.getCellData("CaseAllocation_config9", "Firstname", rowNum);
+			String lastName = reader.getCellData("CaseAllocation_config9", "LastName", rowNum);
+			String Account = reader.getCellData("CaseAllocation_config9", "Account", rowNum);
+			String Ratingval = reader.getCellData("CaseAllocation_config9", "Ratingtype", rowNum);
+			String RRDType = reader.getCellData("CaseAllocation_config9", "RRDType", rowNum);
+			String RRDCaseReason = reader.getCellData("CaseAllocation_config9", "RRDCaseReason", rowNum);
+			String WebEmailtext = reader.getCellData("CaseAllocation_config9", "WebEmailtext", rowNum);
+			String Subject = reader.getCellData("CaseAllocation_config9", "Subject", rowNum);
+			String Description = reader.getCellData("CaseAllocation_config9", "Description", rowNum);
+			String Internalcommnet = reader.getCellData("CaseAllocation_config9", "Internal comment", rowNum);
+			String Assigneduser = reader.getCellData("CaseAllocation_config9", "ExpectedResult", rowNum);
+			String Teamname = reader.getCellData("CaseAllocation_config9", "TeamName", rowNum);
+			String ToBecount = reader.getCellData("CaseAllocation_config9", "ToBeAssigned", rowNum);
+
+			RRD_New_Case_page caseobj = PageFactory.initElements(driver, RRD_New_Case_page.class);
+			caseobj.clickOnDefineCase();
+			logger.log(LogStatus.INFO, "Successfully clicked on Define case");
+
+			caseobj.clickOnNew();
+			logger.log(LogStatus.INFO, "Successfully clicked on New case");
+
+			//caseobj.pickstatus(Status);
+			logger.log(LogStatus.INFO, "Successfully picked status from list ");
+
+			caseobj.pickpriority();
+
+			caseobj.pickpriorityfromlist(Priority);
+			logger.log(LogStatus.INFO, "Successfully picked priority ");
+
+			caseobj.clickcaseorigin();
+			logger.log(LogStatus.INFO, "Successfully clicked on case origin ");
+
+			caseobj.pickcaseorigin(CaseOrigin);
+			logger.log(LogStatus.INFO, "Successfully picked case origin ");
+
+			caseobj.clickcearchcontact();
+			logger.log(LogStatus.INFO, "Successfully clicked on search contact ");
+
+			contactPage contactobj = PageFactory.initElements(driver, contactPage.class);
+			contactobj.clickOnContact();
+			logger.log(LogStatus.INFO, "Successfully clicked on New contact and pop up opens");
+
+			contactobj.clickonsaluation();
+			logger.log(LogStatus.INFO, "Successfully clicked on Salutation");
+
+			contactobj.picksaluationfromlist(saluationtest);
+			logger.log(LogStatus.INFO, "Successfully picked from Salutation");
+
+			contactobj.sendfirstname(firstname);
+			logger.log(LogStatus.INFO, "Successfully enter firstname");
+
+			contactobj.sendLastname(lastName);
+
+			logger.log(LogStatus.INFO, "Successfully enter firstname");
+			contactobj.clickonsave();
+
+			logger.log(LogStatus.INFO, "Successfully clicked on save"); // scrolling
+
+			caseobj.scrolldowntosearchAcc();
+
+			caseobj.clicksearchAcc();
+			logger.log(LogStatus.INFO, "Successfully clicked the search Account value ");
+
+			Accountpage Accobj = PageFactory.initElements(driver, Accountpage.class);
+			Accobj.clickOnNewAccount();
+			logger.log(LogStatus.INFO, "Successfully clicked on New  Account ");
+
+			Accobj.ClickonAccountName(Account);
+			logger.log(LogStatus.INFO, "Enter account name");
+
+			Accobj.clickingRating();
+			logger.log(LogStatus.INFO, "click on Rating Type");
+
+			Accobj.pickrating(Ratingval);
+			logger.log(LogStatus.INFO, "Picked  Rating Type");
+
+			 Accobj.saveaccount();
+			logger.log(LogStatus.INFO, "Successfully clicked on save"); 
+			//scrolling 
+			
+			caseobj.scrolldowntoviewwebinfo();
+			logger.log(LogStatus.INFO, "Scroll down to View Web Info details");
+
+			caseobj.TypeWebemail(WebEmailtext);
+			logger.log(LogStatus.INFO, "Successfully entered the email ");
+
+			caseobj.scrolldowntoviewdescinfo();
+			logger.log(LogStatus.INFO, "Scroll down to View Description Info ");
+
+			caseobj.Typesubject(Subject);
+			logger.log(LogStatus.INFO, "Successfully entered the subject");
+
+			caseobj.TypeDescription(Description);
+			logger.log(LogStatus.INFO, "Successfully entered the description");
+
+			caseobj.TypeInternalComments(Internalcommnet);
+			logger.log(LogStatus.INFO, "Successfully entered the Internal comments");
+
+			caseobj.clickOnSave();
+			logger.log(LogStatus.INFO, "Successfully saved  the new added case and Directed to Case Details page ");
+
+			driver.navigate().refresh();
+			Thread.sleep(10000);
+
+			driver.navigate().refresh();
+			Thread.sleep(3000);
+			 caseobj.getcaseno();
+			 logger.log(LogStatus.INFO, "Get The cas No. from case details page");
+			 
+			
+			reader.setCellData("CaseAllocation_config9", "CaseNo", rowNum, caseobj.getcaseno());
+		    driver.navigate().refresh();
+			 Thread.sleep(10000);
+			
+			
+
+			try {
+				System.out.println("Assigned RRD user  from sheet - " + Assigneduser);
+				String Username = caseobj.AssignedRRDHover.getText();
+				System.out.println("Assigned case owner is:" + Username);
+				softassert.assertTrue(Username.equalsIgnoreCase(Assigneduser),
+						"Assigned RRD user name is not matching");
+			}
+
+			catch (Exception e)
+
+			{
+				System.out.println("Assigned RRD user  from sheet - " + Assigneduser);
+				String Username = caseobj.AssignedRRD.getText();
+				System.out.println("Assigned case owner is:" + Username);
+				softassert.assertTrue(Username.equalsIgnoreCase(Assigneduser),
+						"Assigned RRD user name is not matching");
+			}
+
+			TeamPage teamobj = PageFactory.initElements(driver, TeamPage.class);
+
+			teamobj.clickonDefineTeamtab();
+			logger.log(LogStatus.INFO, "Successfully clicked on Define Team tab");
+			Thread.sleep(2000);
+
+			teamobj.ProcessonSearchTeam(Teamname);
+			logger.log(LogStatus.INFO, "Successfully searched the  Team name and get the value");
+			teamobj.clickonTeamname();
+			logger.log(LogStatus.INFO, "Successfully clicked on TeamId and Directed to Team details page");
+			teamobj.scrolldowntoteamrecord();
+			logger.log(LogStatus.INFO, "Successfully scroll down to verify Team Count");
+
+			try {
+
+				System.out.println("To Be Assigned record of Team from sheet - " + ToBecount);
+				String teamcount = teamobj.TobeAssignedcount.getText();
+				System.out.println("Team count is- " + teamcount);
+				Thread.sleep(1000);
+				softassert.assertTrue(teamcount.equalsIgnoreCase(ToBecount), "To Be Assigned count is not matching");
+				Thread.sleep(3000);
+			} catch (Exception e) {
+				System.out.println("Assertion issue");
+				e.printStackTrace();
+			}
+
+		}
 
 	}
 

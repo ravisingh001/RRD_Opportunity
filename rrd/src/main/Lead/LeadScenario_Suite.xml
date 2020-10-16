@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Leads Scenario">
+	<!-- suite name="Suite Name" -->
+	<suite-files>
+		<suite-file path="C:\Users\Rai Sigh\git\RRD_Opportunity\rrd\src\test\Leads\Lead_Config1.xml"></suite-file>
+		<suite-file path="C:\Users\Rai Sigh\git\RRD_Opportunity\rrd\src\test\Leads\Lead_Config2.xml"></suite-file>
+		<suite-file path="C:\Users\Rai Sigh\git\RRD_Opportunity\rrd\src\test\Leads\Lead_Config3.xml"></suite-file>
+		<suite-file path="C:\Users\Rai Sigh\git\RRD_Opportunity\rrd\src\test\Leads\Lead_Config4.xml"></suite-file>
+		<suite-file path="C:\Users\Rai Sigh\git\RRD_Opportunity\rrd\src\test\Leads\LeadField_TC08.xml"></suite-file>
+		<suite-file path="C:\Users\Rai Sigh\git\RRD_Opportunity\rrd\src\test\Leads\LeadField_TC09.xml"></suite-file>
+		<suite-file path="C:\Users\Rai Sigh\git\RRD_Opportunity\rrd\src\test\Leads\LeadField_TC10.xml"></suite-file>
+		<suite-file path="C:\Users\Rai Sigh\git\RRD_Opportunity\rrd\src\test\Leads\LeadField_TC11.xml"></suite-file>
+		<suite-file path="C:\Users\Rai Sigh\git\RRD_Opportunity\rrd\src\test\Leads\LeadField_TC12.xml"></suite-file>
+		<suite-file path="C:\Users\Rai Sigh\git\RRD_Opportunity\rrd\src\test\Leads\LeadField_TC13.xml"></suite-file>
+		<suite-file path="C:\Users\Rai Sigh\git\RRD_Opportunity\rrd\src\test\Leads\LeadRBAFilters_TC09.xml"></suite-file>
+		<suite-file path="C:\Users\Rai Sigh\git\RRD_Opportunity\rrd\src\test\Leads\LeadRBAFilters_TC10.xml"></suite-file>
+		<suite-file path="C:\Users\Rai Sigh\git\RRD_Opportunity\rrd\src\test\Leads\LeadRBAFilters_TC11.xml"></suite-file>
+		<suite-file path="C:\Users\Rai Sigh\git\RRD_Opportunity\rrd\src\test\Leads\LeadRBAFilters_TC12.xml"></suite-file>
+		<suite-file path="C:\Users\Rai Sigh\git\RRD_Opportunity\rrd\src\test\Leads\LeadRBAFilters_TC13.xml"></suite-file>
+		<suite-file path="C:\Users\Rai Sigh\git\RRD_Opportunity\rrd\src\test\Leads\LeadRBAFilters_TC14.xml"></suite-file>
+		<suite-file path="C:\Users\Rai Sigh\git\RRD_Opportunity\rrd\src\test\Leads\ExistingAccount_TC04.xml"></suite-file>
+		<suite-file path="C:\Users\Rai Sigh\git\RRD_Opportunity\rrd\src\test\Leads\ExistingAccount_TC05.xml"></suite-file>
+		<suite-file path="C:\Users\Rai Sigh\git\RRD_Opportunity\rrd\src\test\Leads\ExistingAccountFilter_TC08.xml"></suite-file>
+		<suite-file path="C:\Users\Rai Sigh\git\RRD_Opportunity\rrd\src\test\Leads\ExistingAccountFilter_TC09.xml"></suite-file>
+		<suite-file path="C:\Users\Rai Sigh\git\RRD_Opportunity\rrd\src\test\Leads\ExistingAccountFilter_TC10.xml"></suite-file>
+		<suite-file path="C:\Users\Rai Sigh\git\RRD_Opportunity\rrd\src\test\Leads\ExistingAccountFilter_TC11.xml"></suite-file>
+		<suite-file path="C:\Users\Rai Sigh\git\RRD_Opportunity\rrd\src\test\Leads\ExistingOpportunity_TC05.xml"></suite-file>
+		<suite-file path="C:\Users\Rai Sigh\git\RRD_Opportunity\rrd\src\test\Leads\ExistingOpportunity_TC06.xml"></suite-file>
+		<suite-file path="C:\Users\Rai Sigh\git\RRD_Opportunity\rrd\src\test\Leads\ExistingOpportunity_TC07.xml"></suite-file>
+		<suite-file path="C:\Users\Rai Sigh\git\RRD_Opportunity\rrd\src\test\Leads\ExistingOpportunity_TC08.xml"></suite-file>
+		<suite-file path="C:\Users\Rai Sigh\git\RRD_Opportunity\rrd\src\test\Leads\ExistingOpportunityFilter_TC10.xml"></suite-file>
+		<suite-file path="C:\Users\Rai Sigh\git\RRD_Opportunity\rrd\src\test\Leads\ExistingOpportunityFilter_TC11.xml"></suite-file>
+		<suite-file path="C:\Users\Rai Sigh\git\RRD_Opportunity\rrd\src\test\Leads\ExistingOpportunityFilter_TC12.xml"></suite-file>
+		<suite-file path="C:\Users\Rai Sigh\git\RRD_Opportunity\rrd\src\test\Leads\ExistingOpportunityFilter_TC13.xml"></suite-file>
+		<suite-file path="C:\Users\Rai Sigh\git\RRD_Opportunity\rrd\src\test\Leads\ExistingOpportunityFilter_TC14.xml"></suite-file>
+		<suite-file path="C:\Users\Rai Sigh\git\RRD_Opportunity\rrd\src\test\Leads\ExistingOpportunityFilter_TC15.xml"></suite-file>
+	</suite-files>
+</suite>

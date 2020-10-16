@@ -83,40 +83,36 @@ public class Lead_Config1 {
 		step1ConfigPage.navigatetoIframeCaseConfig();
 		logger.log(LogStatus.INFO, "Navigate to iframe");
 		
-		step1ConfigPage.clickOnEditButton();
-		logger.log(LogStatus.INFO, "click on edit button");
 		
-		step1ConfigPage.clickOnLeads();
-		logger.log(LogStatus.INFO, "click on lead tab");
-		
-	
-		step1ConfigPage.select_lead_RRDUser(sUser1);
-		logger.log(LogStatus.INFO, "Select user from drop down value");
-	
-	
-		step1ConfigPage.Lead_OwnerNotification(sOwnerNotification);
-		logger.log(LogStatus.INFO, "Select owner notification from drop down value");
-		
-		step1ConfigPage.QueueAssignment_Unchecked();
-		logger.log(LogStatus.INFO, " Selecting Queue assignment Checkbox");
-		
-		step1ConfigPage.Select_Lead_Relationship_Based_Asignment(sReleationshipBasedAssignment);
-		logger.log(LogStatus.INFO, "Select Relationship based assignment value from drop down");
-		
-		
-		step1ConfigPage.clickOnSaveButton();
-        logger.log(LogStatus.INFO, "click on save button to save data");
-		try
-		{
-		Assert.assertTrue(step1ConfigPage.isEditButtonVisible(), "Lead Configuration data was  not submitted successfully");
-		}
-		catch(Exception e)
-		{
-			System.out.println("Assertion is not working");
-		}
-		Thread.sleep(2000);
-		logger.log(LogStatus.PASS, "Lead configuration data saved successfully");
-		
+		  step1ConfigPage.clickOnEditButton(); logger.log(LogStatus.INFO,
+		  "click on edit button");
+		  
+		  step1ConfigPage.clickOnLeads(); logger.log(LogStatus.INFO,
+		  "click on lead tab");
+		  
+		  
+		  step1ConfigPage.select_lead_RRDUser(sUser1); logger.log(LogStatus.INFO,
+		  "Select user from drop down value");
+		  
+		  
+		  step1ConfigPage.Lead_OwnerNotification(sOwnerNotification);
+		  logger.log(LogStatus.INFO, "Select owner notification from drop down value");
+		  
+		  step1ConfigPage.QueueAssignment_Unchecked(); logger.log(LogStatus.INFO,
+		  " Selecting Queue assignment Checkbox");
+		  
+		  step1ConfigPage.Select_Lead_Relationship_Based_Asignment(
+		  sReleationshipBasedAssignment); logger.log(LogStatus.INFO,
+		  "Select Relationship based assignment value from drop down");
+		  
+		  
+		  step1ConfigPage.clickOnSaveButton(); logger.log(LogStatus.INFO,
+		  "click on save button to save data"); try {
+		  Assert.assertTrue(step1ConfigPage.isEditButtonVisible(),
+		  "Lead Configuration data was  not submitted successfully"); } catch(Exception
+		  e) { System.out.println("Assertion is not working"); } Thread.sleep(2000);
+		  logger.log(LogStatus.PASS, "Lead configuration data saved successfully");
+		 
 		
 		}
 		}

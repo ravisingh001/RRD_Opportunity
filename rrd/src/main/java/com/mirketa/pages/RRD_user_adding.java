@@ -302,7 +302,7 @@ public class RRD_user_adding {
 		{
 			SyncElement.TobeClickable(driver, save, 30);
 			save.click();
-			Thread.sleep(2000);
+			Thread.sleep(5000);
 			
 		}
 

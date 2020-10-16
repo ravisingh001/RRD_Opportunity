@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="ManualDistribution">
+  <test thread-count="5" name="ManualDistribution">
+    <classes>
+      <class name="DemoScenario.CaseConfig3"/>
+      <class name="DemoScenario.DefineTeam_Case"/>
+      <class name="DemoScenario.CaseAllocation_config1"/>
+      <class name="DemoScenario.EditTeamSetupCase"/>
+      <class name="DemoScenario.CaseManualDistribution17"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

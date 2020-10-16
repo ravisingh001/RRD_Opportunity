@@ -129,6 +129,11 @@ import com.mirketa.pages.RRDSearchpage;
 				Xls_Reader reader = new Xls_Reader(Testdata_sheet_path);
 				
 				int rowCount = reader.getRowCount("CaseAllocation_config5");
+				
+				reader.addColumn("CaseAllocation_config5", "CaseNo");
+				Thread.sleep(5000);
+				logger.log(LogStatus.INFO, "Add the new col Case No.");
+				
 				for (int rowNum = 2; rowNum <= rowCount; rowNum++)
 				{
 				     String Status=reader.getCellData("CaseAllocation_config5", "Status", rowNum);
@@ -162,7 +167,7 @@ import com.mirketa.pages.RRDSearchpage;
 				logger.log(LogStatus.INFO, "Successfully clicked on New case");
 				
 				
-				caseobj.pickstatus(Status);
+				//caseobj.pickstatus(Status);
 				logger.log(LogStatus.INFO, "Successfully picked status from list ");
 				
 				caseobj.pickpriority();
@@ -218,21 +223,9 @@ import com.mirketa.pages.RRDSearchpage;
 				 Accobj.pickrating(Ratingval);
 				 logger.log(LogStatus.INFO, "Picked  Rating Type");
 				 
-				 Accobj.clickonsave();
+				 Accobj.saveaccount();
 				 logger.log(LogStatus.INFO, "Successfully clicked on save");
 					//scrolling
-				 caseobj.scrolldowntopicktype();
-				 logger.log(LogStatus.INFO, "Scroll down to pick Type from drop down");
-				 
-				 caseobj.pickfromType(RRDType);
-				 logger.log(LogStatus.INFO, "Successfully picked from type ");
-				
-				 caseobj.scrolldowntopickcasereason();
-				 logger.log(LogStatus.INFO, "Scroll down to pick Case Reason from drop down");
-				 
-				 
-				 caseobj.pickfromcasereason(RRDCaseReason);
-				 logger.log(LogStatus.INFO, "Successfully picked from case reason ");
 				
 				 caseobj.scrolldowntoviewwebinfo();
 				 logger.log(LogStatus.INFO, "Scroll down to View Web Info details");
@@ -240,14 +233,7 @@ import com.mirketa.pages.RRDSearchpage;
 				 caseobj.TypeWebemail(WebEmailtext);
 				 logger.log(LogStatus.INFO, "Successfully entered the email ");
 				 
-				/*
-				 * caseobj.TypeWebCompany(Webcompany); logger.log(LogStatus.INFO,
-				 * "Successfully entered the company"); Thread.sleep(1500);
-				 * caseobj.TypeWebName(Webname); logger.log(LogStatus.INFO,
-				 * "Successfully entered the name"); Thread.sleep(1500);
-				 * caseobj.TypeWebPhone(Webphone); logger.log(LogStatus.INFO,
-				 * "Successfully entered the phone"); Thread.sleep(1500);
-				 */
+				
 				 caseobj.scrolldowntoviewdescinfo();
 				 logger.log(LogStatus.INFO, "Scroll down to View Description Info ");
 				 
@@ -266,8 +252,17 @@ import com.mirketa.pages.RRDSearchpage;
 				 driver.navigate().refresh();
 				 Thread.sleep(10000);
 				 
-				 driver.navigate().refresh();
 				
+				    driver.navigate().refresh();
+					Thread.sleep(3000);
+					 caseobj.getcaseno();
+					 logger.log(LogStatus.INFO, "Get The cas No. from case details page");
+					 
+					
+					reader.setCellData("CaseAllocation_config5", "CaseNo", rowNum, caseobj.getcaseno());
+				    driver.navigate().refresh();
+					 Thread.sleep(10000);
+					
 					
 					
 				 try
@@ -287,9 +282,8 @@ import com.mirketa.pages.RRDSearchpage;
 							String Username=caseobj.AssignedRRD.getText();
 							System.out.println("Assigned case owner is:"+Username);
 							softassert.assertTrue(Username.equalsIgnoreCase(Assigneduser),"Assigned RRD user name is not matching");
-							distribute.clickOnManualdistribution();
-							distribute.switchtoframe();
-							distribute.clickonDistributecase();
+							
+				
 							driver.navigate().refresh();
 							Thread.sleep(5000);
 							

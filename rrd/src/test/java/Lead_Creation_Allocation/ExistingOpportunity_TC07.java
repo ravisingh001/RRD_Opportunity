@@ -136,7 +136,7 @@ public class ExistingOpportunity_TC07 {
 				Accobj.pickrating(Ratingtype);
 				logger.log(LogStatus.INFO, "Picked  Rating Type");
 
-				Accobj.clickonsave();
+				Accobj.clickonAccounts_save();
 				logger.log(LogStatus.INFO, "Successfully clicked on save");
 
 				Leadobj.scrolldowntopicktype();

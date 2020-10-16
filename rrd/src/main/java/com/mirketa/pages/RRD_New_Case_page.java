@@ -240,6 +240,10 @@ WebDriver driver;
 	@FindBy(xpath="//a[starts-with(@class,'slds-truncate outputLookupLink slds-truncate outputLookupLink')]")
 	 WebElement clickonTeamId;
 	
+	@FindBy(xpath="(//p[@class='fieldComponent slds-text-body--regular slds-show_inline-block slds-truncate']//slot//lightning-formatted-text)[3]")
+    WebElement caseNumber;
+	
+	
 	//div[@class="slds-grid"]//a[@id='window']
 	
 	public void clickoncasedrpdwn()
@@ -256,7 +260,14 @@ WebDriver driver;
 		 
 		 
 	 }
-	
+	 
+	 public String getcaseno()
+		{
+		String caseno=caseNumber.getText();	
+		System.out.println(caseno);
+		return caseno;
+		
+		}
 	 
 	 public void clickOnDefineCase() throws InterruptedException
 	 {

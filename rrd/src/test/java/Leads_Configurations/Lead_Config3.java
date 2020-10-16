@@ -53,7 +53,8 @@ public class Lead_Config3 {
 		logger.log(LogStatus.INFO, "Succesfully search the RRD");
 
 		rrdsearch.RRDdrpdwnselection();
-		logger.log(LogStatus.INFO,"Succesfully  RRD selection from Dropdown and Directed to RRDHome page successfully");
+		logger.log(LogStatus.INFO,
+				"Succesfully  RRD selection from Dropdown and Directed to RRDHome page successfully");
 		Thread.sleep(15000);
 
 	}
@@ -101,7 +102,8 @@ public class Lead_Config3 {
 			step1ConfigPage.clickOnSaveButton();
 			logger.log(LogStatus.INFO, "click on save button to save data");
 			try {
-				Assert.assertTrue(step1ConfigPage.isEditButtonVisible(),"Lead Configuration data was  not submitted successfully");
+				Assert.assertTrue(step1ConfigPage.isEditButtonVisible(),
+						"Lead Configuration data was  not submitted successfully");
 			} catch (Exception e) {
 				System.out.println("Assertion is not working");
 			}

@@ -21,7 +21,8 @@ package CaseCreation_Allocation;
 	import com.mirketa.pages.RRD_New_Case_page;
 	import com.mirketa.pages.SalesForceLoginPage;
 	import com.mirketa.pages.TeamPage;
-	import com.mirketa.pages.contactPage;
+import com.mirketa.pages.caseDetailspage;
+import com.mirketa.pages.contactPage;
 	import com.mirketa.utility.Helper;
 	import com.mirketa.utility.Xls_Reader;
 	import com.relevantcodes.extentreports.ExtentReports;
@@ -147,6 +148,7 @@ package CaseCreation_Allocation;
 				     String Assigneduser=reader.getCellData("CaseAllocation_config10", "ExpectedResult", rowNum);
 				     String Teamname=reader.getCellData("CaseAllocation_config10", "TeamName", rowNum);
 				     String ToBecount=reader.getCellData("CaseAllocation_config10", "ToBeAssigned", rowNum);
+				     String changeowner=reader.getCellData("CaseAllocation_config10", "Changeowner", rowNum);
 				      
 				
 				RRD_New_Case_page caseobj = PageFactory.initElements(driver, RRD_New_Case_page.class);
@@ -157,7 +159,7 @@ package CaseCreation_Allocation;
 				logger.log(LogStatus.INFO, "Successfully clicked on New case");
 				
 				
-				caseobj.pickstatus(Status);
+				//caseobj.pickstatus(Status);
 				logger.log(LogStatus.INFO, "Successfully picked status from list ");
 				
 				caseobj.pickpriority();
@@ -213,36 +215,17 @@ package CaseCreation_Allocation;
 				 Accobj.pickrating(Ratingval);
 				 logger.log(LogStatus.INFO, "Picked  Rating Type");
 				 
-				 Accobj.clickonsave();
+				 Accobj.saveaccount();
 				 logger.log(LogStatus.INFO, "Successfully clicked on save");
 					//scrolling
-				 caseobj.scrolldowntopicktype();
-				 logger.log(LogStatus.INFO, "Scroll down to pick Type from drop down");
-				 
-				 caseobj.pickfromType(RRDType);
-				 logger.log(LogStatus.INFO, "Successfully picked from type ");
-				
-				 caseobj.scrolldowntopickcasereason();
-				 logger.log(LogStatus.INFO, "Scroll down to pick Case Reason from drop down");
-				 
-				 
-				 caseobj.pickfromcasereason(RRDCaseReason);
-				 logger.log(LogStatus.INFO, "Successfully picked from case reason ");
-				
+					
 				 caseobj.scrolldowntoviewwebinfo();
 				 logger.log(LogStatus.INFO, "Scroll down to View Web Info details");
 				 
 				 caseobj.TypeWebemail(WebEmailtext);
 				 logger.log(LogStatus.INFO, "Successfully entered the email ");
 				 
-				/*
-				 * caseobj.TypeWebCompany(Webcompany); logger.log(LogStatus.INFO,
-				 * "Successfully entered the company"); Thread.sleep(1500);
-				 * caseobj.TypeWebName(Webname); logger.log(LogStatus.INFO,
-				 * "Successfully entered the name"); Thread.sleep(1500);
-				 * caseobj.TypeWebPhone(Webphone); logger.log(LogStatus.INFO,
-				 * "Successfully entered the phone"); Thread.sleep(1500);
-				 */
+				
 				 caseobj.scrolldowntoviewdescinfo();
 				 logger.log(LogStatus.INFO, "Scroll down to View Description Info ");
 				 
@@ -283,6 +266,17 @@ package CaseCreation_Allocation;
 							System.out.println("Assigned case owner is:"+Username);
 							softassert.assertTrue(Username.equalsIgnoreCase(Assigneduser),"Assigned RRD user name is not matching");
 					}
+				 
+				 
+				          caseDetailspage casedetailobj = PageFactory.initElements(driver, caseDetailspage.class); 
+				          
+				          casedetailobj.clickonchangeowner();
+						  casedetailobj.clickonsearchowner(changeowner);
+						  casedetailobj.pickuserfromlist(changeowner);
+						  casedetailobj.Checkedownernotification();
+						  casedetailobj.clickonSubmitchangeownerbtn();
+						 
+						 
 				 
 					
 					  TeamPage teamobj = PageFactory.initElements(driver, TeamPage.class);
