@@ -346,8 +346,10 @@ public class Lead_DefineTeams {
 						userobj.clickoncaseTime();
 						logger.log(LogStatus.INFO, "Succesfully clicked on case time");
 
-						userobj.pickCaseTime();
-						logger.log(LogStatus.INFO, "Succesfully picked  case Time");
+						/*
+						 * userobj.pickCaseTime(); logger.log(LogStatus.INFO,
+						 * "Succesfully picked  case Time");
+						 */
 
 						userobj.getLeadDate(Leaddate);
 						logger.log(LogStatus.INFO, "Succesfully picked  Lead date");
@@ -355,8 +357,10 @@ public class Lead_DefineTeams {
 						userobj.clickonLeadTime();
 						logger.log(LogStatus.INFO, "Succesfully clicked on lead time");
 
-						userobj.pickLeadTime();
-						logger.log(LogStatus.INFO, "Succesfully picked  Lead time");
+						/*
+						 * userobj.pickLeadTime(); logger.log(LogStatus.INFO,
+						 * "Succesfully picked  Lead time");
+						 */
 
 						userobj.scrolldowntosearchRecordlimit();
 
@@ -366,8 +370,10 @@ public class Lead_DefineTeams {
 						userobj.clickonOPpTime();
 						logger.log(LogStatus.INFO, "Succesfully clicked on Opp time");
 
-						userobj.pickOppTime();
-						logger.log(LogStatus.INFO, "Succesfully picked  Opp time");
+						/*
+						 * userobj.pickOppTime(); logger.log(LogStatus.INFO,
+						 * "Succesfully picked  Opp time");
+						 */
 
 						userobj.getRecordAssignLimit(Recordlimit);
 						logger.log(LogStatus.INFO, "Succesfully picked  Record limit");

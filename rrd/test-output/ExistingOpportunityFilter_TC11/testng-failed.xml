@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [ExistingOpportunityFilter_TC11]">
+  <test thread-count="5" name="ExistingOpportunityFilter_TC11(failed)">
+    <classes>
+      <class name="Lead_Creation_Allocation.ExistingOpportunityFilter_TC11">
+        <methods>
+          <include name="teardown"/>
+          <include name="setUp"/>
+          <include name="LeadCreation_ExistingOpportunity_TC11"/>
+        </methods>
+      </class> <!-- Lead_Creation_Allocation.ExistingOpportunityFilter_TC11 -->
+    </classes>
+  </test> <!-- ExistingOpportunityFilter_TC11(failed) -->
+</suite> <!-- Failed suite [ExistingOpportunityFilter_TC11] -->

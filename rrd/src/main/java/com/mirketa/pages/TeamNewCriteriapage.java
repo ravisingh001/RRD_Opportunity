@@ -1,5 +1,6 @@
 package com.mirketa.pages;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -27,17 +28,36 @@ public class TeamNewCriteriapage {
 	@FindBy(xpath = "//div[@id='j_id0:theForm:thePageBlockOne:j_id150']//input[@value='New Criteria']")
 	WebElement Leads_Newcriterabtn;
 
-	@FindBy(xpath = "//table/tbody/tr//td//select[@name='j_id0:frm:pb:pbs:j_id8']")
-	WebElement SelectField;
+	//closed for older package test
+	
+	  @FindBy(xpath =
+	  "//table/tbody/tr//td//select[@name='j_id0:frm:pb:pbs:j_id8']") WebElement
+	  SelectField;
+	 
+	//closed for New package test
+	/*
+	 * @FindBy(xpath =
+	 * "//table/tbody/tr//td//select[@name='j_id0:frm:pb:pbs:j_id7']") WebElement
+	 * SelectField;
+	 */
 
 	@FindBy(xpath = "//select[@name='j_id0:theForm:thePageBlockOne:j_id150:pg:table:0:j_id155']")
 	WebElement SelectFieldLabel;
 	
 	@FindBy(xpath = "//select[@name='j_id0:theForm:thePageBlockOne:j_id150:pg:table:1:j_id155']")
 	WebElement SelectFieldLabel_2;
-
-	@FindBy(xpath = "//table/tbody/tr//td//select[@name='j_id0:frm:pb:pbs:j_id12']")
-	WebElement SelectOperator;
+	//closed for older package test
+	
+	  @FindBy(xpath =
+	  "//table/tbody/tr//td//select[@name='j_id0:frm:pb:pbs:j_id12']") WebElement
+	  SelectOperator;
+	 
+	//closed for new package test
+		/*
+		 * @FindBy(xpath =
+		 * "//table/tbody/tr//td//select[@name='j_id0:frm:pb:pbs:j_id10']") WebElement
+		 * SelectOperator;
+		 */
 
 	@FindBy(xpath = "//select[@name='j_id0:theForm:thePageBlockOne:j_id150:pg:table:0:j_id158']")
 	WebElement LeadConfig_SelectOperator;
@@ -278,25 +298,31 @@ public class TeamNewCriteriapage {
 		}
 	}
 
-	/*
-	 * public int getMultipleCriteriaCount() { List<WebElement>
-	 * criteria=driver.findElements(By.xpath(
-	 * "//table[@id=\"j_id0:criteriaForm:pg:table\"]//tr"));
-	 * 
-	 * System.out.println("getMultipleCriteriaCount size: "+criteria.size());
-	 * 
-	 * return criteria.size();
-	 * 
-	 * }
-	 * 
-	 * public void addLogicAndSubmitCriteria(String logic) {
-	 * 
-	 * try { if (getMultipleCriteriaCount()>1) { Editcriteria(); Thread.sleep(5000);
-	 * System.out.println("edit criteria"); AddCriteriaLogic(logic);
-	 * Thread.sleep(5000); System.out.println("add criteria"); submitcriteria();
-	 * Thread.sleep(5000); System.out.println("submit criteria"); } }
-	 * catch(Exception e) { e.printStackTrace(); } }
-	 */
+	
+	  public int getMultipleCriteriaCount() { 
+	List<WebElement>criteria=driver.findElements(By.xpath("//table[@id=\"j_id0:criteriaForm:pg:table\"]//tr"));
+	 System.out.println("getMultipleCriteriaCount size: "+criteria.size());
+	  
+	  return criteria.size();
+	  
+	  } 
+	  
+	  public void addLogicAndSubmitCriteria(String logic) {
+	 
+	  try { if (getMultipleCriteriaCount()>1) { 
+	Editcriteria(); 
+	Thread.sleep(5000);
+	 System.out.println("edit criteria"); 
+	 AddCriteriaLogic(logic);
+	 Thread.sleep(5000); 
+	 System.out.println("add criteria"); 
+	 submitcriteria();
+	 Thread.sleep(5000); 
+	 System.out.println("submit criteria"); } }
+	  catch(Exception e) { 
+		  e.printStackTrace(); 
+		  } }
+	
 	public void scrollToElement(WebElement webby) {
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].scrollIntoView();", webby);

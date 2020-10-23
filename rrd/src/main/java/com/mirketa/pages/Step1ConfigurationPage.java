@@ -35,8 +35,14 @@ public class Step1ConfigurationPage {
 
 	@FindBy(xpath = "//input[@value='Save']")
 	WebElement SaveButton;
+	//closed for older package
+	/*
+	 * @FindBy(xpath =
+	 * "//td//input[@id='j_id0:theForm:thePageBlockOne:j_id106:j_id107']")
+	 * WebElement QueueAssignment_checkbox;
+	 */
 	
-	@FindBy(xpath = "//td//input[@id='j_id0:theForm:thePageBlockOne:j_id106:j_id107']")
+	@FindBy(xpath = "//td//input[starts-with(@id,'j_id0:theForm:thePageBlockOne:showpgaeblocksectionLeadNotification:j_id')]")
 	WebElement QueueAssignment_checkbox;
 
 	@FindBy(xpath = "//td//input[@id='j_id0:theForm:thePageBlockOne:RBA_hideDiv_pb:RBA_hideDiv:enableCheckBox']")
@@ -71,8 +77,14 @@ public class Step1ConfigurationPage {
 	
 	@FindBy(xpath = "(//select[contains(@name,'j_id0:theForm:thePageBlockOne:showpgaeblocksectionOppNotification:j_id')])[1]")
 	WebElement Opp_Relationship_Based_Asignment;
+	//closed for older package
+	/*
+	 * @FindBy(xpath =
+	 * "(//select[contains(@name,'j_id0:theForm:thePageBlockOne:RBA_hideDiv_pb:j_id110:assignment_type')])")
+	 * WebElement Lead_Relationship_Based_Asignment;
+	 */
 	
-	@FindBy(xpath = "(//select[contains(@name,'j_id0:theForm:thePageBlockOne:RBA_hideDiv_pb:j_id110:assignment_type')])")
+	@FindBy(xpath = "(//select[contains(@name,'j_id0:theForm:thePageBlockOne:showpgaeblocksectionLeadNotification:j_id')])")
 	WebElement Lead_Relationship_Based_Asignment;
 	
 	@FindBy(xpath = "//td//select[@name='j_id0:theForm:thePageBlockOne:showRBA:j_id127:j_id128']")

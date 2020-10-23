@@ -1,53 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Lead_scenario_1" duration-ms="259101" started-at="2020-10-14T14:17:53 IST" finished-at="2020-10-14T14:22:12 IST">
+  <suite name="Default suite" duration-ms="131313" started-at="2020-10-22T18:04:01 IST" finished-at="2020-10-22T18:06:13 IST">
     <groups>
     </groups>
-    <test name="Lead_Config_1" duration-ms="259101" started-at="2020-10-14T14:17:53 IST" finished-at="2020-10-14T14:22:12 IST">
-      <class name="Lead_Creation_Allocation.Leads_Allocation_config1">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:Lead_Creation_Allocation.Leads_Allocation_config1@6ce1f601]" name="setUp" is-config="true" duration-ms="41328" started-at="2020-10-14T14:19:50 IST" finished-at="2020-10-14T14:20:31 IST">
+    <test name="Default test" duration-ms="131313" started-at="2020-10-22T18:04:01 IST" finished-at="2020-10-22T18:06:13 IST">
+      <class name="ContactConfiguration.ContactConfig1">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:ContactConfiguration.ContactConfig1@31500940]" name="setUp" is-config="true" duration-ms="61198" started-at="2020-10-22T18:04:01 IST" finished-at="2020-10-22T18:05:03 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="LeadCreation_config1()[pri:0, instance:Lead_Creation_Allocation.Leads_Allocation_config1@6ce1f601]" name="LeadCreation_config1" duration-ms="100047" started-at="2020-10-14T14:20:31 IST" finished-at="2020-10-14T14:22:11 IST">
+        <test-method status="PASS" signature="TestContactConfig1()[pri:0, instance:ContactConfiguration.ContactConfig1@31500940]" name="TestContactConfig1" duration-ms="69027" started-at="2020-10-22T18:05:03 IST" finished-at="2020-10-22T18:06:12 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- LeadCreation_config1 -->
-        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:Lead_Creation_Allocation.Leads_Allocation_config1@6ce1f601]" name="teardown" is-config="true" duration-ms="664" started-at="2020-10-14T14:22:11 IST" finished-at="2020-10-14T14:22:12 IST">
+        </test-method> <!-- TestContactConfig1 -->
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:ContactConfiguration.ContactConfig1@31500940]" name="teardown" is-config="true" duration-ms="962" started-at="2020-10-22T18:06:12 IST" finished-at="2020-10-22T18:06:13 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=LeadCreation_config1 status=SUCCESS method=Leads_Allocation_config1.LeadCreation_config1()[pri:0, instance:Lead_Creation_Allocation.Leads_Allocation_config1@6ce1f601] output={null}]]]>
+                <![CDATA[[TestResult name=TestContactConfig1 status=SUCCESS method=ContactConfig1.TestContactConfig1()[pri:0, instance:ContactConfiguration.ContactConfig1@31500940] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- Lead_Creation_Allocation.Leads_Allocation_config1 -->
-      <class name="Leads_Configurations.Lead_Config1">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:Leads_Configurations.Lead_Config1@51684e4a]" name="setUp" is-config="true" duration-ms="57815" started-at="2020-10-14T14:17:53 IST" finished-at="2020-10-14T14:18:50 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="Test_Config1()[pri:0, instance:Leads_Configurations.Lead_Config1@51684e4a]" name="Test_Config1" duration-ms="58209" started-at="2020-10-14T14:18:51 IST" finished-at="2020-10-14T14:19:49 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Test_Config1 -->
-        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:Leads_Configurations.Lead_Config1@51684e4a]" name="teardown" is-config="true" duration-ms="884" started-at="2020-10-14T14:19:49 IST" finished-at="2020-10-14T14:19:50 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=Test_Config1 status=SUCCESS method=Lead_Config1.Test_Config1()[pri:0, instance:Leads_Configurations.Lead_Config1@51684e4a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-      </class> <!-- Leads_Configurations.Lead_Config1 -->
-    </test> <!-- Lead_Config_1 -->
-  </suite> <!-- Lead_scenario_1 -->
+      </class> <!-- ContactConfiguration.ContactConfig1 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

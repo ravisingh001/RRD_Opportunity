@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [ManualDistribution]">
-  <test thread-count="5" name="ManualDistribution(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="DemoScenario.CaseManualDistribution17">
+      <class name="ContactConfiguration.ContactConfig1">
         <methods>
-          <include name="setUp"/>
-          <include name="CaseManualDistribution9"/>
           <include name="teardown"/>
+          <include name="setUp"/>
+          <include name="TestContactConfig1"/>
         </methods>
-      </class> <!-- DemoScenario.CaseManualDistribution17 -->
+      </class> <!-- ContactConfiguration.ContactConfig1 -->
     </classes>
-  </test> <!-- ManualDistribution(failed) -->
-</suite> <!-- Failed suite [ManualDistribution] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
