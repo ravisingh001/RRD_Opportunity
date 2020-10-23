@@ -42,28 +42,41 @@ public class TeamPage
 	@FindBy(xpath="//one-app-nav-bar-menu-item[1]//a[@href='/setup/ui/recordtypeselect.jsp?sObjectName=rrde__RRD_Teams__c&save_new_url=%2Fa04%2Fe&navigationLocation=LIST_VIEW']")
 	WebElement NewTeam;
 	
-	@FindBy(xpath="//div[9]//label[1]//div[1]//span[1]")
+	@FindBy(xpath="//div[11]//label[1]//div[1]//span[1]")
 	WebElement OpportunityCriteria_RadiaBtn;
+	
+	@FindBy(xpath="//div[5]//label[1]//div[1]//span[1]")
+	WebElement ContactCriteria_RadiaBtn;
+	
+	//close for older package
+	/*
+	 * @FindBy(xpath="//div[7]//label[1]//div[1]//span[1]") WebElement
+	 * LeadCriteria_RadiaBtn;
+	 */
 	
 	@FindBy(xpath="//div[5]//label[1]//div[1]//span[1]")
 	WebElement LeadCriteria_RadiaBtn;
 	
 	@FindBy(xpath="//span[contains(text(),'Next')]")
 	WebElement NextButton;
+	//close for older package
 	
-	@FindBy(xpath="//input[@class=\"input uiInputSmartNumber\"]")
-	public List<WebElement> txtFieldList_CC;
+	  @FindBy(xpath="//input[@name='rrde__Priority_Order_Not_Unique__c']") public
+	  List<WebElement> txtFieldList_CC;
+	//close for New package
+	/*
+	 * @FindBy(xpath="//input[@name='rrde__Priority_Order__c']") public
+	 * List<WebElement> txtFieldList_CC;
+	 */
 	
-	@FindBy(xpath="//input[@class=' input']")
+	@FindBy(xpath="//input[@name='rrde__Team_Name__c']")
     WebElement Team_name;
 	
-	@FindBy(xpath="//span[contains(text(),'Maximum Intake limit in current cycle')]//following::input[@class='input uiInputSmartNumber'][1]")
+	@FindBy(xpath="//input[@name='rrde__Maximum_limit_in_current_cycle__c']")
 	WebElement Max_intake_limit;
 	
-	@FindBy(xpath="//span[contains(text(),'Allowed Number of Open Cases')]//following::input[@class='input uiInputSmartNumber']")
+	@FindBy(xpath="//input[@name='rrde__Allowed_Number_of_Open_Cases__c']")
 	WebElement Allowed_Num_of_open_case;
-	
-	
 	
 	@FindBy(xpath="//*[@class='forceOutputRecordType']")
 	WebElement Record_type;
@@ -145,6 +158,18 @@ public class TeamPage
 	 {
 		  SyncElement.TobeClickable(driver, OpportunityCriteria_RadiaBtn, 10);	
 		  OpportunityCriteria_RadiaBtn.click();
+		 //JavascriptExecutor executor = (JavascriptExecutor)driver;
+	    // executor.executeScript("arguments[0].click();", OpportunityCriteria_RadiaBtn);
+	     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+		 //NewTeam.click();
+	  
+	 }
+	 
+	 
+	 public void clickonContactCriteria_RadioButton()
+	 {
+		  SyncElement.TobeClickable(driver, ContactCriteria_RadiaBtn, 10);	
+		  ContactCriteria_RadiaBtn.click();
 		 //JavascriptExecutor executor = (JavascriptExecutor)driver;
 	    // executor.executeScript("arguments[0].click();", OpportunityCriteria_RadiaBtn);
 	     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;

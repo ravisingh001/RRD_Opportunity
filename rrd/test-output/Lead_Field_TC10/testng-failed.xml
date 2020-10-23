@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Lead_Field_TC10]">
+  <test thread-count="5" name="Lead_Field_TC10(failed)">
+    <classes>
+      <class name="Lead_Creation_Allocation.LeadFields_TC10">
+        <methods>
+          <include name="LeadCreation_LeadFields_TC10"/>
+          <include name="setUp"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- Lead_Creation_Allocation.LeadFields_TC10 -->
+    </classes>
+  </test> <!-- Lead_Field_TC10(failed) -->
+</suite> <!-- Failed suite [Lead_Field_TC10] -->

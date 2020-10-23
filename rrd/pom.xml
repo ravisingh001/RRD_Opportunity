@@ -153,9 +153,12 @@
        <configuration>
         <useSystemClassLoader>false</useSystemClassLoader>
         <suiteXmlFiles>
-            <suiteXmlFile>src/test/Leads/Lead_Config1.xml</suiteXmlFile>
+            <!-- <suiteXmlFile>src/test/Leads/Lead_Config1.xml</suiteXmlFile> -->
             
-             <!-- <suiteXmlFile>src/main/Lead/Lead_Config1.xml</suiteXmlFile> -->
+             <suiteXmlFile>src/main/DefineTeams/DefineTeams.xml</suiteXmlFile>
+             <suiteXmlFile>src/main/Accounts/Account_Suite.xml</suiteXmlFile>
+             <suiteXmlFile>src/main/Lead/LeadScenario_Suite.xml</suiteXmlFile>
+             <suiteXmlFile>src/main/Opportunity_Suite/Opportunity_Suite.xml</suiteXmlFile>
           </suiteXmlFiles>
 
 	<argLine>

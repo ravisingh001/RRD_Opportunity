@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="AccountConfig12">
+  <test thread-count="5" name="AccountConfig12">
+    <classes>
+      <class name="Accountconfiguration.AccountConfig12"/>
+      <class name="AccountCreation_Allocation.AccountAllocation_config12"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

@@ -5,7 +5,8 @@
     <classes>
       <class name="Lead_DefineTeams.Lead_DefineTeams"/>
       <class name="Opp_DefineTeamSetUp.Opp_DefineTeams"/>
-     
-    </classes>
+      <class name="DefineTeamSetup.DefineTeam_Case"/>
+      <class name="DefineTeamSetup.DefineTeam_Account"/>
+      </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -46,10 +46,10 @@ public class RRD_user_adding {
 		WebElement NewRRDuser;
 		*/
 		
-		@FindBy(xpath="//input[@title='Search People']")
+		@FindBy(xpath="//input[@placeholder='Search People...']")
 		WebElement RRDusersearch;
 		
-		@FindBy(xpath="//li[@class='lookup__item  default uiAutocompleteOption forceSearchInputLookupDesktopOption']")
+		@FindBy(xpath="//li[@class='slds-listbox__item']//span[@class='slds-listbox__option-text slds-listbox__option-text_entity']")
 	    List<WebElement> Lookuppeople;
 		
 		@FindBy(xpath="//input[@title='Search Step 2-Define Teams']")
@@ -59,30 +59,29 @@ public class RRD_user_adding {
 		List<WebElement> LookupTeam;
 		
 		
-		@FindBy(xpath="(//label[@class='form-element__label' and contains(text(),'Date')]//following::input[@class=' input' and @type=\"text\"])[1]")
-		
+		@FindBy(xpath="(//label[@class='slds-form-element__label' and contains(text(),'Date')]//following::input[@class='slds-input' and @type=\"text\"])[1]")
 		WebElement LastCaseAssignedDate;
 
 		
-		@FindBy(xpath="(//label[@class='form-element__label' and contains(text(),'Date')]//following::input[@class=' input' and @type=\"text\"])[3]")
+		@FindBy(xpath="(//label[@class='slds-form-element__label' and contains(text(),'Date')]//following::input[@class='slds-input' and @type='text'])[2]")
 		WebElement LastLeadAssignedDate;
 		
-		@FindBy(xpath="(//label[@class='form-element__label' and contains(text(),'Date')]//following::input[@class=' input' and @type=\"text\"])[5]")
+		@FindBy(xpath="(//label[@class='slds-form-element__label' and contains(text(),'Date')]//following::input[@class='slds-input' and @type='text'])[3]")
 		WebElement LastOppAssignedDate;
 		
-		@FindBy(xpath="(//div[@class='dateTime-inputTime form-element form-element__control'])[1]")
+		@FindBy(xpath="(//label[@class='slds-form-element__label' and contains(text(),'Time')]//following::input[@class='slds-input slds-combobox__input' and @type='text'])[1]")
 		WebElement LastCaseAssignedTime;
 		
 		@FindBy(xpath="//li[@role='menuitem']")
 		List<WebElement> ListPickcaseTime;
 		
-		@FindBy(xpath="(//div[@class='dateTime-inputTime form-element form-element__control'])[2]")
+		@FindBy(xpath="(//label[@class='slds-form-element__label' and contains(text(),'Time')]//following::input[@class='slds-input slds-combobox__input' and @type='text'])[2]")
 		WebElement LastLeadAssignedTime;
 		
 		@FindBy(xpath="//div[@class='visible uiInputTimePicker--default uiInputTimePicker']//div//ul//li[@role=\"menuitem\"]")
 		List<WebElement> ListPickLeadTime;
 		
-		@FindBy(xpath="(//div[@class='dateTime-inputTime form-element form-element__control'])[3]")
+		@FindBy(xpath="(//label[@class='slds-form-element__label' and contains(text(),'Time')]//following::input[@class='slds-input slds-combobox__input' and @type='text'])[3]")
 		WebElement LastOppAssignedTime;
 		
 		@FindBy(xpath="//div[@class='visible uiInputTimePicker--default uiInputTimePicker']//div//ul//li[@role=\"menuitem\"]")
@@ -91,10 +90,10 @@ public class RRD_user_adding {
 		
 		//@FindBy(xpath="(//input[@class='input uiInputSmartNumber'])[1]")
 		
-		@FindBy(xpath="(//span[contains(text(),'Record assign limit')]//following::input[@class='input uiInputSmartNumber'])[1]")
+		@FindBy(xpath="//label[contains(text(),'Record assign limit')]//following::input[@name='rrde__Record_assign_limit__c']")
 		WebElement RecordAssignLimit;
 		
-		@FindBy(xpath="//span[contains(text(),'Allowed Number of Open Cases')]//following::input[@class='input uiInputSmartNumber']")
+		@FindBy(xpath="//label[contains(text(),'Allowed Number of Open Cases')]//following::input[@name='rrde__Allowed_Number_of_Open_Cases__c']")
 	    WebElement Allowedopencases;
 		
 		@FindBy(xpath="//button[@title='Save']")
@@ -163,16 +162,15 @@ public class RRD_user_adding {
 		}
 		public void PickRRDuser(String RRD_user) throws InterruptedException
 		{
-			
+			Thread.sleep(1500);
 			for(int i=0;i<Lookuppeople.size();i++)
 			{
 				String LookupPeople=Lookuppeople.get(i).getText();
 				
 				if(LookupPeople.contains(RRD_user))
 				{
-					Lookuppeople.get(i).click();
+					Lookuppeople.get(0).click();
 				}
-				
 			}
 			Thread.sleep(1500);
 		}
@@ -180,7 +178,6 @@ public class RRD_user_adding {
 		public void clicksOnsearchTeam()
 		{
 			Team.click();
-			
 		}
 		
 		
@@ -214,7 +211,7 @@ public class RRD_user_adding {
 		
 		public void pickCaseTime() throws InterruptedException
 		{
-			
+			//LastCaseAssignedTime.clear();
 			ListPickcaseTime.get(1).click();
 			Thread.sleep(2000);
 		/*
@@ -243,7 +240,7 @@ public class RRD_user_adding {
 		public void pickLeadTime() throws InterruptedException
 	{
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			ListPickLeadTime.get(3).click();
+			ListPickLeadTime.get(2).click();
 			Thread.sleep(2500);
 		
 		}
@@ -266,7 +263,7 @@ public class RRD_user_adding {
 		public void pickOppTime() throws InterruptedException
 		{
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			ListPickOppTime.get(2).click();
+			ListPickOppTime.get(3).click();
 			Thread.sleep(1500);
 			
 		/*

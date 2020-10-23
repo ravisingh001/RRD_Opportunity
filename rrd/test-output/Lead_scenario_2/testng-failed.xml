@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Lead_scenario_2]">
+  <test thread-count="5" name="Lead_Config_2(failed)">
+    <classes>
+      <class name="Lead_Creation_Allocation.Leads_Allocation_config2">
+        <methods>
+          <include name="LeadCreation_config2"/>
+          <include name="setUp"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- Lead_Creation_Allocation.Leads_Allocation_config2 -->
+    </classes>
+  </test> <!-- Lead_Config_2(failed) -->
+</suite> <!-- Failed suite [Lead_scenario_2] -->

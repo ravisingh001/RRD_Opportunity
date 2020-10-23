@@ -9,19 +9,19 @@
   </test> Test -->
 
 <suite-files>
-    <suite-file path="Opportunity_Config1.xml"></suite-file>
-    <suite-file path="Opportunity_Config2.xml"></suite-file>
-    <suite-file path="Opportunity_Config3.xml"></suite-file>
-     <suite-file path="Opportunity_Config4.xml"></suite-file>
-      <suite-file path="Opportunity_Config5.xml"></suite-file>
-       <suite-file path="Opportunity_Config6.xml"></suite-file>
-        <suite-file path="Opportunity_Config7.xml"></suite-file>
-         <suite-file path="Opportunity_Config80.xml"></suite-file>
-          <suite-file path="Opportunity_Config81.xml"></suite-file>
-           <suite-file path="Opportunity_Config82.xml"></suite-file>
-            <suite-file path="Opportunity_Config83.xml"></suite-file>
-             <suite-file path="Opportunity_Config84.xml"></suite-file>
-              <suite-file path="Opportunity_Config85.xml"></suite-file>
+    <suite-file path="src/test/Opportunity/Opportunity_Config1.xml"></suite-file>
+    <suite-file path="src/test/Opportunity/Opportunity_Config2.xml"></suite-file>
+    <suite-file path="src/test/Opportunity/Opportunity_Config3.xml"></suite-file>
+     <suite-file path="src/test/Opportunity/Opportunity_Config4.xml"></suite-file>
+      <suite-file path="src/test/Opportunity/Opportunity_Config5.xml"></suite-file>
+       <suite-file path="src/test/Opportunity/Opportunity_Config6.xml"></suite-file>
+        <suite-file path="src/test/Opportunity/Opportunity_Config7.xml"></suite-file>
+         <suite-file path="src/test/Opportunity/Opportunity_Config80.xml"></suite-file>
+          <suite-file path="src/test/Opportunity/Opportunity_Config81.xml"></suite-file>
+           <suite-file path="src/test/Opportunity/Opportunity_Config82.xml"></suite-file>
+            <suite-file path="src/test/Opportunity/Opportunity_Config83.xml"></suite-file>
+             <suite-file path="src/test/Opportunity/Opportunity_Config84.xml"></suite-file>
+              <suite-file path="src/test/Opportunity/Opportunity_Config85.xml"></suite-file>
 </suite-files>
 </suite> <!-- Suite -->
 
