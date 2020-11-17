@@ -3,13 +3,16 @@ package com.mirketa.pages;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import com.mirketa.utility.SyncElement;
+import com.relevantcodes.extentreports.LogStatus;
 
 public class RRD_New_Case_page {
 	
@@ -41,6 +44,9 @@ WebDriver driver;
 	
 	@FindBy(xpath="//span[@class='slds-truncate']//span[contains(text(),'Opportunities')]")
 	WebElement More_SelectOpportunity;
+	
+	@FindBy(xpath="//span[@class='slds-truncate']//span[contains(text(),'Contacts')]")
+	WebElement More_SelectContact;
 	
 	@FindBy(xpath="//one-app-nav-bar-item-root[@class='navItem slds-context-bar__item slds-shrink-none slds-is-active']//lightning-icon[@class='slds-icon-utility-chevrondown slds-icon_container']")
 	WebElement Opportunity_DropDown;
@@ -222,6 +228,9 @@ WebDriver driver;
 	@FindBy(xpath="(//span[@class='flex-wrap-ie11 owner-name slds-truncate slds-grow']//div[@class='slds-grid'])[2]/a")
 	public  WebElement AssignedOpportunityRRDHover;
 	
+	@FindBy(xpath="(//span[@class='flex-wrap-ie11 owner-name slds-grow']//div[@class='slds-grid'])[2]/a")
+	public  WebElement AssignedContactRRDHover;
+	
 	@FindBy(xpath="//slot[@name='outputField']//slot//span//div//div//a")
 	public  WebElement AssignedLead_RRDHover;
 	
@@ -243,6 +252,8 @@ WebDriver driver;
 	@FindBy(xpath="(//p[@class='fieldComponent slds-text-body--regular slds-show_inline-block slds-truncate']//slot//lightning-formatted-text)[3]")
     WebElement caseNumber;
 	
+	@FindBy(xpath="//*[@type='search'][@name='Contact-search-input']")
+    WebElement ContactName;
 	
 	//div[@class="slds-grid"]//a[@id='window']
 	
@@ -260,6 +271,18 @@ WebDriver driver;
 		 
 		 
 	 }
+	 
+	 
+	 public void ProcessonSearchContact(String str) throws InterruptedException
+		{
+			    SyncElement.isElementPresnt(driver,ContactName, 10);
+			    ContactName.clear();
+			    ContactName.sendKeys(str);
+				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+				refreshButton.click();
+				Thread.sleep(2000);
+		}
+		
 	 
 	 public String getcaseno()
 		{
@@ -299,6 +322,13 @@ WebDriver driver;
 	        Thread.sleep(5000);
 	 }
 	 
+	 public void clickOnMore_ContactTab() throws InterruptedException
+	 {
+		     SyncElement.TobeClickable(driver, More_SelectContact, 30);
+	         JavascriptExecutor executor = (JavascriptExecutor)driver;
+	        executor.executeScript("arguments[0].click();", More_SelectContact);
+	        Thread.sleep(5000);
+	 }
 	 
 	 public void clickOnDefine_Opportunity() throws InterruptedException
 	 {
@@ -769,6 +799,8 @@ WebDriver driver;
 		 clickonTeamId.click();
 		 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
 	}
+	
+	
 	
 	 
 

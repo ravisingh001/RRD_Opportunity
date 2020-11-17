@@ -104,8 +104,7 @@ public class ContactConfig4 {
 		logger.log(LogStatus.INFO, "Succesfully search the RRD");
 
 		rrdsearch.RRDdrpdwnselection();
-		logger.log(LogStatus.INFO,
-				"Succesfully  RRD selection from Dropdown and Directed to RRDHome page successfully");
+		logger.log(LogStatus.INFO,"Succesfully  RRD selection from Dropdown and Directed to RRDHome page successfully");
 		Thread.sleep(15000);
 
 	}
@@ -127,8 +126,7 @@ public class ContactConfig4 {
 			homePage.clickOnStep1Configuration();
 			logger.log(LogStatus.INFO, "click on step1 configuration tab");
 
-			Step1ContactConfigurationpage step1AccConfigPage = PageFactory.initElements(driver,
-					Step1ContactConfigurationpage.class);
+			Step1ContactConfigurationpage step1AccConfigPage = PageFactory.initElements(driver,Step1ContactConfigurationpage.class);
 
 			step1AccConfigPage.navigatetoIframeContactConfig();
 			logger.log(LogStatus.INFO, "Navigate to iframe");

@@ -42,6 +42,9 @@ public WebDriver driver;
 	@FindBy(xpath="(//*[@class='greenBtn']//input[@type='submit'])[3]")
 	WebElement DistributeAccount;
 	
+	@FindBy(xpath="(//*[@class='greenBtn']//input[@type='submit'])[4]")
+	WebElement distributeContact;
+	
 	
 	public void clickOnManualdistribution() throws InterruptedException
 	{
@@ -63,6 +66,16 @@ public WebDriver driver;
 	{
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 	     executor.executeScript("arguments[0].click();", distributecase);
+		 //distributecase.click();
+	     Thread.sleep(1000);
+		
+	}
+	
+	
+	public void clickonDistributeContact() throws InterruptedException
+	{
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+	     executor.executeScript("arguments[0].click();", distributeContact);
 		 //distributecase.click();
 	     Thread.sleep(1000);
 		

@@ -30,6 +30,7 @@ public class RRDSearchpage
 	
 	public void appclick() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		SyncElement.TobeClickable(driver, AppLauncher, 20);
 		AppLauncher.click();
 		Thread.sleep(2000);
@@ -41,10 +42,26 @@ public class RRDSearchpage
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		Thread.sleep(3000);
 	}
+	
+	public void ContactSearch() throws InterruptedException
+	{
+		SyncElement.TobeClickable(driver, SearchRRD, 20);
+		SearchRRD.sendKeys("Contacts");
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		Thread.sleep(3000);
+	}
+	
 	public void RRDdrpdwnselection() throws InterruptedException
 	{
 		SyncElement.TobeClickable(driver, DrpRRDselection.get(0), 20);
 		DrpRRDselection.get(0).click();
+		Thread.sleep(5000);
+	}
+	
+	public void RRDdrpdwnselection_Contacts() throws InterruptedException
+	{
+		SyncElement.TobeClickable(driver, DrpRRDselection.get(0), 20);
+		DrpRRDselection.get(1).click();
 		Thread.sleep(5000);
 	}
 }

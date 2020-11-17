@@ -23,11 +23,20 @@ public class Accountpage {
 	@FindBy(xpath="//div[contains(text(),'New')]")
 	WebElement Newbtn;
 	
-	@FindBy(xpath="//span[@class='itemLabel slds-truncate slds-show--inline-block slds-m-left--xx-small' and @title='New Account']")
+	/*
+	 * @FindBy(
+	 * xpath="//span[@class='itemLabel slds-truncate slds-show--inline-block slds-m-left--xx-small' and @title='New Account']"
+	 * ) WebElement NewAccount;
+	 */
+	@FindBy(xpath="//div[@data-aura-class='forceSearchInputLookupDesktopActionItem']/span[@title='New Account']")
 	WebElement NewAccount;
+	
 	
 	@FindBy(xpath="//label//span[contains(text(),'Account Name')]//following-sibling::span[contains(@class,'required')][contains(text(),'*')]//following::input[@class=' input'][1]")
 	WebElement AccountName;
+	
+	@FindBy(xpath="(//input[@type='text'][@aria-required='true'])[3]")
+	WebElement Contact_AccountName;
 	
 	@FindBy(xpath="//div[@class='uiMenu']//div[@class='uiPopupTrigger']//a[@class='select' and @role='button']")
 	List<WebElement> lists;
@@ -95,6 +104,9 @@ public class Accountpage {
 	@FindBy(xpath="(//span[contains(text(),'Upsell Opportunity')]//following::div[@class='uiMenu']//div[@class='uiPopupTrigger']//a[@class='select' and @role='button'])[1]")
 	WebElement Upsell_Opportunity;
 	
+	@FindBy(xpath="//input[contains(@placeholder,'Search Accounts...')]")
+	WebElement searchAccount;
+	
 	@FindBy(xpath="//li[@class='uiMenuItem uiRadioMenuItem']")
 	List<WebElement> UpselListl_Opportunity;
 	
@@ -147,6 +159,14 @@ public class Accountpage {
 	
 	@FindBy(xpath="//button[@title='Save']//span[contains(@class,'label bBody')][contains(text(),'Save')]")
 	WebElement Saveacc;
+	
+	/*
+	 * @FindBy(xpath="(//span[@class=' label bBody'][contains(text(),'Save')])[5]")
+	 * WebElement Contact_Account_Save;
+	 */
+	
+	@FindBy(xpath="//button[@title='Save'][@data-aura-class='uiButton--default uiButton--brand uiButton forceActionButton']//span")
+	WebElement Contact_Account_Save;
 	
 	/*
 	 * @FindBy(
@@ -211,6 +231,12 @@ public class Accountpage {
 		Thread.sleep(4000);
 	}
 	
+	public void clickonContact_Account_save() throws InterruptedException
+	{
+		Contact_Account_Save.click();
+		Thread.sleep(4000);
+	}
+	
 	public void clickonAccounts_save() throws InterruptedException
 	{
 		Account_Save.click();
@@ -223,8 +249,14 @@ public class Accountpage {
 	public void clickOnNewAccount() throws InterruptedException
 	{
 		SyncElement.TobeClickable(driver, NewAccount, 20);
+		
+		/*
+		 * JavascriptExecutor executor = (JavascriptExecutor) driver;
+		 * executor.executeScript("arguments[0].scrollIntoView();", NewAccount);
+		 */
+		 
 		NewAccount.click();
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 	}
 	
 	public void clickonNew() throws InterruptedException
@@ -241,6 +273,13 @@ public class Accountpage {
 		SyncElement.isElementPresnt(driver, AccountName, 20);
 		AccountName.sendKeys(Account);
 		 Thread.sleep(2000);
+	}
+	
+	public void ClickonContact_AccountName(String Account) throws InterruptedException
+	{
+		SyncElement.isElementPresnt(driver, Contact_AccountName, 20);
+		Contact_AccountName.sendKeys(Account);
+		 Thread.sleep(3000);
 	}
 	
 	public void clickingRating() throws InterruptedException
@@ -479,5 +518,13 @@ public class Accountpage {
 		 
 		
 	}
+	
+	public void clicksearchAcc() throws InterruptedException
+	 {
+		 SyncElement.TobeClickable(driver, searchAccount, 30);
+		 searchAccount.click();
+		 Thread.sleep(4000);
+		 
+	 }
 
 }
