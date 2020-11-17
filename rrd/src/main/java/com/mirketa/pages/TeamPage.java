@@ -54,7 +54,7 @@ public class TeamPage
 	 * LeadCriteria_RadiaBtn;
 	 */
 	
-	@FindBy(xpath="//div[5]//label[1]//div[1]//span[1]")
+	@FindBy(xpath="//div[7]//label[1]//div[1]//span[1]")
 	WebElement LeadCriteria_RadiaBtn;
 	
 	@FindBy(xpath="//span[contains(text(),'Next')]")
@@ -122,6 +122,9 @@ public class TeamPage
 	
 	@FindBy(xpath="(//div[@class='slds-form-element slds-hint-parent test-id__output-root slds-form-element_readonly slds-form-element_stacked']//slot//lightning-formatted-number)[6]")
     public WebElement TobeAssignedcount_ForOpportunity;
+	
+	@FindBy(xpath="(//div[@class='slds-form-element__control']//slot//lightning-formatted-number)[8]")
+    public WebElement TobeAssignedcount_ForContact;
 	
 	@FindBy(xpath="(//div[@class='slds-form-element slds-hint-parent test-id__output-root slds-form-element_readonly slds-form-element_stacked']//slot//lightning-formatted-number)[6]")
     public WebElement TobeAssignedcount_ForLeads;
@@ -277,6 +280,16 @@ public class TeamPage
 		 JavascriptExecutor js = (JavascriptExecutor) driver;
 		 js.executeScript("arguments[0].scrollIntoView();",TobeAssignedcount_ForOpportunity );
 		 SyncElement.isElementPresnt(driver,TobeAssignedcount_ForOpportunity, 10);
+		 Thread.sleep(2000);
+		 
+	 }
+	 
+	 public void scrolldowntoteamrecord_ForContact() throws InterruptedException
+	 {
+		 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+		 JavascriptExecutor js = (JavascriptExecutor) driver;
+		 js.executeScript("arguments[0].scrollIntoView();",TobeAssignedcount_ForContact );
+		 SyncElement.isElementPresnt(driver,TobeAssignedcount_ForContact, 10);
 		 Thread.sleep(2000);
 		 
 	 }

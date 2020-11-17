@@ -104,8 +104,7 @@ public class ContactConfig2 {
 		logger.log(LogStatus.INFO, "Succesfully search the RRD");
 
 		rrdsearch.RRDdrpdwnselection();
-		logger.log(LogStatus.INFO,
-				"Succesfully  RRD selection from Dropdown and Directed to RRDHome page successfully");
+		logger.log(LogStatus.INFO,"Succesfully  RRD selection from Dropdown and Directed to RRDHome page successfully");
 		Thread.sleep(15000);
 
 	}

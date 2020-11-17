@@ -2,11 +2,11 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Account_Suite">
 
-<!-- <test thread-count="5" name="Opportunity_DefineTeam">
+<test thread-count="5" name="Opportunity_DefineTeam">
     <classes>
       <class name="Opp_DefineTeamSetUp.Opp_DefineTeams.java"/>
     </classes>
-  </test> -->
+  </test>
 
 <suite-files>
     <suite-file path="src/test/Accounts/AccountAllocation_01.xml"></suite-file>
@@ -24,4 +24,3 @@
               <suite-file path="src/test/Accounts/AccountAllocation_13.xml"></suite-file>
 </suite-files>
 </suite> <!-- Suite -->
-
