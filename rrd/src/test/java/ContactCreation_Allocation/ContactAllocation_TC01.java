@@ -99,7 +99,7 @@ public class ContactAllocation_TC01 {
 			Contactobj.sendLastname(LastName);
 			logger.log(LogStatus.INFO, "Enter Contact name");
 
-			Accountpage Accobj = PageFactory.initElements(driver, Accountpage.class);
+			/*Accountpage Accobj = PageFactory.initElements(driver, Accountpage.class);
 			
 			Accobj.clicksearchAcc();
 			logger.log(LogStatus.INFO, "Successfully clicked the search Account value ");
@@ -107,11 +107,13 @@ public class ContactAllocation_TC01 {
 			Accobj.clickOnNewAccount();
 			logger.log(LogStatus.INFO, "Successfully clicked on New  Account ");
 
-			Accobj.ClickonContact_AccountName(AccountName);
-			logger.log(LogStatus.INFO, "Enter account name");
-
-			Accobj.clickonContact_Account_save();
-			logger.log(LogStatus.INFO, "Successfully clicked on save");
+			
+			 * Accobj.ClickonContact_AccountName(AccountName); logger.log(LogStatus.INFO,
+			 * "Enter account name");
+			 * 
+			 * Accobj.clickonContact_Account_save(); logger.log(LogStatus.INFO,
+			 * "Successfully clicked on save");
+			 */
 			
 			Contactobj.sendMailingzipcode(MailingZip);
 			logger.log(LogStatus.INFO, "Enter Mailing Zip code name");
@@ -164,8 +166,8 @@ public class ContactAllocation_TC01 {
 				System.out.println("Team count is- " + teamcount);
 				System.out.printf("%n");
 				Thread.sleep(1000);
-				Assert.assertTrue(teamcount.equalsIgnoreCase(ToBeAssigned), "To Be Assigned count is not matching");
-				//softassert.assertTrue(teamcount.equalsIgnoreCase(ToBeAssigned), "To Be Assigned count is not matching");
+				//Assert.assertTrue(teamcount.equalsIgnoreCase(ToBeAssigned), "To Be Assigned count is not matching");
+				softassert.assertTrue(teamcount.equalsIgnoreCase(ToBeAssigned), "To Be Assigned count is not matching");
 			} catch (Exception e) {
 				System.out.println("Assertion issue");
 				System.out.printf("%n");

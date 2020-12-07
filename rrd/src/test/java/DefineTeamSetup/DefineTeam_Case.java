@@ -4,18 +4,13 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
-import com.mirketa.dataprovider.ExcelsheetDataprovidertest;
-
 import com.mirketa.factory.BrowserFactory;
 import com.mirketa.factory.DataProviderFactory;
 import com.mirketa.pages.RRDSearchpage;
@@ -24,7 +19,6 @@ import com.mirketa.pages.SalesForceLoginPage;
 import com.mirketa.pages.TeamNewCriteriapage;
 import com.mirketa.pages.TeamPage;
 import com.mirketa.utility.Helper;
-import com.mirketa.utility.SyncElement;
 import com.mirketa.utility.Xls_Reader;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
@@ -204,7 +198,6 @@ public class DefineTeam_Case {
 							.equalsIgnoreCase(reader.getCellData("RRDTeam", "TeamName", rownum)))
 
 					{
-
 						String SpriorityOrder = reader.getCellData("RRDTeam", "PriorityOrder", rownum);
 						String SteamName = reader.getCellData("RRDTeam", "TeamName", rownum);
 						String SmaxIntakeLimit = reader.getCellData("RRDTeam", "Max_Intake_limit", rownum);
@@ -217,7 +210,10 @@ public class DefineTeam_Case {
 						teamobj.clickonNewTeam();
 						logger.log(LogStatus.INFO, "Succesfully clicked on  RRD New team button");
 
+						teamobj.clickonCaseCriteria_RadioButton();
+						logger.log(LogStatus.INFO, "Succesfully clicked on  case New team button");
 						teamobj.clickOnNext();
+
 						logger.log(LogStatus.INFO, "Succesfully clicked on  RRD Next button");
 
 						teamobj.type_priority_order(SpriorityOrder);

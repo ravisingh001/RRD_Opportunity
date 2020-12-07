@@ -40,11 +40,14 @@ public class HomePage {
 	@FindBy(xpath="//span[@class='slds-truncate'][contains(text(),'Accounts')]")
 	WebElement Account;
 	
-	@FindBy(xpath="//one-app-nav-bar-item-root[15]/one-app-nav-bar-item-dropdown/div/one-app-nav-bar-menu-button/a")
+	@FindBy(xpath="//one-app-nav-bar-item-root[9]/one-app-nav-bar-item-dropdown/div/one-app-nav-bar-menu-button/a")
 	WebElement Contactdrpdown;
 	
 	@FindBy(xpath="//a[@title='Contacts']//span[contains(text(),'Contacts')]")
 	WebElement ContactTab;
+	
+	@FindBy(xpath="//a[@title='Accounts']//span[contains(text(),'Accounts')]")
+	WebElement AccountTab;
 	
 
 	public String getTitle() {
@@ -71,6 +74,16 @@ public class HomePage {
 		executor.executeScript("arguments[0].click();", Step2DefineTeam);
 		
 	}
+	
+	public void clickOnAccountTab() throws InterruptedException {
+		 // SyncElement.TobeClickable(driver, Accountdrpdown, 0);
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+	    executor.executeScript("arguments[0].click();", AccountTab);
+	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+		//ContactTab.click(); 
+		Thread.sleep(3000);
+     
+		 }
 	
 	public void clickOnAccountdrpdown() throws InterruptedException {
 		 // SyncElement.TobeClickable(driver, Accountdrpdown, 0);

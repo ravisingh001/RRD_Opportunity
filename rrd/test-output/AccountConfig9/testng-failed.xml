@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [AccountConfig9]">
+  <test thread-count="5" name="AccountConfig9(failed)">
+    <classes>
+      <class name="EditTeamSetupAccount.EditTeamAcc_config09">
+        <methods>
+          <include name="EditTeamsetup"/>
+          <include name="setUp"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- EditTeamSetupAccount.EditTeamAcc_config09 -->
+    </classes>
+  </test> <!-- AccountConfig9(failed) -->
+</suite> <!-- Failed suite [AccountConfig9] -->

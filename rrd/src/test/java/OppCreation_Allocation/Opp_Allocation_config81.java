@@ -125,7 +125,7 @@ public class Opp_Allocation_config81 {
 				Accobj.clickOnNewAccount();
 				logger.log(LogStatus.INFO, "Successfully clicked on New  Account ");
 
-				Accobj.ClickonAccountName(AccountName);
+				Accobj.ClickonOpportunity_AccountName(AccountName);
 				logger.log(LogStatus.INFO, "Enter account name");
 
 				Accobj.clickingRating();
@@ -134,7 +134,7 @@ public class Opp_Allocation_config81 {
 				Accobj.pickrating(Ratingtype);
 				logger.log(LogStatus.INFO, "Picked  Rating Type");
 
-				Accobj.clickonsave();
+				Accobj.clickonAccounts_save();
 				logger.log(LogStatus.INFO, "Successfully clicked on save");
 
 				caseobj.scrolldowntopicktype();
@@ -248,6 +248,8 @@ public class Opp_Allocation_config81 {
 		teamobj.clickonCloneOpportunity();
 		logger.log(LogStatus.INFO, "Successfully clicked on clone button");
 		Thread.sleep(5000);
+		driver.navigate().refresh();
+		Thread.sleep(6000);
 		caseobj.clickOnSave();
 		logger.log(LogStatus.INFO, "Successfully saved  the new added case and Directed to Case Details page ");
 

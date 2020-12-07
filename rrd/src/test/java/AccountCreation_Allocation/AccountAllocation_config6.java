@@ -95,6 +95,9 @@ import com.mirketa.utility.Helper;
 			      
 			     HomePage home=PageFactory.initElements(driver, HomePage.class);
 				  //home.clickOnAccounttab();
+			     home.clickOnAccountTab();
+				  logger.log(LogStatus.INFO, "Successfully clicked on Account ");
+			     
 				  home.clickOnAccountdrpdown();
 				  logger.log(LogStatus.INFO, "Successfully clicked on New  Account ");
 				  
@@ -120,7 +123,7 @@ import com.mirketa.utility.Helper;
 			 Accobj.pickownershipval(ownershipval);
 			 logger.log(LogStatus.INFO, "clicked on  Ownership");
 			 
-			 Accobj.clickonsave();
+			 Accobj.clickonAccounts_save();
 			 logger.log(LogStatus.INFO, "Successfully clicked on save");
 			
 			

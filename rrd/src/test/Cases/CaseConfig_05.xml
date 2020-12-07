@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="CaseAllocation_5">
+  <test thread-count="5" name="CaseAllocation_5">
+    <classes>
+      <class name="Caseconfiguration.CaseConfig5"/>
+      <class name="CaseCreation_Allocation.CaseAllocation_config5"/>
+      <class name="CaseDistribution.CaseManualDistribution5"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

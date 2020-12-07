@@ -33,13 +33,13 @@ public class TeamPage
 	@FindBy(xpath="//a[starts-with(@class,'slds-truncate outputLookupLink slds-truncate outputLookupLink')]")
 	 WebElement clickonTeamId;
 	
-	@FindBy(xpath="//div[contains(text(),'Clone')]")
+	@FindBy(xpath="//button[@name='Clone']")
 	 WebElement clickonCloneButton;
 	
 	@FindBy(xpath="//one-app-nav-bar-item-root[3]//one-app-nav-bar-item-dropdown[1]//div[1]//one-app-nav-bar-menu-button[1]//a[1]/lightning-icon[1]/lightning-primitive-icon[1]//*[local-name()='svg']")
 	WebElement DefineTeambuttondrpdown;
 	
-	@FindBy(xpath="//one-app-nav-bar-menu-item[1]//a[@href='/setup/ui/recordtypeselect.jsp?sObjectName=rrde__RRD_Teams__c&save_new_url=%2Fa04%2Fe&navigationLocation=LIST_VIEW']")
+	@FindBy(xpath="//one-app-nav-bar-menu-item[1]//a[@role='menuitemcheckbox']//span[contains(text(),'New Team')]")
 	WebElement NewTeam;
 	
 	@FindBy(xpath="//div[11]//label[1]//div[1]//span[1]")
@@ -56,6 +56,9 @@ public class TeamPage
 	
 	@FindBy(xpath="//div[7]//label[1]//div[1]//span[1]")
 	WebElement LeadCriteria_RadiaBtn;
+	
+	@FindBy(xpath="//div[1]/div[1]/label/div[1]/span[1]")
+	WebElement CaseCriteria_RadiaBtn;
 	
 	@FindBy(xpath="//span[contains(text(),'Next')]")
 	WebElement NextButton;
@@ -117,23 +120,23 @@ public class TeamPage
 	@FindBy(xpath="(//lightning-formatted-text[@data-output-element-id='output-field'])[1]")
 	public WebElement teamInfo;
 	
-	@FindBy(xpath="(//div[@class='slds-form-element slds-hint-parent test-id__output-root slds-form-element_readonly slds-form-element_stacked']//slot//lightning-formatted-number)[7]")
+	@FindBy(xpath="(//div[@class='slds-form-element__control']//slot//lightning-formatted-number)[10]")
     public WebElement TobeAssignedcount;
 	
-	@FindBy(xpath="(//div[@class='slds-form-element slds-hint-parent test-id__output-root slds-form-element_readonly slds-form-element_stacked']//slot//lightning-formatted-number)[6]")
+	@FindBy(xpath="(//div[@class='slds-form-element__control']//slot//lightning-formatted-number)[9]")
     public WebElement TobeAssignedcount_ForOpportunity;
+	
+	@FindBy(xpath="(//span[contains(text(),'To be assigned no of Records')])[1]/following::span//slot/lightning-formatted-number")
+    public WebElement TobeAssignedcount_ForLeads;
+	
+	@FindBy(xpath="(//slot[@name='outputField']//slot//span//div//div//a)[1]")
+    public WebElement Ownername;
+	
+	@FindBy(xpath="(//div[@class='slds-form-element__control']//slot//lightning-formatted-number)[8]")
+	public WebElement AccountTobeAssigned;
 	
 	@FindBy(xpath="(//div[@class='slds-form-element__control']//slot//lightning-formatted-number)[8]")
     public WebElement TobeAssignedcount_ForContact;
-	
-	@FindBy(xpath="(//div[@class='slds-form-element slds-hint-parent test-id__output-root slds-form-element_readonly slds-form-element_stacked']//slot//lightning-formatted-number)[6]")
-    public WebElement TobeAssignedcount_ForLeads;
-	
-	@FindBy(xpath="(//force-hoverable-link//div[@class='slds-grid']//a)[2]")
-    public WebElement Ownername;
-	
-	@FindBy(xpath="(//div[@class='slds-form-element slds-hint-parent test-id__output-root slds-form-element_readonly slds-form-element_stacked']//slot//lightning-formatted-number)[6]")
-	public WebElement AccountTobeAssigned;
 	
    public void clickOnDefineTeam() throws InterruptedException {
 		/*
@@ -186,6 +189,18 @@ public class TeamPage
 		   Teamsrecordtype.get(1).click();
 		   Thread.sleep(3000);
 	   }
+	 
+	 public void clickonCaseCriteria_RadioButton()
+	 {
+		  SyncElement.TobeClickable(driver, CaseCriteria_RadiaBtn, 10);	
+		  CaseCriteria_RadiaBtn.click();
+		 //JavascriptExecutor executor = (JavascriptExecutor)driver;
+	    // executor.executeScript("arguments[0].click();", LeadCriteria_RadiaBtn);
+	     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+		 //NewTeam.click();
+	  
+	 }
+	 
 	   
 	 
 	 public void clickonLeadsCriteria_RadioButton()
@@ -280,16 +295,6 @@ public class TeamPage
 		 JavascriptExecutor js = (JavascriptExecutor) driver;
 		 js.executeScript("arguments[0].scrollIntoView();",TobeAssignedcount_ForOpportunity );
 		 SyncElement.isElementPresnt(driver,TobeAssignedcount_ForOpportunity, 10);
-		 Thread.sleep(2000);
-		 
-	 }
-	 
-	 public void scrolldowntoteamrecord_ForContact() throws InterruptedException
-	 {
-		 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
-		 JavascriptExecutor js = (JavascriptExecutor) driver;
-		 js.executeScript("arguments[0].scrollIntoView();",TobeAssignedcount_ForContact );
-		 SyncElement.isElementPresnt(driver,TobeAssignedcount_ForContact, 10);
 		 Thread.sleep(2000);
 		 
 	 }
@@ -406,5 +411,17 @@ public class TeamPage
 		 SyncElement.isElementPresnt(driver,AccountTobeAssigned, 20);
 		 Thread.sleep(2000);
 	 }
+	
+	public void scrolldowntoteamrecord_ForContact() throws InterruptedException
+	 {
+		 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+		 JavascriptExecutor js = (JavascriptExecutor) driver;
+		 js.executeScript("arguments[0].scrollIntoView();",TobeAssignedcount_ForContact );
+		 SyncElement.isElementPresnt(driver,TobeAssignedcount_ForContact, 10);
+		 Thread.sleep(2000);
+		 
+	 }
+	 
+	 
 	
 }

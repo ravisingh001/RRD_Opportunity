@@ -93,6 +93,9 @@ public class AccountAllocation_config11 {
 		      
 		     HomePage home=PageFactory.initElements(driver, HomePage.class);
 			  //home.clickOnAccounttab();
+		     home.clickOnAccountTab();
+				logger.log(LogStatus.INFO, "Successfully clicked on Account ");
+
 			  home.clickOnAccountdrpdown();
 			  logger.log(LogStatus.INFO, "Successfully clicked on New  Account ");
 			  
@@ -118,7 +121,7 @@ public class AccountAllocation_config11 {
 		 Accobj.pickownershipval(ownershipval);
 		 logger.log(LogStatus.INFO, "clicked on  Ownership");
 		 
-		 Accobj.clickonsave();
+		 Accobj.clickonAccounts_save();
 		 logger.log(LogStatus.INFO, "Successfully clicked on save");
 		
 		

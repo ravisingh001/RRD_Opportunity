@@ -31,8 +31,7 @@ public class Distribute_Contact {
 	ExtentTest logger;
 	Properties pro;
 
-	public String Testdata_sheet_path = System.getProperty("user.dir") + File.separator + "AppData" + File.separator
-			+ "ContactDistributionAllocation.xlsx";
+	public String Testdata_sheet_path = System.getProperty("user.dir") + File.separator + "AppData" + File.separator + "ContactDistributionAllocation.xlsx";
 
 	SoftAssert softassert = new SoftAssert();
 
@@ -47,8 +46,7 @@ public class Distribute_Contact {
 		logger.log(LogStatus.INFO, "Application is up and running");
 		driver.manage().deleteAllCookies();
 		SalesForceLoginPage salesForceLoginPage = PageFactory.initElements(driver, SalesForceLoginPage.class);
-		salesForceLoginPage.loginApplicaiton(DataProviderFactory.getExcel().getData(0, 1, 0),
-				DataProviderFactory.getExcel().getData(0, 1, 1));
+		salesForceLoginPage.loginApplicaiton(DataProviderFactory.getExcel().getData(0, 1, 0),DataProviderFactory.getExcel().getData(0, 1, 1));
 		logger.log(LogStatus.INFO, "Login into application");
 		Thread.sleep(5000);
 		RRDSearchpage rrdsearch = PageFactory.initElements(driver, RRDSearchpage.class);
@@ -60,47 +58,88 @@ public class Distribute_Contact {
 		logger.log(LogStatus.INFO, "Succesfully search the RRD");
 
 		rrdsearch.RRDdrpdwnselection();
-		logger.log(LogStatus.INFO,
-				"Succesfully  RRD selection from Dropdown and Directed to RRDHome page successfully");
+		logger.log(LogStatus.INFO,"Succesfully  RRD selection from Dropdown and Directed to RRDHome page successfully");
+
+		/*
+		 * rrdsearch.appclick(); logger.log(LogStatus.INFO,
+		 * "Succesfully Clicked on Applauncher");
+		 * 
+		 * rrdsearch.ContactSearch(); logger.log(LogStatus.INFO,
+		 * "Succesfully search the Contact");
+		 * 
+		 * rrdsearch.RRDdrpdwnselection_Contacts(); logger.log(LogStatus.INFO,
+		 * "Succesfully  Contact selection from Dropdown and Directed to Contacts page successfully"
+		 * );
+		 */
 
 	}
 
 	@Test
 	public void CaseManualDistribution9() throws InterruptedException {
 		Xls_Reader reader = new Xls_Reader(Testdata_sheet_path);
+
+		/*
+		 * ManualDistributionPage manualdistribution = PageFactory.initElements(driver,
+		 * ManualDistributionPage.class);
+		 * manualdistribution.clickOnManualdistribution(); logger.log(LogStatus.INFO,
+		 * "Clicked on ManualDistribution"); driver.navigate().refresh();
+		 * Thread.sleep(6000); manualdistribution.switchtoframe();
+		 * logger.log(LogStatus.INFO, "Switch to frame");
+		 * manualdistribution.countofframe(); Thread.sleep(4000);
+		 * 
+		 * manualdistribution.clickonDistributeContact(); logger.log(LogStatus.INFO,
+		 * "Clicked on Distribute Contact button to distribute the Contact successfully"
+		 * ); driver.navigate().refresh(); Thread.sleep(6000);
+		 */
+
 		// Xls_Reader Reader = new Xls_Reader(Testdata_sheet_path);
 		int rowCount = reader.getRowCount("ContactDistribution_2");
 		for (int rowNum = 2; rowNum <= rowCount; rowNum++) {
 
 			String Contact = reader.getCellData("ContactDistribution_2", "ContactName", rowNum);
-			String Assigneduser = reader.getCellData("ContactDistribution_2", "ExpectedResultAfterDistribution",
-					rowNum);
+			String Assigneduser = reader.getCellData("ContactDistribution_2", "ExpectedResultAfterDistribution",rowNum);
 			String Teamname = reader.getCellData("ContactDistribution_2", "TeamName", rowNum);
 			String ToBecount = reader.getCellData("ContactDistribution_2", "ToBeAssignedAfterdistribution", rowNum);
-
-			ManualDistributionPage manualdistribution = PageFactory.initElements(driver, ManualDistributionPage.class);
-			manualdistribution.clickOnManualdistribution();
-			logger.log(LogStatus.INFO, "Clicked on ManualDistribution");
-			driver.navigate().refresh();
-			Thread.sleep(6000);
-			manualdistribution.switchtoframe();
-			logger.log(LogStatus.INFO, "Switch to frame");
-			manualdistribution.countofframe();
-			Thread.sleep(4000);
-
-			manualdistribution.clickonDistributeContact();
-			logger.log(LogStatus.INFO, "Clicked on Distribute Contact button to distribute the Contact successfully");
-			driver.navigate().refresh();
-			Thread.sleep(6000);
-
-			// contactPage Contactobj = PageFactory.initElements(driver, contactPage.class);
-
+			RRD_New_Case_page contactobj = PageFactory.initElements(driver, RRD_New_Case_page.class);
 			TeamPage teamobj = PageFactory.initElements(driver, TeamPage.class);
 
+			contactobj.clickOnMore_ToSelect_Opportunity();
+			logger.log(LogStatus.INFO, "Successfully clicked on More Tab");
+			Thread.sleep(4000);
+			contactobj.clickOnMore_ContactTab();
+			logger.log(LogStatus.INFO, "Successfully clicked on Contact Button");
+			Thread.sleep(4000);
+			driver.navigate().refresh();
+			Thread.sleep(7000);
+			contactobj.ProcessonSearchContact(Contact);
+			logger.log(LogStatus.INFO, "Successfully searched the  Team name and get the value");
+			teamobj.clickonTeamname();
+			logger.log(LogStatus.INFO, "Successfully clicked on TeamId and Directed to Team details page");
+			driver.navigate().refresh();
+			Thread.sleep(10000);
+			driver.navigate().refresh();
+
+			try {
+				System.out.println("Assigned RRD user from sheet - " + Assigneduser);
+				String Username = contactobj.AssignedContactRRDHover.getText();
+				System.out.println("Assigned contact owner is:" + Username);
+				// softassert.assertTrue(Username.equalsIgnoreCase(Result), "Assigned RRD user
+				// name is not matching");
+				Assert.assertTrue(Username.equalsIgnoreCase(Assigneduser), "Assigned RRD user name is not matching");
+				System.out.printf("%n");
+			} catch (Exception e) {
+				System.out.println("Assigned RRD user  from sheet - " + Assigneduser);
+				String Username = contactobj.AssignedContactRRDHover.getText();
+				System.out.println("Assigned contact owner is:" + Username);
+				// softassert.assertTrue(Username.equalsIgnoreCase(Result), "Assigned RRD user
+				// name is not matching");
+				Assert.assertTrue(Username.equalsIgnoreCase(Assigneduser), "Assigned RRD user name is not matching");
+				System.out.printf("%n");
+			}
+			// contactPage Contactobj = PageFactory.initElements(driver, contactPage.class);
 			teamobj.clickonDefineTeamtab();
 			logger.log(LogStatus.INFO, "Successfully clicked on Define Team tab");
 			Thread.sleep(2000);
-
 			teamobj.ProcessonSearchTeam(Teamname);
 			logger.log(LogStatus.INFO, "Successfully searched the  Team name and get the value");
 			teamobj.clickonTeamname();
@@ -109,7 +148,6 @@ public class Distribute_Contact {
 			logger.log(LogStatus.INFO, "Successfully scroll down to verify Team Count");
 
 			try {
-
 				System.out.println("To Be Assigned record of Team from sheet - " + ToBecount);
 				String teamcount = teamobj.TobeAssignedcount_ForContact.getText();
 				System.out.println("Team count is- " + teamcount);
@@ -123,52 +161,10 @@ public class Distribute_Contact {
 				System.out.printf("%n");
 				e.printStackTrace();
 			}
-
 			Thread.sleep(3000);
 			driver.navigate().refresh();
 			Thread.sleep(7000);
-
-			RRD_New_Case_page contactobj = PageFactory.initElements(driver, RRD_New_Case_page.class);
-			contactobj.clickOnMore_ToSelect_Opportunity();
-			logger.log(LogStatus.INFO, "Successfully clicked on More Tab");
-			Thread.sleep(4000);
-			contactobj.clickOnMore_ContactTab();
-			logger.log(LogStatus.INFO, "Successfully clicked on Contact Button");
-			Thread.sleep(6000);
-
-			contactobj.ProcessonSearchContact(Contact);
-			logger.log(LogStatus.INFO, "Successfully searched the  Team name and get the value");
-			teamobj.clickonTeamname();
-			logger.log(LogStatus.INFO, "Successfully clicked on TeamId and Directed to Team details page");
-			driver.navigate().refresh();
-			Thread.sleep(10000);
-
-			driver.navigate().refresh();
-
-			try {
-				System.out.println("Assigned RRD user from sheet - " + Assigneduser);
-				String Username = contactobj.AssignedContactRRDHover.getText();
-				System.out.println("Assigned contact owner is:" + Username);
-				// softassert.assertTrue(Username.equalsIgnoreCase(Result), "Assigned RRD user
-				// name is not matching");
-				Assert.assertTrue(Username.equalsIgnoreCase(Assigneduser), "Assigned RRD user name is not matching");
-				System.out.printf("%n");
-			}
-
-			catch (Exception e)
-
-			{
-				System.out.println("Assigned RRD user  from sheet - " + Assigneduser);
-				String Username = contactobj.AssignedContactRRDHover.getText();
-				System.out.println("Assigned contact owner is:" + Username);
-				// softassert.assertTrue(Username.equalsIgnoreCase(Result), "Assigned RRD user
-				// name is not matching");
-				Assert.assertTrue(Username.equalsIgnoreCase(Assigneduser), "Assigned RRD user name is not matching");
-				System.out.printf("%n");
-			}
-
 		}
-
 	}
 
 	@AfterMethod
@@ -181,5 +177,4 @@ public class Distribute_Contact {
 		report.endTest(logger);
 		report.flush();
 	}
-
 }

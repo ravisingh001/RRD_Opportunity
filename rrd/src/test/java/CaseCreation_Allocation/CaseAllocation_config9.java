@@ -204,8 +204,14 @@ public class CaseAllocation_config9 {
 			caseobj.clickOnNew();
 			logger.log(LogStatus.INFO, "Successfully clicked on New case");
 
-			//caseobj.pickstatus(Status);
+			caseobj.clickOnNew();
+			logger.log(LogStatus.INFO, "Successfully clicked on New case");
+			driver.navigate().refresh();
+
+			Thread.sleep(7000);
+			// caseobj.pickstatus(Status);
 			logger.log(LogStatus.INFO, "Successfully picked status from list ");
+			caseobj.ClickonNametoCloseContactWindow();
 
 			caseobj.pickpriority();
 
@@ -250,7 +256,7 @@ public class CaseAllocation_config9 {
 			Accobj.clickOnNewAccount();
 			logger.log(LogStatus.INFO, "Successfully clicked on New  Account ");
 
-			Accobj.ClickonAccountName(Account);
+			Accobj.ClickonCase_AccountName(Account);
 			logger.log(LogStatus.INFO, "Enter account name");
 
 			Accobj.clickingRating();
@@ -288,9 +294,11 @@ public class CaseAllocation_config9 {
 			Thread.sleep(10000);
 
 			driver.navigate().refresh();
-			Thread.sleep(3000);
-			 caseobj.getcaseno();
-			 logger.log(LogStatus.INFO, "Get The cas No. from case details page");
+			Thread.sleep(10000);
+			caseobj.clickOnDetailsTab();
+			Thread.sleep(5000);
+			caseobj.getcaseno();
+			logger.log(LogStatus.INFO, "Get The cas No. from case details page");
 			 
 			
 			reader.setCellData("CaseAllocation_config9", "CaseNo", rowNum, caseobj.getcaseno());

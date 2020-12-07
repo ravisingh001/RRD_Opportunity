@@ -100,19 +100,21 @@ public class ContactAllocation_TC08 {
 			Contactobj.sendLastname(LastName);
 			logger.log(LogStatus.INFO, "Enter Contact name");
 
-			Accountpage Accobj = PageFactory.initElements(driver, Accountpage.class);
-			
-			Accobj.clicksearchAcc();
-			logger.log(LogStatus.INFO, "Successfully clicked the search Account value ");
-
-			Accobj.clickOnNewAccount();
-			logger.log(LogStatus.INFO, "Successfully clicked on New  Account ");
-
-			Accobj.ClickonContact_AccountName(AccountName);
-			logger.log(LogStatus.INFO, "Enter account name");
-
-			Accobj.clickonContact_Account_save();
-			logger.log(LogStatus.INFO, "Successfully clicked on save");
+			/*
+			 * Accountpage Accobj = PageFactory.initElements(driver, Accountpage.class);
+			 * 
+			 * Accobj.clicksearchAcc(); logger.log(LogStatus.INFO,
+			 * "Successfully clicked the search Account value ");
+			 * 
+			 * Accobj.clickOnNewAccount(); logger.log(LogStatus.INFO,
+			 * "Successfully clicked on New  Account ");
+			 * 
+			 * Accobj.ClickonContact_AccountName(AccountName); logger.log(LogStatus.INFO,
+			 * "Enter account name");
+			 * 
+			 * Accobj.clickonContact_Account_save(); logger.log(LogStatus.INFO,
+			 * "Successfully clicked on save");
+			 */
 			
 			Contactobj.sendtitle(Title);
 			logger.log(LogStatus.INFO, "Enter Title name");
@@ -166,8 +168,8 @@ public class ContactAllocation_TC08 {
 				System.out.println("Team count is- " + teamcount);
 				System.out.printf("%n");
 				Thread.sleep(1000);
-				Assert.assertTrue(teamcount.equalsIgnoreCase(ToBeAssigned), "To Be Assigned count is not matching");
-				//softassert.assertTrue(teamcount.equalsIgnoreCase(ToBeAssigned), "To Be Assigned count is not matching");
+				//Assert.assertTrue(teamcount.equalsIgnoreCase(ToBeAssigned), "To Be Assigned count is not matching");
+				softassert.assertTrue(teamcount.equalsIgnoreCase(ToBeAssigned), "To Be Assigned count is not matching");
 			} catch (Exception e) {
 				System.out.println("Assertion issue");
 				System.out.printf("%n");

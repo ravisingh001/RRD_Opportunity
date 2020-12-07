@@ -33,7 +33,7 @@ import com.relevantcodes.extentreports.LogStatus;
  * </p>
  * <p>
  * 2.Go to SetUp page
- * </p>
+ * </p> 
  * <p>
  * 4.Click on App launcher
  * </p>

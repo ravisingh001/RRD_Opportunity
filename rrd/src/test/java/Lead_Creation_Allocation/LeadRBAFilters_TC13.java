@@ -132,7 +132,7 @@ public class LeadRBAFilters_TC13 {
 				try {
 					System.out.println("Assigned RRD user  from sheet - " + ExpectedResult);
 					String Username = Leadobj.AssignedLead_RRDHover.getText();
-					System.out.println("Assigned case owner is:" + Username);
+					System.out.println("Assigned Lead owner is:" + Username);
 					softassert.assertTrue(Username.equalsIgnoreCase(ExpectedResult),"Assigned RRD user name is not matching");
 				}
 				catch (Exception e)
@@ -142,7 +142,7 @@ public class LeadRBAFilters_TC13 {
 					System.out.println("Assigned Lead owner is:" + Username);
 					softassert.assertTrue(Username.equalsIgnoreCase(ExpectedResult),"Assigned RRD user name is not matching");
 				}		
-				if(driver.findElements(By.xpath("//span[@class='uiOutputTextArea']")).size()!= 0){ 
+				if(driver.findElements(By.xpath("(//span[@class='slds-grid slds-grid_align-spread'])[3]")).size()!= 0){ 
 					 System.out.println("Lead assigment is done through RBA"); } 
 				 else{
 				  System.out.println("Lead assigment is not done  through RBA"); }
@@ -237,10 +237,10 @@ public class LeadRBAFilters_TC13 {
 				{
 					System.out.println("Assigned RRD user  from sheet - " + ExpectedResult);
 					String Username = Leadobj.AssignedLead_RRDHover.getText();
-					System.out.println("Assigned case owner is:" + Username);
+					System.out.println("Assigned Lead owner is:" + Username);
 					softassert.assertTrue(Username.equalsIgnoreCase(ExpectedResult),"Assigned RRD user name is not matching");
 				}
-				if(driver.findElements(By.xpath("//span[@class='uiOutputTextArea']")).size()!= 0){ 
+				if(driver.findElements(By.xpath("(//span[@class='slds-grid slds-grid_align-spread'])[3]")).size()!= 0){ 
 					 System.out.println("Lead assigment is done through RBA"); } 
 				 else{
 				  System.out.println("Lead assigment is not done  through RBA"); }

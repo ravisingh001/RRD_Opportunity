@@ -129,7 +129,7 @@ public class Opp_Allocation_config83 {
 				Accobj.clickOnNewAccount();
 				logger.log(LogStatus.INFO, "Successfully clicked on New  Account ");
 
-				Accobj.ClickonAccountName(AccountName);
+				Accobj.ClickonOpportunity_AccountName(AccountName);
 				logger.log(LogStatus.INFO, "Enter account name");
 
 				Accobj.clickingRating();
@@ -138,7 +138,7 @@ public class Opp_Allocation_config83 {
 				Accobj.pickrating(Ratingtype);
 				logger.log(LogStatus.INFO, "Picked  Rating Type");
 
-				Accobj.clickonsave();
+				Accobj.clickonAccounts_save();
 				logger.log(LogStatus.INFO, "Successfully clicked on save");
 
 				caseobj.scrolldowntopicktype();
@@ -246,6 +246,8 @@ public class Opp_Allocation_config83 {
 		teamobj.clickonTeamname();
 		logger.log(LogStatus.INFO, "Successfully clicked on OpportunityId and Directed to Opportunity details page");
 		Thread.sleep(5000);
+		driver.navigate().refresh();
+		Thread.sleep(6000);
 		teamobj.clickonCloneOpportunity();
 		logger.log(LogStatus.INFO, "Successfully clicked on clone button");
 		Thread.sleep(5000);
@@ -281,9 +283,6 @@ public class Opp_Allocation_config83 {
 			System.out.println("Assigned record not matches with Any User");
 			Assert.fail("Does not match the criteria");
 		}
-		
-		
-		
 	}
 
 	@AfterMethod

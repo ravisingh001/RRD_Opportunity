@@ -59,7 +59,7 @@ public class Online_Offline_UserTest {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		UserSearchField.click();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);	
-		UserSearchField.sendKeys("RRD Mirketa (rrd_teamtest@mirketa.com)");
+		UserSearchField.sendKeys("RRD Mirketa (siddharth.mittal@mirketa.com.rrdqa)");
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		SelectUser.click();
 		Thread.sleep(5000);
@@ -77,7 +77,7 @@ public class Online_Offline_UserTest {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		UserSearchField.click();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);	
-		UserSearchField.sendKeys("RRD Mirketa (rrd_teamtest@mirketa.com)");
+		UserSearchField.sendKeys("RRD Mirketa (siddharth.mittal@mirketa.com.rrdqa)");
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		SelectUser.click();
 		Thread.sleep(5000);
@@ -95,7 +95,7 @@ public class Online_Offline_UserTest {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		UserSearchField.click();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);	
-		UserSearchField.sendKeys("Security User (insightssecurity@00d3h000007rihgea0.com)");
+		UserSearchField.sendKeys("Security User (rohit@mirketa.com.rrdqa)");
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		SelectUser.click();
 		Thread.sleep(5000);
@@ -113,7 +113,7 @@ public class Online_Offline_UserTest {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		UserSearchField.click();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);	
-		UserSearchField.sendKeys("Security User (insightssecurity@00d3h000007rihgea0.com)");
+		UserSearchField.sendKeys("Security User (rohit@mirketa.com.rrdqa)");
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		SelectUser.click();
 		Thread.sleep(5000);

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="CaseAllocation_4">
+  <test thread-count="5" name="CaseAllocation_4">
+    <classes>
+      <class name="Caseconfiguration.PreRbacaseconfig"/>
+      <class name="CaseCreation_Allocation.PreRBACaseAllocation"/>
+      <class name="Caseconfiguration.CaseConfig4"/>
+       <class name="CaseCreation_Allocation.CaseAllocation_config4"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

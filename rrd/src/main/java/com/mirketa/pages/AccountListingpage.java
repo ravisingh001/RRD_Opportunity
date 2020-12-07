@@ -45,7 +45,7 @@ public WebDriver driver;
 		 SyncElement.TobeClickable(driver,Accountnamelink, 30);
 		 Accountnamelink.click();
 		 Thread.sleep(3000);
-		 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
 		
 	}
 	

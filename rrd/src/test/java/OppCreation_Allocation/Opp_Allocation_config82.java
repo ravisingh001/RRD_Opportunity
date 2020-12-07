@@ -125,7 +125,7 @@ public class Opp_Allocation_config82 {
 				Accobj.clickOnNewAccount();
 				logger.log(LogStatus.INFO, "Successfully clicked on New  Account ");
 
-				Accobj.ClickonAccountName(AccountName);
+				Accobj.ClickonOpportunity_AccountName(AccountName);
 				logger.log(LogStatus.INFO, "Enter account name");
 
 				Accobj.clickingRating();
@@ -134,7 +134,7 @@ public class Opp_Allocation_config82 {
 				Accobj.pickrating(Ratingtype);
 				logger.log(LogStatus.INFO, "Picked  Rating Type");
 
-				Accobj.clickonsave();
+				Accobj.clickonAccounts_save();
 				logger.log(LogStatus.INFO, "Successfully clicked on save");
 
 				caseobj.scrolldowntopicktype();

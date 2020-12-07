@@ -62,7 +62,8 @@ public class ContactAllocation_TC09 {
 		logger.log(LogStatus.INFO, "Succesfully search the RRD");
 
 		rrdsearch.RRDdrpdwnselection();
-		logger.log(LogStatus.INFO,"Succesfully  RRD selection from Dropdown and Directed to RRDHome page successfully");
+		logger.log(LogStatus.INFO,
+				"Succesfully  RRD selection from Dropdown and Directed to RRDHome page successfully");
 
 	}
 
@@ -77,13 +78,14 @@ public class ContactAllocation_TC09 {
 		logger.log(LogStatus.INFO, "Succesfully search the Contact");
 
 		rrdsearch.RRDdrpdwnselection_Contacts();
-		logger.log(LogStatus.INFO,"Succesfully  Contact selection from Dropdown and Directed to Contacts page successfully");
+		logger.log(LogStatus.INFO,
+				"Succesfully  Contact selection from Dropdown and Directed to Contacts page successfully");
 
 		Xls_Reader reader = new Xls_Reader(Testdata_sheet_path);
 
 		int RowCount = reader.getRowCount("ContactAllocation9_1");
 		for (int rowNum = 2; rowNum <= RowCount; rowNum++) {
-		
+
 			String LastName = reader.getCellData("ContactAllocation9_1", "LastName", rowNum);
 			String MailingCity = reader.getCellData("ContactAllocation9_1", "Mailing City", rowNum);
 			String AccountName = reader.getCellData("ContactAllocation9_1", "AccountName", rowNum);
@@ -102,35 +104,35 @@ public class ContactAllocation_TC09 {
 			Thread.sleep(3000);
 			driver.navigate().refresh();
 			Thread.sleep(6000);
-			
+
 			Contactobj.sendLastname(LastName);
 			logger.log(LogStatus.INFO, "Enter Contact name");
 
-			Accountpage Accobj = PageFactory.initElements(driver, Accountpage.class);
-			
-			Accobj.clicksearchAcc();
-			logger.log(LogStatus.INFO, "Successfully clicked the search Account value ");
+			/*
+			 * Accountpage Accobj = PageFactory.initElements(driver, Accountpage.class);
+			 * 
+			 * Accobj.clicksearchAcc(); logger.log(LogStatus.INFO,
+			 * "Successfully clicked the search Account value ");
+			 * 
+			 * Accobj.clickOnNewAccount(); logger.log(LogStatus.INFO,
+			 * "Successfully clicked on New  Account ");
+			 * 
+			 * Accobj.ClickonContact_AccountName(AccountName); logger.log(LogStatus.INFO,
+			 * "Enter account name");
+			 * 
+			 * Accobj.clickonContact_Account_save(); logger.log(LogStatus.INFO,
+			 * "Successfully clicked on save");
+			 */
 
-			Accobj.clickOnNewAccount();
-			logger.log(LogStatus.INFO, "Successfully clicked on New  Account ");
+			Contactobj.sendMailingCity(MailingCity);
+			logger.log(LogStatus.INFO, "Successfully picked Mailing City ");
 
-			Accobj.ClickonContact_AccountName(AccountName);
-			logger.log(LogStatus.INFO, "Enter account name");
-
-			Accobj.clickonContact_Account_save();
-			logger.log(LogStatus.INFO, "Successfully clicked on save");
-			
-			
-			Contactobj.sendMailingCity(MailingCity); 
-			logger.log(LogStatus.INFO,"Successfully picked Mailing City ");
-			
-			Contactobj.pick_LeadSource(Leadsource); 
-			logger.log(LogStatus.INFO,"Successfully picked from Lead Source ");
-			 
+			Contactobj.pick_LeadSource(Leadsource);
+			logger.log(LogStatus.INFO, "Successfully picked from Lead Source ");
 
 			Contactobj.clickonsave();
 			logger.log(LogStatus.INFO, "Successfully clicked on save");
-			
+
 			driver.navigate().refresh();
 			Thread.sleep(10000);
 
@@ -140,7 +142,8 @@ public class ContactAllocation_TC09 {
 				System.out.println("Assigned RRD user from sheet - " + Result);
 				String Username = CONTACTobj.AssignedContactRRDHover.getText();
 				System.out.println("Assigned contact owner is:" + Username);
-				//softassert.assertTrue(Username.equalsIgnoreCase(Result), "Assigned RRD user name is not matching");
+				// softassert.assertTrue(Username.equalsIgnoreCase(Result), "Assigned RRD user
+				// name is not matching");
 				Assert.assertTrue(Username.equalsIgnoreCase(Result), "Assigned RRD user name is not matching");
 				System.out.printf("%n");
 			}
@@ -151,7 +154,8 @@ public class ContactAllocation_TC09 {
 				System.out.println("Assigned RRD user  from sheet - " + Result);
 				String Username = CONTACTobj.AssignedContactRRDHover.getText();
 				System.out.println("Assigned contact owner is:" + Username);
-				//softassert.assertTrue(Username.equalsIgnoreCase(Result), "Assigned RRD user name is not matching");
+				// softassert.assertTrue(Username.equalsIgnoreCase(Result), "Assigned RRD user
+				// name is not matching");
 				Assert.assertTrue(Username.equalsIgnoreCase(Result), "Assigned RRD user name is not matching");
 				System.out.printf("%n");
 			}
@@ -175,17 +179,19 @@ public class ContactAllocation_TC09 {
 				System.out.println("Team count is- " + teamcount);
 				System.out.printf("%n");
 				Thread.sleep(1000);
-				//Assert.assertTrue(teamcount.equalsIgnoreCase(ToBeAssigned), "To Be Assigned count is not matching");
+				// Assert.assertTrue(teamcount.equalsIgnoreCase(ToBeAssigned), "To Be Assigned
+				// count is not matching");
 				softassert.assertTrue(teamcount.equalsIgnoreCase(ToBeAssigned), "To Be Assigned count is not matching");
 			} catch (Exception e) {
 				System.out.println("Assertion issue");
 				System.out.printf("%n");
 				e.printStackTrace();
-			}}
-		
+			}
+		}
+
 		int rowCount = reader.getRowCount("ContactAllocation9_2");
 		for (int rowNum = 2; rowNum <= rowCount; rowNum++) {
-			
+
 			String LastName = reader.getCellData("ContactAllocation9_2", "LastName", rowNum);
 			String MailingCity = reader.getCellData("ContactAllocation9_2", "Mailing City", rowNum);
 			String AccountName = reader.getCellData("ContactAllocation9_2", "AccountName", rowNum);
@@ -198,7 +204,7 @@ public class ContactAllocation_TC09 {
 			Thread.sleep(3000);
 			driver.navigate().refresh();
 			Thread.sleep(7000);
-			
+
 			RRD_New_Case_page contactobj = PageFactory.initElements(driver, RRD_New_Case_page.class);
 			contactobj.clickOnMore_ToSelect_Opportunity();
 			logger.log(LogStatus.INFO, "Successfully clicked on More Tab");
@@ -207,7 +213,6 @@ public class ContactAllocation_TC09 {
 			logger.log(LogStatus.INFO, "Successfully clicked on Contact Button");
 			Thread.sleep(4000);
 
-			
 			home.clickOnContactdrpdown();
 			logger.log(LogStatus.INFO, "Successfully clicked on New Contact ");
 
@@ -217,33 +222,35 @@ public class ContactAllocation_TC09 {
 			Thread.sleep(3000);
 			driver.navigate().refresh();
 			Thread.sleep(6000);
-			
+
 			Contactobj.sendLastname(LastName);
 			logger.log(LogStatus.INFO, "Enter Contact name");
 
-			Accountpage Accobj = PageFactory.initElements(driver, Accountpage.class);
-			
-			Accobj.clicksearchAcc();
-			logger.log(LogStatus.INFO, "Successfully clicked the search Account value ");
+			/*
+			 * Accountpage Accobj = PageFactory.initElements(driver, Accountpage.class);
+			 * 
+			 * Accobj.clicksearchAcc(); logger.log(LogStatus.INFO,
+			 * "Successfully clicked the search Account value ");
+			 * 
+			 * Accobj.clickOnNewAccount(); logger.log(LogStatus.INFO,
+			 * "Successfully clicked on New  Account ");
+			 * 
+			 * Accobj.ClickonContact_AccountName(AccountName); logger.log(LogStatus.INFO,
+			 * "Enter account name");
+			 * 
+			 * Accobj.clickonContact_Account_save(); logger.log(LogStatus.INFO,
+			 * "Successfully clicked on save");
+			 */
 
-			Accobj.clickOnNewAccount();
-			logger.log(LogStatus.INFO, "Successfully clicked on New  Account ");
-
-			Accobj.ClickonContact_AccountName(AccountName);
-			logger.log(LogStatus.INFO, "Enter account name");
-
-			Accobj.clickonContact_Account_save();
-			logger.log(LogStatus.INFO, "Successfully clicked on save");
-			
 			Contactobj.sendMailingCity(MailingCity);
-			logger.log(LogStatus.INFO,"Successfully picked Mailing City ");
-			
-			Contactobj.pick_LeadSource(Leadsource); 
-			logger.log(LogStatus.INFO,"Successfully picked from Lead Source ");
+			logger.log(LogStatus.INFO, "Successfully picked Mailing City ");
+
+			Contactobj.pick_LeadSource(Leadsource);
+			logger.log(LogStatus.INFO, "Successfully picked from Lead Source ");
 
 			Contactobj.clickonsave();
 			logger.log(LogStatus.INFO, "Successfully clicked on save");
-			
+
 			driver.navigate().refresh();
 			Thread.sleep(10000);
 
@@ -253,7 +260,8 @@ public class ContactAllocation_TC09 {
 				System.out.println("Assigned RRD user from sheet - " + Result);
 				String Username = CONTACTobj.AssignedContactRRDHover.getText();
 				System.out.println("Assigned contact owner is:" + Username);
-				//softassert.assertTrue(Username.equalsIgnoreCase(Result), "Assigned RRD user name is not matching");
+				// softassert.assertTrue(Username.equalsIgnoreCase(Result), "Assigned RRD user
+				// name is not matching");
 				Assert.assertTrue(Username.equalsIgnoreCase(Result), "Assigned RRD user name is not matching");
 				System.out.printf("%n");
 			}
@@ -264,7 +272,8 @@ public class ContactAllocation_TC09 {
 				System.out.println("Assigned RRD user  from sheet - " + Result);
 				String Username = CONTACTobj.AssignedContactRRDHover.getText();
 				System.out.println("Assigned contact owner is:" + Username);
-				//softassert.assertTrue(Username.equalsIgnoreCase(Result), "Assigned RRD user name is not matching");
+				// softassert.assertTrue(Username.equalsIgnoreCase(Result), "Assigned RRD user
+				// name is not matching");
 				Assert.assertTrue(Username.equalsIgnoreCase(Result), "Assigned RRD user name is not matching");
 				System.out.printf("%n");
 			}
@@ -288,44 +297,44 @@ public class ContactAllocation_TC09 {
 				System.out.println("Team count is- " + teamcount);
 				System.out.printf("%n");
 				Thread.sleep(1000);
-				//Assert.assertTrue(teamcount.equalsIgnoreCase(ToBeAssigned), "To Be Assigned count is not matching");
+				// Assert.assertTrue(teamcount.equalsIgnoreCase(ToBeAssigned), "To Be Assigned
+				// count is not matching");
 				softassert.assertTrue(teamcount.equalsIgnoreCase(ToBeAssigned), "To Be Assigned count is not matching");
 			} catch (Exception e) {
 				System.out.println("Assertion issue");
 				System.out.printf("%n");
 				e.printStackTrace();
-			}}
-		
+			}
+		}
+
 		int Rowcount = reader.getRowCount("ContactAllocation9_2");
 		for (int rowNum = 2; rowNum <= Rowcount; rowNum++) {
-			
-		String DC = reader.getCellData("ContactAllocation9_2", "Distribution Count", rowNum);
-		
-		ManualDistributionPage manualdistribution = PageFactory.initElements(driver, ManualDistributionPage.class);
-		manualdistribution.clickOnManualdistribution();
-		logger.log(LogStatus.INFO, "Clicked on ManualDistribution");
 
-		manualdistribution.switchtoframe();
-		logger.log(LogStatus.INFO, "Switch to frame");
-		manualdistribution.countofframe();
-		driver.navigate().refresh();
-		Thread.sleep(4000);
-		
-		contactPage Contactobj = PageFactory.initElements(driver, contactPage.class);
-		try {
-			System.out.println("Contact Distribution Count from sheet - " + DC);
-			String Username = Contactobj.Contact_DistributionCount.getText();
-			System.out.println("Contact Distribution Count is:" + Username);
-			softassert.assertTrue(Username.equalsIgnoreCase(DC),"Contact Distribution Count is not matching");
-		}
-		catch (Exception e)
-		{
-			System.out.println("Contact Distribution Count from sheet - " + DC);
-			String Username = Contactobj.Contact_DistributionCount.getText();
-			System.out.println("Contact Distribution Count is:" + Username);
-			softassert.assertTrue(Username.equalsIgnoreCase(DC),"Contact Distribution Count is not matching");
-		}
-		
+			String DC = reader.getCellData("ContactAllocation9_2", "Distribution Count", rowNum);
+
+			ManualDistributionPage manualdistribution = PageFactory.initElements(driver, ManualDistributionPage.class);
+			manualdistribution.clickOnManualdistribution();
+			logger.log(LogStatus.INFO, "Clicked on ManualDistribution");
+
+			manualdistribution.switchtoframe();
+			logger.log(LogStatus.INFO, "Switch to frame");
+			manualdistribution.countofframe();
+			driver.navigate().refresh();
+			Thread.sleep(4000);
+
+			contactPage Contactobj = PageFactory.initElements(driver, contactPage.class);
+			try {
+				System.out.println("Contact Distribution Count from sheet - " + DC);
+				String Username = Contactobj.Contact_DistributionCount.getText();
+				System.out.println("Contact Distribution Count is:" + Username);
+				softassert.assertTrue(Username.equalsIgnoreCase(DC), "Contact Distribution Count is not matching");
+			} catch (Exception e) {
+				System.out.println("Contact Distribution Count from sheet - " + DC);
+				String Username = Contactobj.Contact_DistributionCount.getText();
+				System.out.println("Contact Distribution Count is:" + Username);
+				softassert.assertTrue(Username.equalsIgnoreCase(DC), "Contact Distribution Count is not matching");
+			}
+
 		}
 	}
 

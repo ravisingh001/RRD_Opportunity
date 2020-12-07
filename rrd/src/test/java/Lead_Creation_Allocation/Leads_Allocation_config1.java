@@ -226,9 +226,6 @@ public class Leads_Allocation_config1 {
 				logger.log(LogStatus.INFO, "Successfully searched the  Team name and get the value");
 				teamobj.clickonTeamname();
 				logger.log(LogStatus.INFO, "Successfully clicked on TeamId and Directed to Team details page");
-				teamobj.scrolldowntoteamrecord_ForLeads();
-				logger.log(LogStatus.INFO, "Successfully scroll down to verify Team Count");
-
 				try {
 
 					System.out.println("To Be Assigned record of Team from sheet - " + ToBeAssigned);

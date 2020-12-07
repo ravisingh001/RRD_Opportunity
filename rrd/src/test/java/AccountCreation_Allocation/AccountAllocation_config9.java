@@ -89,6 +89,9 @@ public class AccountAllocation_config9 {
 		      
 		     HomePage home=PageFactory.initElements(driver, HomePage.class);
 			  //home.clickOnAccounttab();
+		     home.clickOnAccountTab();
+			  logger.log(LogStatus.INFO, "Successfully clicked on Account ");
+		     
 			  home.clickOnAccountdrpdown();
 			  logger.log(LogStatus.INFO, "Successfully clicked on New  Account ");
 			  
@@ -117,7 +120,7 @@ public class AccountAllocation_config9 {
 		 Accobj.pickcustomerpriofromlist(Cus_priority);
 		 logger.log(LogStatus.INFO, "picked from customer priority");
 		 
-		 Accobj.clickonsave();
+		 Accobj.clickonAccounts_save();
 		 logger.log(LogStatus.INFO, "Successfully clicked on save");
 		
 		
