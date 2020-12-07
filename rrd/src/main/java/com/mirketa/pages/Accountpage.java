@@ -297,10 +297,11 @@ public class Accountpage {
 	
 	public void clickingRating() throws InterruptedException
 	{
+		
 		//SyncElement.TobeClickable(driver, lists.get(0), 40);
 		Rating.click();
 		//lists.get(0).click();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 	}
 	
 	public void EnterphoneNo(String Phone) throws InterruptedException
