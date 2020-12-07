@@ -138,7 +138,7 @@ public class LeadRBAFilters_TC14 {
 					softassert.assertTrue(Username.equalsIgnoreCase(ExpectedResult),"Assigned RRD user name is not matching");
 				}	
 				
-				if(driver.findElements(By.xpath("//span[@class='uiOutputTextArea']")).size()!= 0){ 
+				if(driver.findElements(By.xpath("(//span[@class='slds-grid slds-grid_align-spread'])[3]")).size()!= 0){ 
 						 System.out.println("Lead assigment is done through RBA");
 						 System.out.printf("%n");} 
 					 else{
@@ -240,7 +240,7 @@ public class LeadRBAFilters_TC14 {
 					softassert.assertTrue(Username.equalsIgnoreCase(ExpectedResult),"Assigned RRD user name is not matching");
 				}	
 				
-				if(driver.findElements(By.xpath("//span[@class='uiOutputTextArea']")).size()!= 0){ 
+				if(driver.findElements(By.xpath("(//span[@class='slds-grid slds-grid_align-spread'])[3]")).size()!= 0){ 
 					 System.out.println("Lead assigment is done through RBA");
 					 System.out.printf("%n");} 
 				 else{

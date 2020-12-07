@@ -25,7 +25,7 @@ public WebDriver driver;
 	@FindBy(xpath="//span[@class='itemLabel slds-truncate slds-show--inline-block slds-m-left--xx-small' and @title='New Contact' ]")
     WebElement NewContact;
 	
-	@FindBy(xpath="//div[@class='salutation compoundTLRadius compoundTRRadius compoundBorderBottom form-element__row uiMenu']//div[@class='uiPopupTrigger']//a[@class='select' and @role=\"button\" and contains(text(),'--None--')]")
+	@FindBy(xpath="(//a[@class='select' and @role='button' and contains(text(),'--None--')])[3]")
 	WebElement clicksaluation;
 	
 	@FindBy(xpath="//li[@class='uiMenuItem uiRadioMenuItem']")
@@ -49,7 +49,7 @@ public WebDriver driver;
 	@FindBy(xpath="(//span[contains(text(),'Title')]/following::input[@class=' input'])[1]")
 	WebElement Title;
 	
-	@FindBy(xpath="//button[@class='slds-button slds-button--neutral uiButton--brand uiButton forceActionButton']//span[contains(@class,' label bBody')][contains(text(),'Save')]")
+	@FindBy(xpath="//button[@title='Save'][@data-aura-class='uiButton--default uiButton--brand uiButton forceActionButton']//span")
 	WebElement Save;
 	
 	@FindBy(xpath="//span[contains(text(),'Contacts')][@class='slds-truncate']")

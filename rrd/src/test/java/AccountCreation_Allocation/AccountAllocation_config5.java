@@ -92,6 +92,9 @@ public class AccountAllocation_config5 {
 			      
 			     HomePage home=PageFactory.initElements(driver, HomePage.class);
 				  //home.clickOnAccounttab();
+			     home.clickOnAccountTab();
+				  logger.log(LogStatus.INFO, "Successfully clicked on Account ");
+			     
 				  home.clickOnAccountdrpdown();
 				  logger.log(LogStatus.INFO, "Successfully clicked on New  Account ");
 				  
@@ -120,7 +123,7 @@ public class AccountAllocation_config5 {
 			 Accobj.pickindustryfromlist(Industryval);
 			 logger.log(LogStatus.INFO, "picked from Industry list");
 			 
-			 Accobj.clickonsave();
+			 Accobj.clickonAccounts_save();
 			 logger.log(LogStatus.INFO, "Successfully clicked on save");
 			
 			

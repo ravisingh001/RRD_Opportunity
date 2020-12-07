@@ -27,18 +27,17 @@ import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 public class AccountAllocation_config13 {
-	
-	SoftAssert softassert=new SoftAssert();
-	
+
+	SoftAssert softassert = new SoftAssert();
+
 	WebDriver driver;
 	ExtentReports report;
 	ExtentTest logger;
 	Properties pro;
-	
-	String Testdata_sheet_path= System.getProperty("user.dir") +File.separator+"AppData"+File.separator+"AccountAllocation.xlsx";
 
-	
-	
+	String Testdata_sheet_path = System.getProperty("user.dir") + File.separator + "AppData" + File.separator
+			+ "AccountAllocation.xlsx";
+
 	@BeforeMethod
 	public void setUp() throws FileNotFoundException, InterruptedException {
 		report = new ExtentReports("./Report/AccountCreation2.html");
@@ -53,126 +52,110 @@ public class AccountAllocation_config13 {
 				DataProviderFactory.getExcel().getData(0, 1, 1));
 		logger.log(LogStatus.INFO, "Login into application");
 		Thread.sleep(10000);
-		RRDSearchpage rrdsearch=PageFactory.initElements(driver,RRDSearchpage.class);
-		
+		RRDSearchpage rrdsearch = PageFactory.initElements(driver, RRDSearchpage.class);
+
 		rrdsearch.appclick();
 		logger.log(LogStatus.INFO, "Succesfully Clicked on Applauncher");
-		
+
 		rrdsearch.RRdsearch();
 		logger.log(LogStatus.INFO, "Succesfully search the RRD");
-		
+
 		rrdsearch.RRDdrpdwnselection();
-		logger.log(LogStatus.INFO, "Succesfully  RRD selection from Dropdown and Directed to RRDHome page successfully");
-		
-		
-		
-		
-	}
-	
+		logger.log(LogStatus.INFO,
+				"Succesfully  RRD selection from Dropdown and Directed to RRDHome page successfully");
 
-	
+	}
+
 	@Test
-	public void AccountCreation_config13() throws InterruptedException
-	{
-		
+	public void AccountCreation_config13() throws InterruptedException {
+
 		Xls_Reader reader = new Xls_Reader(Testdata_sheet_path);
-		
+
 		int rowCount = reader.getRowCount("AccountAllocation13");
-		for (int rowNum = 2; rowNum <= rowCount; rowNum++)
-		{
-		     String AccountName=reader.getCellData("AccountAllocation13", "AccountName", rowNum);
-			 String Rating=reader.getCellData("AccountAllocation13", "Rating", rowNum);
-			 String City=reader.getCellData("AccountAllocation13", "BillingCity", rowNum);
-			 String Result=reader.getCellData("AccountAllocation13", "ExpectedResult", rowNum);
-		     String Teamname=reader.getCellData("AccountAllocation13", "TeamName", rowNum);
-		     String ToBecount=reader.getCellData("AccountAllocation13", "ToBeAssigned", rowNum);
-		      
-		     HomePage home=PageFactory.initElements(driver, HomePage.class);
-			  //home.clickOnAccounttab();
-			  home.clickOnAccountdrpdown();
-			  logger.log(LogStatus.INFO, "Successfully clicked on New  Account ");
-			  
-			  home.clickonNewAccount();
-			  logger.log(LogStatus.INFO, "clicked on New Account option");
-			 Accountpage Accobj = PageFactory.initElements(driver, Accountpage.class);
-			 
+		for (int rowNum = 2; rowNum <= rowCount; rowNum++) {
+			String AccountName = reader.getCellData("AccountAllocation13", "AccountName", rowNum);
+			String Rating = reader.getCellData("AccountAllocation13", "Rating", rowNum);
+			String City = reader.getCellData("AccountAllocation13", "BillingCity", rowNum);
+			String Result = reader.getCellData("AccountAllocation13", "ExpectedResult", rowNum);
+			String Teamname = reader.getCellData("AccountAllocation13", "TeamName", rowNum);
+			String ToBecount = reader.getCellData("AccountAllocation13", "ToBeAssigned", rowNum);
+
+			HomePage home = PageFactory.initElements(driver, HomePage.class);
+			// home.clickOnAccounttab();
+			home.clickOnAccountTab();
+			logger.log(LogStatus.INFO, "Successfully clicked on Account ");
+
+			home.clickOnAccountdrpdown();
+			logger.log(LogStatus.INFO, "Successfully clicked on New  Account ");
+
+			home.clickonNewAccount();
+			logger.log(LogStatus.INFO, "clicked on New Account option");
+			Accountpage Accobj = PageFactory.initElements(driver, Accountpage.class);
+
 			// Accobj.clickonNew();
-			 //logger.log(LogStatus.INFO, "clicked on New Button on Account listing page");
-		 
-		 Accobj.ClickonAccountName(AccountName);
-		 logger.log(LogStatus.INFO, "Enter account name");
-		
-		 Accobj.clickingRating();
-		 logger.log(LogStatus.INFO, "click on Rating Type");
-		
-		 Accobj.pickrating(Rating);
-		 logger.log(LogStatus.INFO, "Picked  Rating Type");
-		 
-		 Accobj.EnterBillingCity(City);
-		 logger.log(LogStatus.INFO, "Entered  City");
-		 
-		 Accobj.clickonsave();
-		 logger.log(LogStatus.INFO, "Successfully clicked on save");
-		
-		
-		
-		 driver.navigate().refresh();
-		 Thread.sleep(10000);
-		 
-		 driver.navigate().refresh();
-		
-			
-		 AccountDetailspage details=PageFactory.initElements(driver, AccountDetailspage.class);
-			
-			
-		  try
-		  { System.out.println("Assigned RRD user  from sheet - "+Result);
-		  String Username=details.AssignedOwner.getText();
-		  System.out.println("Assigned case owner is:"+Username);
-		  
-		  softassert.assertTrue(Username.equalsIgnoreCase(Result),"Assigned RRD user name is not matching"); 
-		  }
-		  catch(Exception e)
-		  {
-	
-		  }
-		  
-		  
-		 
-		  
-		  
-		  TeamPage teamobj = PageFactory.initElements(driver, TeamPage.class);
-		  
-		  teamobj.clickonDefineTeamtab(); logger.log(LogStatus.INFO,
-		  "Successfully clicked on Define Team tab"); Thread.sleep(2000);
-		  
-		  teamobj.ProcessonSearchTeam(Teamname); logger.log(LogStatus.INFO,
-		  "Successfully searched the  Team name and get the value");
-		  teamobj.clickonTeamname(); logger.log(LogStatus.INFO,
-		  "Successfully clicked on TeamId and Directed to Team details page");
-		  teamobj.scrolldowntoAccountteamrecord(); logger.log(LogStatus.INFO,
-		  "Successfully scroll down to verify Team Count");
-		  
-		  
-		  try {
-		  
-		  System.out.println("To Be Assigned record of Team from sheet - "+ToBecount);
-		  String teamcount=teamobj.AccountTobeAssigned.getText();
-		  System.out.println("Team count is- "+teamcount);
-		  Thread.sleep(1000);
-		  softassert.assertTrue(teamcount.equalsIgnoreCase(ToBecount),"To Be Assigned count is not matching"); }
-		  catch(Exception e) {
-		  System.out.println("Assertion issue");
-		  e.printStackTrace();
-		  }
-			 	
-			
-			 
+			// logger.log(LogStatus.INFO, "clicked on New Button on Account listing page");
+
+			Accobj.ClickonAccountName(AccountName);
+			logger.log(LogStatus.INFO, "Enter account name");
+
+			Accobj.clickingRating();
+			logger.log(LogStatus.INFO, "click on Rating Type");
+
+			Accobj.pickrating(Rating);
+			logger.log(LogStatus.INFO, "Picked  Rating Type");
+
+			Accobj.EnterBillingCity(City);
+			logger.log(LogStatus.INFO, "Entered  City");
+
+			Accobj.clickonAccounts_save();
+			logger.log(LogStatus.INFO, "Successfully clicked on save");
+
+			driver.navigate().refresh();
+			Thread.sleep(10000);
+
+			driver.navigate().refresh();
+
+			AccountDetailspage details = PageFactory.initElements(driver, AccountDetailspage.class);
+
+			try {
+				System.out.println("Assigned RRD user  from sheet - " + Result);
+				String Username = details.AssignedOwner.getText();
+				System.out.println("Assigned case owner is:" + Username);
+
+				softassert.assertTrue(Username.equalsIgnoreCase(Result), "Assigned RRD user name is not matching");
+			} catch (Exception e) {
+
+			}
+
+			TeamPage teamobj = PageFactory.initElements(driver, TeamPage.class);
+
+			teamobj.clickonDefineTeamtab();
+			logger.log(LogStatus.INFO, "Successfully clicked on Define Team tab");
+			Thread.sleep(2000);
+
+			teamobj.ProcessonSearchTeam(Teamname);
+			logger.log(LogStatus.INFO, "Successfully searched the  Team name and get the value");
+			teamobj.clickonTeamname();
+			logger.log(LogStatus.INFO, "Successfully clicked on TeamId and Directed to Team details page");
+			teamobj.scrolldowntoAccountteamrecord();
+			logger.log(LogStatus.INFO, "Successfully scroll down to verify Team Count");
+
+			try {
+
+				System.out.println("To Be Assigned record of Team from sheet - " + ToBecount);
+				String teamcount = teamobj.AccountTobeAssigned.getText();
+				System.out.println("Team count is- " + teamcount);
+				Thread.sleep(1000);
+				softassert.assertTrue(teamcount.equalsIgnoreCase(ToBecount), "To Be Assigned count is not matching");
+			} catch (Exception e) {
+				System.out.println("Assertion issue");
+				e.printStackTrace();
+			}
+
 		}
-		
+
 	}
 
-	
 	@AfterMethod
 	public void teardown(ITestResult result) {
 		if (result.getStatus() == ITestResult.FAILURE) {
@@ -183,8 +166,5 @@ public class AccountAllocation_config13 {
 		report.endTest(logger);
 		report.flush();
 	}
-
-
-
 
 }

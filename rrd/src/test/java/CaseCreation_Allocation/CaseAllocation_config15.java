@@ -155,10 +155,12 @@ package CaseCreation_Allocation;
 				
 				caseobj.clickOnNew();
 				logger.log(LogStatus.INFO, "Successfully clicked on New case");
-				
-				
-				//caseobj.pickstatus(Status);
+				driver.navigate().refresh();
+
+				Thread.sleep(7000);
+				// caseobj.pickstatus(Status);
 				logger.log(LogStatus.INFO, "Successfully picked status from list ");
+				caseobj.ClickonNametoCloseContactWindow();
 				
 				caseobj.pickpriority();
 				
@@ -204,7 +206,7 @@ package CaseCreation_Allocation;
 				 Accobj.clickOnNewAccount();
 			     logger.log(LogStatus.INFO, "Successfully clicked on New  Account ");
 				 
-				 Accobj.ClickonAccountName(Account);
+				 Accobj.ClickonCase_AccountName(Account);
 				 logger.log(LogStatus.INFO, "Enter account name");
 				
 				 Accobj.clickingRating();
@@ -248,8 +250,11 @@ package CaseCreation_Allocation;
 				
 				 driver.navigate().refresh();
 				 Thread.sleep(10000);
-				 
-				 driver.navigate().refresh();
+
+					driver.navigate().refresh();
+					Thread.sleep(10000);
+					caseobj.clickOnDetailsTab();
+					Thread.sleep(5000);
 				
 					
 					

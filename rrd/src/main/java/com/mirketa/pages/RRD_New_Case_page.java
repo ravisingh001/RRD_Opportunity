@@ -96,10 +96,17 @@ WebDriver driver;
 	@FindBy(xpath="//span[@class='slds-media__body']'")
 	List<WebElement> statuslist;
 	
-	@FindBy(xpath="(//a[@class='select'])[1]")
+	@FindBy(xpath="//h2[contains(text(),'New Case')]")
+	WebElement CaseText;
+	
+	@FindBy(xpath="(//a[@class='select'])[4]")
 	WebElement priority;
 	
-	@FindBy(xpath="//a[@role='menuitemradio']")
+	/*
+	 * @FindBy(xpath="//a[@role='menuitemradio']") List<WebElement> priolist;
+	 */
+	
+	@FindBy(xpath="(//a[@class='select'])[4]")
 	List<WebElement> priolist;
 	
 	@FindBy(xpath="(//a[@class='select'])[2]")
@@ -114,13 +121,13 @@ WebDriver driver;
 	@FindBy(xpath="(//div[@data-aura-class='uiInput uiInputText uiInput--default uiInput--input']//input[@class=' input'])[1]")
 	WebElement Company;
 	
-	@FindBy(xpath="(//a[@class='select'])[4]")
+	@FindBy(xpath="(//a[@class='select'])[1]")
 	WebElement LeadStatus;
 	
-	@FindBy(xpath="(//a[@class='select'])[3]")
+	@FindBy(xpath="(//a[@class='select'])[5]")
 	WebElement LeadIndustry;
 	
-	@FindBy(xpath="(//a[@class='select'])[2]")
+	@FindBy(xpath="(//a[@class='select'])[4]")
 	WebElement LeadSource;
 	
 	@FindBy(xpath="//input[@placeholder='Country']")
@@ -129,16 +136,16 @@ WebDriver driver;
 	@FindBy(xpath="//input[@placeholder='City']")
 	WebElement City;
 	
-	@FindBy(xpath="//input[@class=' input'][@type='email']")
+	@FindBy(xpath="//input[@class=' input'][@inputmode='email']")
 	WebElement Email;
 
-	@FindBy(xpath="(//input[@data-aura-class='uiInputSmartNumber'])[2]")
+	@FindBy(xpath="(//input[@data-aura-class='uiInputSmartNumber'])[1]")
 	WebElement EmployeeField;
 	
-	@FindBy(xpath="(//a[@class='select'])[5]")
+	@FindBy(xpath="(//a[@class='select'])[3]")
 	WebElement Rating;
 
-	@FindBy(xpath="(//input[@class=' input'])[5]")
+	@FindBy(xpath="(//input[@class=' input'])[4]")
 	WebElement Title;
 	
 	@FindBy(xpath="//input[@title='Search Contacts']")
@@ -186,7 +193,7 @@ WebDriver driver;
 	@FindBy(xpath="(//a[@class='select'])[4]")
 	WebElement CaseReason;
 	
-	@FindBy(xpath="//span[contains(text(),'Web Email')]//following::input[@type='email']")
+	@FindBy(xpath="(//span[contains(text(),'Web Email')]//following::input[@type='text'])[1]")
 	WebElement WebEmail;
 	
 	@FindBy(xpath="(//span[contains(text(),'Web Company')]//following::input[@type='text'])[4]")
@@ -198,7 +205,7 @@ WebDriver driver;
 	@FindBy(xpath="//span[contains(text(),'Web Phone')]//following::input[@type='text'][6]")
 	WebElement WebPhone;
 	
-	@FindBy(xpath="//span[contains(text(),'Subject')]//following::input[@class=' input' and @type='text'][5]")
+	@FindBy(xpath="//span[contains(text(),'Subject')]//following::input[@class=' input' and @type='text'][1]")
 	WebElement subject;
 	
 	@FindBy(xpath="(//textarea[@class=' textarea'])[1]")
@@ -216,16 +223,20 @@ WebDriver driver;
 	@FindBy(xpath = "//button[@name='refreshButton']//lightning-primitive-icon")
 	WebElement refreshButton;
 	
-	@FindBy(xpath="//slot//force-owner-lookup//div//span//force-lookup//div//span[@class='displayLabel']")
+	
+	@FindBy(xpath = "//span[contains(text(),'Sandbox: RRDQA')]")
+	WebElement ClickOnTitle_TOremoveNotificationalert;
+	
+	@FindBy(xpath="(//span[@class='test-id__field-label'][contains(text(),'Case Owner')]//following::slot//force-owner-lookup//div//span//force-lookup//div//span)[2]")
 	public  WebElement AssignedRRD;
 	
 	//@FindBy(linktext="//*[@class='flex-wrap-ie11 owner-name slds-grow']//a[@id='window']")
 	//public  WebElement AssignedRRDHover;
 	
-	@FindBy(xpath="(//span[@class='flex-wrap-ie11 owner-name slds-grow']//div[@class='slds-grid'])[2]/a")
+	@FindBy(xpath="(//span[@class='test-id__field-label'][contains(text(),'Case Owner')]//following::slot//force-owner-lookup//div//span//force-lookup//div//span)[2]")
 	public  WebElement AssignedRRDHover;
 	
-	@FindBy(xpath="(//span[@class='flex-wrap-ie11 owner-name slds-truncate slds-grow']//div[@class='slds-grid'])[2]/a")
+	@FindBy(xpath="(//span[@class='flex-wrap-ie11 owner-name slds-grow']//div[@class='slds-grid'])/a")
 	public  WebElement AssignedOpportunityRRDHover;
 	
 	@FindBy(xpath="(//span[@class='flex-wrap-ie11 owner-name slds-grow']//div[@class='slds-grid'])[2]/a")
@@ -249,14 +260,14 @@ WebDriver driver;
 	@FindBy(xpath="//a[starts-with(@class,'slds-truncate outputLookupLink slds-truncate outputLookupLink')]")
 	 WebElement clickonTeamId;
 	
-	@FindBy(xpath="(//p[@class='fieldComponent slds-text-body--regular slds-show_inline-block slds-truncate']//slot//lightning-formatted-text)[3]")
+	@FindBy(xpath="(//span[@class='test-id__field-value slds-form-element__static slds-grow word-break-ie11 is-read-only']//slot//lightning-formatted-text)[1]")
     WebElement caseNumber;
 	
-	@FindBy(xpath="//*[@type='search'][@name='Contact-search-input']")
+	@FindBy(xpath="//input[@class='slds-input' and @placeholder='Search this list...']")
     WebElement ContactName;
 	
-	//div[@class="slds-grid"]//a[@id='window']
 	
+	//*[@type='search'][@name='Contact-search-input']
 	public void clickoncasedrpdwn()
 	{
 		
@@ -278,9 +289,18 @@ WebDriver driver;
 			    SyncElement.isElementPresnt(driver,ContactName, 10);
 			    ContactName.clear();
 			    ContactName.sendKeys(str);
+			    Thread.sleep(5000);
+			    ClickOnTitle_TOremoveNotificationalert.click();
+			    Thread.sleep(5000);
+			    refreshButton.click();
 				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
-				refreshButton.click();
-				Thread.sleep(2000);
+				 refreshButton.click();
+					/*
+					 * Thread.sleep(2000); refreshButton.click();
+					 */
+				//JavascriptExecutor executor = (JavascriptExecutor)driver;
+				//executor.executeScript("arguments[0].click();", refreshButton);
+				Thread.sleep(3000);
 		}
 		
 	 
@@ -372,8 +392,6 @@ WebDriver driver;
 	        Thread.sleep(3000);
 	        executor.executeScript("arguments[0].click();", Leads_DropDown_New);
 	        Thread.sleep(4000);
-	        SyncElement.TobeClickable(driver, LeadStatus_DropDown, 30);
-	        Thread.sleep(3000);
 	 }
 	 
 	 
@@ -475,18 +493,26 @@ WebDriver driver;
 		
 	 
 	 } 
+	 
+	 public void ClickonNametoCloseContactWindow() throws InterruptedException
+	 {
+		 WebDriverWait wait = new WebDriverWait(driver, 20);
+		 wait.until(ExpectedConditions.elementToBeClickable(CaseText));
+		 CaseText.click();
+		 Thread.sleep(1500);
+		
+	 
+	 } 
 	 public void pickpriorityfromlist(String priorityname) throws InterruptedException
 	 {
-		 for(int i=0;i<priolist.size();i++)
-		 {
-			 String prio= priolist.get(i).getText();
-			 if(prio.contains(priorityname))
-			 {
-				 priolist.get(i).click();
-			 }
-			 
-		 }
-		 Thread.sleep(1500);
+			/*
+			 * for(int i=0;i<priolist.size();i++) { String prio= priolist.get(i).getText();
+			 * if(prio.contains(priorityname)) { priolist.get(i).click(); }
+			 * 
+			 * } Thread.sleep(1500);
+			 */
+		 priority.sendKeys(priorityname +"\n");
+		 Thread.sleep(5000);
 	 }
 	 
 	
@@ -497,17 +523,16 @@ WebDriver driver;
 		 Thread.sleep(1500);
 	 } 
 	 
-	 public void pickcaseorigin(String origin) throws InterruptedException
+	 public void pickcaseorigin(String Origin) throws InterruptedException
 	 {
-		 for(int i=0;i<CaseoriginList.size();i++)
-		 {
-			 String origincase= CaseoriginList.get(i).getText();
-			 if(origincase.contains(origin))
-			 {
-				 CaseoriginList.get(i).click();
-			 }
-		 }
+			/*
+			 * for(int i=0;i<CaseoriginList.size();i++) { String origincase=
+			 * CaseoriginList.get(i).getText(); if(origincase.contains(origin)) {
+			 * CaseoriginList.get(i).click(); } }
+			 */
 		 Thread.sleep(1500);
+		 caseOrigin.sendKeys(Origin +"\n");
+		 Thread.sleep(5000);
 	 }
 	 
 	 public void pickStage(String Stage) throws InterruptedException
@@ -765,6 +790,8 @@ WebDriver driver;
 		 Save.click();
 		 Thread.sleep(10000);
 	 }
+	
+
 	
 	 public void clickOnDetailsTab() throws InterruptedException
 	 {

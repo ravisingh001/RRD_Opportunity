@@ -104,17 +104,19 @@ public class ContactAllocation_TC04 {
 
 			Accountpage Accobj = PageFactory.initElements(driver, Accountpage.class);
 			
-			Accobj.clicksearchAcc();
-			logger.log(LogStatus.INFO, "Successfully clicked the search Account value ");
-
-			Accobj.clickOnNewAccount();
-			logger.log(LogStatus.INFO, "Successfully clicked on New  Account ");
-
-			Accobj.ClickonContact_AccountName(AccountName);
-			logger.log(LogStatus.INFO, "Enter account name");
-
-			Accobj.clickonContact_Account_save();
-			logger.log(LogStatus.INFO, "Successfully clicked on save");
+			/*
+			 * Accobj.clicksearchAcc(); logger.log(LogStatus.INFO,
+			 * "Successfully clicked the search Account value ");
+			 * 
+			 * Accobj.clickOnNewAccount(); logger.log(LogStatus.INFO,
+			 * "Successfully clicked on New  Account ");
+			 * 
+			 * Accobj.ClickonContact_AccountName(AccountName); logger.log(LogStatus.INFO,
+			 * "Enter account name");
+			 * 
+			 * Accobj.clickonContact_Account_save(); logger.log(LogStatus.INFO,
+			 * "Successfully clicked on save");
+			 */
 			
 			/*
 			 * Contactobj.pick_LeadSource(Leadsource); logger.log(LogStatus.INFO,

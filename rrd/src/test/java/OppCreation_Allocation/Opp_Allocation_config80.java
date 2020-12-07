@@ -125,7 +125,7 @@ public class Opp_Allocation_config80 {
 				Accobj.clickOnNewAccount();
 				logger.log(LogStatus.INFO, "Successfully clicked on New  Account ");
 
-				Accobj.ClickonAccountName(AccountName);
+				Accobj.ClickonOpportunity_AccountName(AccountName);
 				logger.log(LogStatus.INFO, "Enter account name");
 
 				Accobj.clickingRating();
@@ -134,7 +134,7 @@ public class Opp_Allocation_config80 {
 				Accobj.pickrating(Ratingtype);
 				logger.log(LogStatus.INFO, "Picked  Rating Type");
 
-				Accobj.clickonsave();
+				Accobj.clickonAccounts_save();
 				logger.log(LogStatus.INFO, "Successfully clicked on save");
 
 				caseobj.scrolldowntopicktype();
@@ -229,8 +229,7 @@ public class Opp_Allocation_config80 {
 			String Ownername = teamobj.Ownername.getText();
 			System.out.println("Changed Owner Name is- " + Ownername);
 			Thread.sleep(1000);
-			softassert.assertTrue(Ownername.equalsIgnoreCase(ChangedOwner),
-					"To Be changed owner is not matching");
+			softassert.assertTrue(Ownername.equalsIgnoreCase(ChangedOwner),"To Be changed owner is not matching");
 		} catch (Exception e) {
 			System.out.println("Assertion issue");
 			e.printStackTrace();
@@ -245,6 +244,8 @@ public class Opp_Allocation_config80 {
 		teamobj.clickonTeamname();
 		logger.log(LogStatus.INFO, "Successfully clicked on OpportunityId and Directed to Opportunity details page");
 		Thread.sleep(5000);
+		driver.navigate().refresh();
+		Thread.sleep(6000);
 		teamobj.clickonCloneOpportunity();
 		logger.log(LogStatus.INFO, "Successfully clicked on clone button");
 		Thread.sleep(5000);
@@ -269,10 +270,8 @@ public class Opp_Allocation_config80 {
 		  softassert.assertTrue(teamobj.Ownername.getText().equalsIgnoreCase(ChangedOwner), "To Be changed owner is not matching");
 		  }
 		  else if (teamobj.Ownername.getText().equals("RRD Mirketa")){
-		  System.out.println("To Be Assigned record is -" +
-		  teamobj.Ownername.getText());
-		  softassert.assertTrue(teamobj.Ownername.getText().equalsIgnoreCase(
-		  ChangedOwner), "To Be changed owner is not matching"); }
+		  System.out.println("To Be Assigned record is -" + teamobj.Ownername.getText());
+		  softassert.assertTrue(teamobj.Ownername.getText().equalsIgnoreCase(ChangedOwner), "To Be changed owner is not matching"); }
 		 
 		 else {
 			System.out.println("Assigned record not matches with Any User");

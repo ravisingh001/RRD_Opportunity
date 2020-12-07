@@ -23,20 +23,18 @@ public class Accountpage {
 	@FindBy(xpath="//div[contains(text(),'New')]")
 	WebElement Newbtn;
 	
-	/*
-	 * @FindBy(
-	 * xpath="//span[@class='itemLabel slds-truncate slds-show--inline-block slds-m-left--xx-small' and @title='New Account']"
-	 * ) WebElement NewAccount;
-	 */
-	@FindBy(xpath="//div[@data-aura-class='forceSearchInputLookupDesktopActionItem']/span[@title='New Account']")
+	@FindBy(xpath="//span[@class='itemLabel slds-truncate slds-show--inline-block slds-m-left--xx-small' and @title='New Account']")
 	WebElement NewAccount;
 	
-	
-	@FindBy(xpath="//label//span[contains(text(),'Account Name')]//following-sibling::span[contains(@class,'required')][contains(text(),'*')]//following::input[@class=' input'][1]")
+	@FindBy(xpath="(//label//span[contains(text(),'Account Name')]//following-sibling::span[contains(@class,'required')][contains(text(),'*')]//following::input[@class=' input'])[1]")
 	WebElement AccountName;
 	
-	@FindBy(xpath="(//input[@type='text'][@aria-required='true'])[3]")
-	WebElement Contact_AccountName;
+	@FindBy(xpath="(//label//span[contains(text(),'Account Name')]//following-sibling::span[contains(@class,'required')][contains(text(),'*')]//following::input[@class=' input'])[1]")
+	WebElement Case_AccountName;
+	
+	
+	@FindBy(xpath="(//label//span[contains(text(),'Account Name')]//following-sibling::span[contains(@class,'required')][contains(text(),'*')]//following::input[@class=' input'])[2]")
+	WebElement Opp_AccountName;
 	
 	@FindBy(xpath="//div[@class='uiMenu']//div[@class='uiPopupTrigger']//a[@class='select' and @role='button']")
 	List<WebElement> lists;
@@ -74,23 +72,35 @@ public class Accountpage {
 	@FindBy(xpath="//li[@class='uiMenuItem uiRadioMenuItem']")
 	List<WebElement> ownershiplist;
 	
+	@FindBy(xpath="(//a[@class='select'])[3]")
+	WebElement ownershiplist1;
+	
 	@FindBy(xpath="(//span[contains(text(),'Industry')]//following::div[@class='uiMenu']//div[@class='uiPopupTrigger']//a[@class='select' and @role='button'])[1]")
 	WebElement Industry;
 	
 	@FindBy(xpath="//li[@class='uiMenuItem uiRadioMenuItem']")
 	List<WebElement> IndustryList;
 	
+	@FindBy(xpath="(//a[@class='select'])[4]")
+	WebElement IndustryList1;
+	
 	@FindBy(xpath="(//span[contains(text(),'Customer Priority')]//following::div[@class='uiMenu']//div[@class='uiPopupTrigger']//a[@class='select' and @role='button'])[1]")
 	WebElement Customerprio;
 	
-	@FindBy(xpath="//li[@class='uiMenuItem uiRadioMenuItem']")
+	@FindBy(xpath="(//a[@class='select'])[5]")
 	List<WebElement> CustomerprioList;
+	
+	@FindBy(xpath="(//a[@class='select'])[5]")
+	WebElement CustomerprioList1;
 	
 	@FindBy(xpath="(//span[contains(text(),'SLA')]//following::div[@class='uiMenu']//div[@class='uiPopupTrigger']//a[@class='select' and @role='button'])[1]")
 	WebElement Sla;
 	
 	@FindBy(xpath="//li[@class='uiMenuItem uiRadioMenuItem']")
 	List<WebElement> SlaList;
+	
+	@FindBy(xpath="(//a[@class='select'])[6]")
+	WebElement SlaList1;
 	
 	@FindBy(xpath="(//span[contains(text(),'SLA Expiration Date')]//following::input[@type='text'])[1]")
 	WebElement SLAExpirationDate;
@@ -103,9 +113,6 @@ public class Accountpage {
 	
 	@FindBy(xpath="(//span[contains(text(),'Upsell Opportunity')]//following::div[@class='uiMenu']//div[@class='uiPopupTrigger']//a[@class='select' and @role='button'])[1]")
 	WebElement Upsell_Opportunity;
-	
-	@FindBy(xpath="//input[contains(@placeholder,'Search Accounts...')]")
-	WebElement searchAccount;
 	
 	@FindBy(xpath="//li[@class='uiMenuItem uiRadioMenuItem']")
 	List<WebElement> UpselListl_Opportunity;
@@ -161,14 +168,6 @@ public class Accountpage {
 	WebElement Saveacc;
 	
 	/*
-	 * @FindBy(xpath="(//span[@class=' label bBody'][contains(text(),'Save')])[5]")
-	 * WebElement Contact_Account_Save;
-	 */
-	
-	@FindBy(xpath="//button[@title='Save'][@data-aura-class='uiButton--default uiButton--brand uiButton forceActionButton']//span")
-	WebElement Contact_Account_Save;
-	
-	/*
 	 * @FindBy(
 	 * xpath="//span[@class='itemLabel slds-truncate slds-show--inline-block slds-m-left--xx-small' and @title='New Account']"
 	 * ) WebElement NewAccount;
@@ -185,12 +184,27 @@ public class Accountpage {
 	 * Picklistrating;
 	 */
 	
+	/*
+	 * @FindBy(xpath="(//span[@class=' label bBody'][contains(text(),'Save')])[5]")
+	 * WebElement Contact_Account_Save;
+	 */
+	
+	@FindBy(xpath="//button[@title='Save'][@data-aura-class='uiButton--default uiButton--brand uiButton forceActionButton']//span")
+	WebElement Contact_Account_Save;
+	
 	
 	@FindBy(xpath="(//button[3]/span[contains(text(),'Save')])[2]")
 	WebElement Save;
 	
 	@FindBy(xpath="//button[3]/span[contains(text(),'Save')]")
 	WebElement Account_Save;
+	
+	@FindBy(xpath="(//input[@type='text'][@aria-required='true'])[2]")
+	WebElement Contact_AccountName;
+	
+	@FindBy(xpath="//input[contains(@placeholder,'Search Accounts...')]")
+	WebElement searchAccount;
+	
 	
 	/*
 	 * public void clickOnNewAccount() throws InterruptedException {
@@ -226,20 +240,15 @@ public class Accountpage {
 		 * JavascriptExecutor executor = (JavascriptExecutor) driver;
 		 * executor.executeScript("arguments[0].scrollIntoView();", Save);
 		 */
-		Saveacc.click();
-		//Save.click();
-		Thread.sleep(4000);
-	}
-	
-	public void clickonContact_Account_save() throws InterruptedException
-	{
 		Contact_Account_Save.click();
+		//
 		Thread.sleep(4000);
 	}
 	
 	public void clickonAccounts_save() throws InterruptedException
 	{
-		Account_Save.click();
+		Save.click();
+		//Account_Save.click();
 		Thread.sleep(4000);
 	}
 	
@@ -249,14 +258,8 @@ public class Accountpage {
 	public void clickOnNewAccount() throws InterruptedException
 	{
 		SyncElement.TobeClickable(driver, NewAccount, 20);
-		
-		/*
-		 * JavascriptExecutor executor = (JavascriptExecutor) driver;
-		 * executor.executeScript("arguments[0].scrollIntoView();", NewAccount);
-		 */
-		 
 		NewAccount.click();
-		Thread.sleep(4000);
+		Thread.sleep(2000);
 	}
 	
 	public void clickonNew() throws InterruptedException
@@ -275,11 +278,21 @@ public class Accountpage {
 		 Thread.sleep(2000);
 	}
 	
-	public void ClickonContact_AccountName(String Account) throws InterruptedException
+
+	public void ClickonOpportunity_AccountName(String Account) throws InterruptedException
 	{
-		SyncElement.isElementPresnt(driver, Contact_AccountName, 20);
-		Contact_AccountName.sendKeys(Account);
-		 Thread.sleep(3000);
+		SyncElement.isElementPresnt(driver, Opp_AccountName, 20);
+		Opp_AccountName.sendKeys(Account);
+		 Thread.sleep(2000);
+	}
+	
+	
+	
+	public void ClickonCase_AccountName(String Account) throws InterruptedException
+	{
+		SyncElement.isElementPresnt(driver, Case_AccountName, 20);
+		Case_AccountName.sendKeys(Account);
+		 Thread.sleep(2000);
 	}
 	
 	public void clickingRating() throws InterruptedException
@@ -347,20 +360,15 @@ public class Accountpage {
 	}
 	
 	public void pickcustomerpriofromlist(String prio) throws InterruptedException
-	{
-		
-		for(int i=0;i<CustomerprioList.size();i++)
-		{
-			String clickprio=CustomerprioList.get(i).getText();
-			
-			if(clickprio.contains(prio))
-			{
-				CustomerprioList.get(i).click();
-			}
-		}
-		
-		Thread.sleep(4000);
-		
+	{/*
+		 * for(int i=0;i<CustomerprioList.size();i++) { String
+		 * clickprio=CustomerprioList.get(i).getText();
+		 * 
+		 * if(clickprio.contains(prio)) { CustomerprioList.get(i).click(); } }
+		 * Thread.sleep(4000);
+		 */
+		CustomerprioList1.sendKeys(prio+"\n");
+		 Thread.sleep(5000);
 		
 	}
 	public void scrolltoindustry() throws InterruptedException
@@ -381,21 +389,19 @@ public class Accountpage {
 	
 	public void pickindustryfromlist(String indus) throws InterruptedException
 	{
-		
+		/*
+		 * 
+		 * for(int i=0;i<IndustryList.size();i++) { String
+		 * indusval=CustomerprioList.get(i).getText();
+		 * 
+		 * if(indusval.contains(indus)) {
+		 * 
+		 * 
+		 * IndustryList.get(i).click(); } }
+		 */
 			
-			for(int i=0;i<IndustryList.size();i++)
-			{
-				String indusval=CustomerprioList.get(i).getText();
-				
-				if(indusval.contains(indus))
-				{
-					
-					
-					IndustryList.get(i).click();
-				}
-			}
-			
-			Thread.sleep(4000);
+			IndustryList1.sendKeys(indus+"\n");
+			 Thread.sleep(5000);
 	}
 	
 	public void EnterBillingCity(String City) throws InterruptedException
@@ -467,17 +473,14 @@ public class Accountpage {
 	
 	public void pickownershipval(String owner) throws InterruptedException
 	{
-		for(int i=0;i<ownershiplist.size();i++)
-		{
-			String pickownership=ownershiplist.get(i).getText();
-			
-			if(pickownership.contains(owner))
-			{
-				ownershiplist.get(i).click();
-			}
-		}
-		
-		Thread.sleep(2000);
+		/*
+		 * for(int i=0;i<ownershiplist.size();i++) { String
+		 * pickownership=ownershiplist.get(i).getText();
+		 * 
+		 * if(pickownership.contains(owner)) { ownershiplist.get(i).click(); } }
+		 */
+		ownershiplist1.sendKeys(owner+"\n");
+		 Thread.sleep(5000);
 		
 	}
 	
@@ -491,17 +494,14 @@ public class Accountpage {
 	
 	public void pickslafromlist(String sla) throws InterruptedException
 	{
-		for(int i=0;i<SlaList.size();i++)
-		{
-			String picksla=SlaList.get(i).getText();
-			
-			if(picksla.contains(sla))
-			{
-				SlaList.get(i).click();
-			}
-		}
+		/*
+		 * for(int i=0;i<SlaList1.size();i++) { String picksla=SlaList.get(i).getText();
+		 * 
+		 * if(picksla.contains(sla)) { SlaList.get(i).click(); } }
+		 */
+		SlaList1.sendKeys(sla+"\n");
+		 Thread.sleep(5000);
 		
-		Thread.sleep(2000);
 	}
 	
 	
@@ -513,7 +513,7 @@ public class Accountpage {
 	
 	public void saveaccount() throws InterruptedException
 	{
-		Save.click();
+		Contact_Account_Save.click();
 		Thread.sleep(4000);
 		 
 		
@@ -526,5 +526,18 @@ public class Accountpage {
 		 Thread.sleep(4000);
 		 
 	 }
+	
+	public void ClickonContact_AccountName(String Account) throws InterruptedException
+	{
+		SyncElement.isElementPresnt(driver, Contact_AccountName, 20);
+		Contact_AccountName.sendKeys(Account);
+		 Thread.sleep(3000);
+	}
+	
+	public void clickonContact_Account_save() throws InterruptedException
+	{
+		Contact_Account_Save.click();
+		Thread.sleep(4000);
+	}
 
 }

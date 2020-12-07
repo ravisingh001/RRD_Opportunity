@@ -217,7 +217,7 @@ public class Opp_Allocation_config1 {
 				Accobj.clickOnNewAccount();
 				logger.log(LogStatus.INFO, "Successfully clicked on New  Account ");
 
-				Accobj.ClickonAccountName(AccountName);
+				Accobj.ClickonOpportunity_AccountName(AccountName);
 				logger.log(LogStatus.INFO, "Enter account name");
 
 				Accobj.clickingRating();
@@ -226,7 +226,7 @@ public class Opp_Allocation_config1 {
 				Accobj.pickrating(Ratingtype);
 				logger.log(LogStatus.INFO, "Picked  Rating Type");
 
-				Accobj.clickonsave();
+				Accobj.clickonAccounts_save();
 				logger.log(LogStatus.INFO, "Successfully clicked on save");
 
 				caseobj.scrolldowntopicktype();
@@ -277,9 +277,6 @@ public class Opp_Allocation_config1 {
 				logger.log(LogStatus.INFO, "Successfully searched the  Team name and get the value");
 				teamobj.clickonTeamname();
 				logger.log(LogStatus.INFO, "Successfully clicked on TeamId and Directed to Team details page");
-				teamobj.scrolldowntoteamrecord_ForOpportunity();
-				logger.log(LogStatus.INFO, "Successfully scroll down to verify Team Count");
-
 				try {
 
 					System.out.println("To Be Assigned record of Team from sheet - " + ToBeAssigned);

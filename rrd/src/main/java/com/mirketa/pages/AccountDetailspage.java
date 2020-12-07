@@ -17,7 +17,8 @@ public WebDriver driver;
 	
 	
 	
-	@FindBy(xpath="//a[@class='slds-grow flex-wrap-ie11 slds-truncate']")
+	//@FindBy(xpath="//a[@class='slds-grow flex-wrap-ie11 slds-truncate']")
+	@FindBy(xpath="//a[@class='flex-wrap-ie11 slds-truncate']")
 	public WebElement AssignedOwner;
 	
 	@FindBy(xpath="//p[@class='fieldComponent slds-text-body--regular slds-show_inline-block slds-truncate']//lightning-button-icon[@class='slds-shrink-none change-owner-trigger']//lightning-primitive-icon")

@@ -127,7 +127,7 @@ public class ExistingOpportunityFilter_TC13 {
 				Accobj.clickOnNewAccount();
 				logger.log(LogStatus.INFO, "Successfully clicked on New  Account ");
 
-				Accobj.ClickonAccountName(AccountName);
+				Accobj.ClickonOpportunity_AccountName(AccountName);
 				logger.log(LogStatus.INFO, "Enter account name");
 
 				Accobj.clickingRating();
@@ -249,7 +249,7 @@ public class ExistingOpportunityFilter_TC13 {
 					System.out.println("Assigned Lead owner is:" + Username);
 					softassert.assertTrue(Username.equalsIgnoreCase(ExpectedResult),"Assigned RRD user name is not matching");
 				}	
-				if(driver.findElements(By.xpath("//span[@class='uiOutputTextArea']")).size()!= 0){ 
+				if(driver.findElements(By.xpath("(//span[@class='slds-grid slds-grid_align-spread'])[3]")).size()!= 0){ 
 						 System.out.println("Lead assigment is done through RBA"); } 
 					 else{
 					  System.out.println("Lead assigment is not done through RBA"); }

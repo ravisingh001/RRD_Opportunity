@@ -93,6 +93,9 @@ public class AccountAllocation_config7 {
 		      
 		     HomePage home=PageFactory.initElements(driver, HomePage.class);
 			  //home.clickOnAccounttab();
+		     home.clickOnAccountTab();
+			  logger.log(LogStatus.INFO, "Successfully clicked on Account ");
+		     
 			  home.clickOnAccountdrpdown();
 			  logger.log(LogStatus.INFO, "Successfully clicked on New  Account ");
 			  
@@ -121,7 +124,7 @@ public class AccountAllocation_config7 {
 		 Accobj.pickslafromlist(SLAval);
 		 logger.log(LogStatus.INFO, "pick from  Sla list");
 		 
-		 Accobj.clickonsave();
+		 Accobj.clickonAccounts_save();
 		 logger.log(LogStatus.INFO, "Successfully clicked on save");
 		
 		 driver.navigate().refresh();

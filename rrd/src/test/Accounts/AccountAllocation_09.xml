@@ -5,6 +5,9 @@
     <classes>
       <class name="Accountconfiguration.AccountConfig9"/>
       <class name="AccountCreation_Allocation.AccountAllocation_config9"/>
+      <class name="EditTeamSetupAccount.EditTeamAcc_config09"/>
+      <class name="AccountDistribution.ManualDistributionAccount09"/>
+      
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

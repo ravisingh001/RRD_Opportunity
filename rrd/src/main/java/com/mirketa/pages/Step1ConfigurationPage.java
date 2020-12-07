@@ -42,7 +42,7 @@ public class Step1ConfigurationPage {
 	 * WebElement QueueAssignment_checkbox;
 	 */
 	
-	@FindBy(xpath = "//td//input[starts-with(@id,'j_id0:theForm:thePageBlockOne:showpgaeblocksectionLeadNotification:j_id')]")
+	@FindBy(xpath = "//td[@class='dataCol first last']//input[starts-with(@id,'j_id0:theForm:thePageBlockOne:j_id')]")
 	WebElement QueueAssignment_checkbox;
 
 	@FindBy(xpath = "//td//input[@id='j_id0:theForm:thePageBlockOne:RBA_hideDiv_pb:RBA_hideDiv:enableCheckBox']")
@@ -84,7 +84,7 @@ public class Step1ConfigurationPage {
 	 * WebElement Lead_Relationship_Based_Asignment;
 	 */
 	
-	@FindBy(xpath = "(//select[contains(@name,'j_id0:theForm:thePageBlockOne:showpgaeblocksectionLeadNotification:j_id')])")
+	@FindBy(xpath = "(//select[contains(@name,'j_id0:theForm:thePageBlockOne:RBA_hideDiv_pb:j_id')])")
 	WebElement Lead_Relationship_Based_Asignment;
 	
 	@FindBy(xpath = "//td//select[@name='j_id0:theForm:thePageBlockOne:showRBA:j_id127:j_id128']")

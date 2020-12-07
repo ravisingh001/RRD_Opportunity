@@ -96,7 +96,6 @@ public class EditContactTeam {
 		// editteamobj.EditTeamopencase(teamopencaset);
 		editteamobj.clickonEditteamsave();
 		logger.log(LogStatus.INFO, "Save the Edited value successfully");
-		driver.navigate().refresh();
 		Thread.sleep(4000);
 
 		editteamobj.clickonRelatedtab();
