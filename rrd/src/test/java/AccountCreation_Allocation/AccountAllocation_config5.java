@@ -18,7 +18,8 @@ import com.mirketa.pages.AccountDetailspage;
 import com.mirketa.pages.Accountpage;
 	import com.mirketa.pages.HomePage;
 	import com.mirketa.pages.RRDSearchpage;
-	import com.mirketa.pages.SalesForceLoginPage;
+import com.mirketa.pages.RRD_New_Case_page;
+import com.mirketa.pages.SalesForceLoginPage;
 import com.mirketa.pages.TeamPage;
 import com.mirketa.utility.Helper;
 	import com.mirketa.utility.Xls_Reader;
@@ -102,6 +103,9 @@ public class AccountAllocation_config5 {
 				  logger.log(LogStatus.INFO, "clicked on New Account option");
 				 Accountpage Accobj = PageFactory.initElements(driver, Accountpage.class);
 				 
+				 driver.navigate().refresh();
+					Thread.sleep(10000);
+				 
 				// Accobj.clickonNew();
 				 //logger.log(LogStatus.INFO, "clicked on New Button on Account listing page");
 			 
@@ -132,7 +136,10 @@ public class AccountAllocation_config5 {
 			 Thread.sleep(10000);
 			 
 			 driver.navigate().refresh();
-			
+			 RRD_New_Case_page Leadobj = PageFactory.initElements(driver, RRD_New_Case_page.class);
+				Leadobj.clickOnDetailsTab();
+				logger.log(LogStatus.INFO, "Successfully switched to lead Details page ");
+				Thread.sleep(3000);
 			 AccountDetailspage details=PageFactory.initElements(driver, AccountDetailspage.class);
 				
 				

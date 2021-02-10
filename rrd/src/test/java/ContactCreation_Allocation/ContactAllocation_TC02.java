@@ -101,19 +101,21 @@ public class ContactAllocation_TC02 {
 			Contactobj.sendLastname(LastName);
 			logger.log(LogStatus.INFO, "Enter Contact name");
 
-			Accountpage Accobj = PageFactory.initElements(driver, Accountpage.class);
-			
-			Accobj.clicksearchAcc();
-			logger.log(LogStatus.INFO, "Successfully clicked the search Account value ");
-
-			Accobj.clickOnNewAccount();
-			logger.log(LogStatus.INFO, "Successfully clicked on New  Account ");
-
-			Accobj.ClickonContact_AccountName(AccountName);
-			logger.log(LogStatus.INFO, "Enter account name");
-
-			Accobj.clickonContact_Account_save();
-			logger.log(LogStatus.INFO, "Successfully clicked on save");
+			/*
+			 * Accountpage Accobj = PageFactory.initElements(driver, Accountpage.class);
+			 * 
+			 * Accobj.clicksearchAcc(); logger.log(LogStatus.INFO,
+			 * "Successfully clicked the search Account value ");
+			 * 
+			 * Accobj.clickOnNewAccount(); logger.log(LogStatus.INFO,
+			 * "Successfully clicked on New  Account ");
+			 * 
+			 * Accobj.ClickonContact_AccountName(AccountName); logger.log(LogStatus.INFO,
+			 * "Enter account name");
+			 * 
+			 * Accobj.clickonContact_Account_save(); logger.log(LogStatus.INFO,
+			 * "Successfully clicked on save");
+			 */
 			
 			Contactobj.sendDepartmenname(departmentname);
 			logger.log(LogStatus.INFO, "Enter department name");
@@ -210,19 +212,21 @@ public class ContactAllocation_TC02 {
 			Contactobj.sendLastname(LastName);
 			logger.log(LogStatus.INFO, "Enter Contact name");
 
-			Accountpage Accobj = PageFactory.initElements(driver, Accountpage.class);
-			
-			Accobj.clicksearchAcc();
-			logger.log(LogStatus.INFO, "Successfully clicked the search Account value ");
-
-			Accobj.clickOnNewAccount();
-			logger.log(LogStatus.INFO, "Successfully clicked on New  Account ");
-
-			Accobj.ClickonContact_AccountName(AccountName);
-			logger.log(LogStatus.INFO, "Enter account name");
-
-			Accobj.clickonContact_Account_save();
-			logger.log(LogStatus.INFO, "Successfully clicked on save");
+			/*
+			 * Accountpage Accobj = PageFactory.initElements(driver, Accountpage.class);
+			 * 
+			 * Accobj.clicksearchAcc(); logger.log(LogStatus.INFO,
+			 * "Successfully clicked the search Account value ");
+			 * 
+			 * Accobj.clickOnNewAccount(); logger.log(LogStatus.INFO,
+			 * "Successfully clicked on New  Account ");
+			 * 
+			 * Accobj.ClickonContact_AccountName(AccountName); logger.log(LogStatus.INFO,
+			 * "Enter account name");
+			 * 
+			 * Accobj.clickonContact_Account_save(); logger.log(LogStatus.INFO,
+			 * "Successfully clicked on save");
+			 */
 			
 			Contactobj.sendDepartmenname(departmentname);
 			logger.log(LogStatus.INFO, "Enter department name");

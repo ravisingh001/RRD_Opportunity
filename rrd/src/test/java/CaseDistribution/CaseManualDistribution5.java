@@ -72,17 +72,18 @@ public class CaseManualDistribution5 {
 
 		int rowCount = reader.getRowCount("CaseAllocation_config5");
 
-		ManualDistributionPage manualdistribution = PageFactory.initElements(driver, ManualDistributionPage.class);
-		manualdistribution.clickOnManualdistribution();
-		logger.log(LogStatus.INFO, "Clicked on ManualDistribution");
-
-		manualdistribution.switchtoframe();
-		logger.log(LogStatus.INFO, "Switch to frame");
-		manualdistribution.countofframe();
-		manualdistribution.clickonDistributecase();
-		logger.log(LogStatus.INFO, "Clicked on Distribute case button to distribute the case successfully");
-		driver.navigate().refresh();
-		Thread.sleep(4000);
+		/*
+		 * ManualDistributionPage manualdistribution = PageFactory.initElements(driver,
+		 * ManualDistributionPage.class);
+		 * manualdistribution.clickOnManualdistribution(); logger.log(LogStatus.INFO,
+		 * "Clicked on ManualDistribution");
+		 * 
+		 * manualdistribution.switchtoframe(); logger.log(LogStatus.INFO,
+		 * "Switch to frame"); manualdistribution.countofframe();
+		 * manualdistribution.clickonDistributecase(); logger.log(LogStatus.INFO,
+		 * "Clicked on Distribute case button to distribute the case successfully");
+		 * driver.navigate().refresh(); Thread.sleep(4000);
+		 */
 
 		for (int rowNum = 2; rowNum <= rowCount; rowNum++) {
 

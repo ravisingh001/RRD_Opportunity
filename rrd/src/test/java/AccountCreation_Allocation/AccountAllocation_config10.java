@@ -19,6 +19,7 @@ import com.mirketa.pages.AccountDetailspage;
 import com.mirketa.pages.Accountpage;
 import com.mirketa.pages.HomePage;
 import com.mirketa.pages.RRDSearchpage;
+import com.mirketa.pages.RRD_New_Case_page;
 import com.mirketa.pages.SalesForceLoginPage;
 import com.mirketa.pages.TeamPage;
 import com.mirketa.utility.Helper;
@@ -92,7 +93,8 @@ public class AccountAllocation_config10 {
 			home.clickonNewAccount();
 			logger.log(LogStatus.INFO, "clicked on New Account option");
 			Accountpage Accobj = PageFactory.initElements(driver, Accountpage.class);
-
+			driver.navigate().refresh();
+			Thread.sleep(10000);
 			// Accobj.clickonNew();
 			// logger.log(LogStatus.INFO, "clicked on New Button on Account listing page");
 
@@ -122,7 +124,10 @@ public class AccountAllocation_config10 {
 
 			driver.navigate().refresh();
 			Thread.sleep(3000);
-
+			RRD_New_Case_page Leadobj = PageFactory.initElements(driver, RRD_New_Case_page.class);
+			Leadobj.clickOnDetailsTab();
+			logger.log(LogStatus.INFO, "Successfully switched to lead Details page ");
+			Thread.sleep(3000);
 			AccountDetailspage details = PageFactory.initElements(driver, AccountDetailspage.class);
 
 			details.getAccountname();
@@ -133,8 +138,8 @@ public class AccountAllocation_config10 {
 				String Username = details.AssignedOwner.getText();
 				System.out.println("Assigned case owner is:" + Username);
 
-				//softassert.assertTrue(Username.equalsIgnoreCase(Result), "Assigned RRD user name is not matching");
-				Assert.assertTrue(Username.equalsIgnoreCase(Result), "Assigned RRD user name is not matching");
+				softassert.assertTrue(Username.equalsIgnoreCase(Result), "Assigned RRD user name is not matching");
+				//Assert.assertTrue(Username.equalsIgnoreCase(Result), "Assigned RRD user name is not matching");
 				System.out.printf("%n");
 			} catch (Exception e) {
 

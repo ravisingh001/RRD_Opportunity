@@ -158,6 +158,10 @@ public class ExistingOpportunity_TC05 {
 				Thread.sleep(10000);
 
 				driver.navigate().refresh();
+				
+				Leadobj.clickOnDetailsTab();
+				logger.log(LogStatus.INFO, "Successfully switched to lead Details page ");
+				Thread.sleep(3000);
 
 				try {
 					System.out.println("Assigned RRD user  from sheet - " + ExpectedResult);

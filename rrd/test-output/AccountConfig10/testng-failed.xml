@@ -3,6 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [AccountConfig10]">
   <test thread-count="5" name="AccountConfig10(failed)">
     <classes>
+      <class name="AccountCreation_Allocation.AccountAllocation_config10">
+        <methods>
+          <include name="AccountCreation_config10"/>
+          <include name="setUp"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- AccountCreation_Allocation.AccountAllocation_config10 -->
       <class name="AccountDistribution.ManualDistributionAccountt10">
         <methods>
           <include name="AccountManualDistribution10"/>

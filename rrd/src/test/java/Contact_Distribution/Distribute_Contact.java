@@ -78,19 +78,23 @@ public class Distribute_Contact {
 	public void CaseManualDistribution9() throws InterruptedException {
 		Xls_Reader reader = new Xls_Reader(Testdata_sheet_path);
 
-		/*
-		 * ManualDistributionPage manualdistribution = PageFactory.initElements(driver,
-		 * ManualDistributionPage.class);
-		 * manualdistribution.clickOnManualdistribution(); logger.log(LogStatus.INFO,
-		 * "Clicked on ManualDistribution"); driver.navigate().refresh();
-		 * Thread.sleep(6000); manualdistribution.switchtoframe();
-		 * logger.log(LogStatus.INFO, "Switch to frame");
-		 * manualdistribution.countofframe(); Thread.sleep(4000);
-		 * 
-		 * manualdistribution.clickonDistributeContact(); logger.log(LogStatus.INFO,
-		 * "Clicked on Distribute Contact button to distribute the Contact successfully"
-		 * ); driver.navigate().refresh(); Thread.sleep(6000);
-		 */
+		
+		  ManualDistributionPage manualdistribution = PageFactory.initElements(driver,
+		  ManualDistributionPage.class);
+		  manualdistribution.clickOnManualdistribution(); logger.log(LogStatus.INFO,
+		  "Clicked on ManualDistribution"); driver.navigate().refresh();
+		  Thread.sleep(6000); manualdistribution.switchtoframe();
+		  logger.log(LogStatus.INFO, "Switch to frame");
+		  manualdistribution.countofframe(); Thread.sleep(4000);
+		  
+		  manualdistribution.clickonDistributeContact(); logger.log(LogStatus.INFO,
+		  "Clicked on Distribute Contact button to distribute the Contact successfully"); 
+		  driver.navigate().refresh(); 
+		  Thread.sleep(6000);
+		  driver.navigate().refresh(); 
+		  Thread.sleep(6000);
+		  driver.navigate().refresh(); 
+		  Thread.sleep(6000);
 
 		// Xls_Reader Reader = new Xls_Reader(Testdata_sheet_path);
 		int rowCount = reader.getRowCount("ContactDistribution_2");

@@ -211,7 +211,7 @@ public class PreRBACaseAllocation {
 
 			caseobj.clickcearchcontact();
 			logger.log(LogStatus.INFO, "Successfully clicked on search contact ");
-
+			Accountpage Accobj = PageFactory.initElements(driver, Accountpage.class);
 			contactPage contactobj = PageFactory.initElements(driver, contactPage.class);
 			contactobj.clickOnContact();
 			logger.log(LogStatus.INFO, "Successfully clicked on New contact and pop up opens");
@@ -228,7 +228,7 @@ public class PreRBACaseAllocation {
 			contactobj.sendLastname(lastName);
 
 			logger.log(LogStatus.INFO, "Successfully enter firstname");
-			contactobj.clickonsave();
+			Accobj.saveaccount();
 
 			logger.log(LogStatus.INFO, "Successfully clicked on save");
 			// scrolling
@@ -238,7 +238,7 @@ public class PreRBACaseAllocation {
 			caseobj.clicksearchAcc();
 			logger.log(LogStatus.INFO, "Successfully clicked the search Account value ");
 
-			Accountpage Accobj = PageFactory.initElements(driver, Accountpage.class);
+			
 			Accobj.clickOnNewAccount();
 			logger.log(LogStatus.INFO, "Successfully clicked on New  Account ");
 
@@ -376,7 +376,7 @@ public class PreRBACaseAllocation {
 
 			caseobj.clickcearchcontact();
 			logger.log(LogStatus.INFO, "Successfully clicked on search contact ");
-
+			Accountpage Accobj = PageFactory.initElements(driver, Accountpage.class);
 			contactPage contactobj = PageFactory.initElements(driver, contactPage.class);
 			contactobj.clickOnContact();
 			logger.log(LogStatus.INFO, "Successfully clicked on New contact and pop up opens");
@@ -393,7 +393,7 @@ public class PreRBACaseAllocation {
 			contactobj.sendLastname(lastName);
 
 			logger.log(LogStatus.INFO, "Successfully enter firstname");
-			contactobj.clickonsave();
+			Accobj.saveaccount();
 
 			logger.log(LogStatus.INFO, "Successfully clicked on save");
 			// scrolling
@@ -403,7 +403,7 @@ public class PreRBACaseAllocation {
 			caseobj.clicksearchAcc();
 			logger.log(LogStatus.INFO, "Successfully clicked the search Account value ");
 
-			Accountpage Accobj = PageFactory.initElements(driver, Accountpage.class);
+			
 			Accobj.clickOnNewAccount();
 			logger.log(LogStatus.INFO, "Successfully clicked on New  Account ");
 

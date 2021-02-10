@@ -108,6 +108,10 @@ public class ExistingAccount_TC04 {
 				driver.navigate().refresh();
 				Thread.sleep(6000);
 				
+				Leadobj.clickOnDetailsTab();
+				logger.log(LogStatus.INFO, "Successfully switched to lead Details page ");
+				Thread.sleep(3000);
+				
 				try {
 					System.out.println("Assigned RRD user  from sheet - " + Result);
 					String Username = Leadobj.AssignedOpportunityRRDHover.getText();

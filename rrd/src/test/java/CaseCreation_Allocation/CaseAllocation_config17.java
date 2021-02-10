@@ -295,6 +295,8 @@ public class CaseAllocation_config17 {
 			reader.setCellData("CaseAllocation_config17", "CaseNo", rowNum, caseobj.getcaseno());
 			driver.navigate().refresh();
 			Thread.sleep(10000);
+			caseobj.clickOnDetailsTab();
+			Thread.sleep(5000);
 
 			try {
 				System.out.println("Assigned RRD user  from sheet - " + Assigneduser);

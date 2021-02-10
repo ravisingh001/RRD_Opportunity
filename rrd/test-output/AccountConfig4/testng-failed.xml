@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [AccountConfig4]">
+  <test thread-count="5" name="AccountConfig4(failed)">
+    <classes>
+      <class name="AccountCreation_Allocation.AccountAllocation_config4">
+        <methods>
+          <include name="setUp"/>
+          <include name="teardown"/>
+          <include name="AccountCreation_config4"/>
+        </methods>
+      </class> <!-- AccountCreation_Allocation.AccountAllocation_config4 -->
+      <class name="Accountconfiguration.AccountConfig4">
+        <methods>
+          <include name="teardown"/>
+          <include name="setUp"/>
+          <include name="TestAccountConfig4"/>
+        </methods>
+      </class> <!-- Accountconfiguration.AccountConfig4 -->
+    </classes>
+  </test> <!-- AccountConfig4(failed) -->
+</suite> <!-- Failed suite [AccountConfig4] -->

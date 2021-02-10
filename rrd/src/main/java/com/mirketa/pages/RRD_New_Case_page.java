@@ -233,7 +233,7 @@ WebDriver driver;
 	//@FindBy(linktext="//*[@class='flex-wrap-ie11 owner-name slds-grow']//a[@id='window']")
 	//public  WebElement AssignedRRDHover;
 	
-	@FindBy(xpath="(//span[@class='test-id__field-label'][contains(text(),'Case Owner')]//following::slot//force-owner-lookup//div//span//force-lookup//div//span)[2]")
+	@FindBy(xpath="(//span[@class='test-id__field-label'][contains(text(),'Case Owner')]//following::slot//force-owner-lookup//div//span//force-lookup//div//span)")
 	public  WebElement AssignedRRDHover;
 	
 	@FindBy(xpath="(//span[@class='flex-wrap-ie11 owner-name slds-grow']//div[@class='slds-grid'])/a")
@@ -499,7 +499,7 @@ WebDriver driver;
 		 WebDriverWait wait = new WebDriverWait(driver, 20);
 		 wait.until(ExpectedConditions.elementToBeClickable(CaseText));
 		 CaseText.click();
-		 Thread.sleep(1500);
+		 Thread.sleep(3000);
 		
 	 
 	 } 

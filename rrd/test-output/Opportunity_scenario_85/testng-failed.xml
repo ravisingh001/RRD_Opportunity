@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Opportunity_scenario_85]">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="OppCreation_Allocation.Pre_OppAllocation_config85">
+      <class name="Opp_Configuration.Opp_caseconfig2">
         <methods>
           <include name="setUp"/>
-          <include name="OpportunityCreation_config84"/>
+          <include name="TestCaseConfig1"/>
           <include name="teardown"/>
         </methods>
-      </class> <!-- OppCreation_Allocation.Pre_OppAllocation_config85 -->
+      </class> <!-- Opp_Configuration.Opp_caseconfig2 -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Opportunity_scenario_85] -->
