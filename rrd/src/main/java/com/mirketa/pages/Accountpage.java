@@ -240,8 +240,8 @@ public class Accountpage {
 		 * JavascriptExecutor executor = (JavascriptExecutor) driver;
 		 * executor.executeScript("arguments[0].scrollIntoView();", Save);
 		 */
-		Contact_Account_Save.click();
-		//
+		//Contact_Account_Save.click();
+		Account_Save.click();
 		Thread.sleep(4000);
 	}
 	

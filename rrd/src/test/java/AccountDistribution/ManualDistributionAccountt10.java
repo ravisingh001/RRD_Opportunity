@@ -118,9 +118,8 @@ public class ManualDistributionAccountt10 {
 				System.out.println("Assigned Account owner is:" + Username);
 				Thread.sleep(1000);
 
-				// softassert.assertTrue(Username.equalsIgnoreCase(Result),"Assigned RRD user
-				// name is not matching");
-				Assert.assertTrue(Username.equalsIgnoreCase(Result), "Assigned RRD user name is not matching");
+				 softassert.assertTrue(Username.equalsIgnoreCase(Result),"Assigned RRD user name is not matching");
+						 //Assert.assertTrue(Username.equalsIgnoreCase(Result), "Assigned RRD user name is not matching");
 				System.out.printf("%n");
 			} catch (Exception e) {
 

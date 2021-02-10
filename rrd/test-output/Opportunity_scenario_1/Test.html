@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Dec 02 15:05:56 IST 2020</td>
+<td>Started on:</td><td>Sun Dec 20 13:14:24 IST 2020</td>
 </tr>
-<tr><td>Total time:</td><td>248 seconds (248058 ms)</td>
+<tr><td>Total time:</td><td>724 seconds (724760 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,55 +75,16 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='OppCreation_Allocation.Opp_Allocation_config1.OpportunityCreation_config1()'><b>OpportunityCreation_config1</b><br>Test class: OppCreation_Allocation.Opp_Allocation_config1</td>
-<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span class=&quot; label bBody&quot; dir=&quot;ltr&quot; data-aura-rendered-by=&quot;772:1795;a&quot;&gt;...&lt;/span&gt; is not clickable at point (1008, 751). Other element would receive the click: &lt;label class=&quot;label inputLabel uiLabel-top form-element__label uiLabel&quot; for=&quot;591:2364;a&quot; data-aura-rendered-by=&quot;1567:0&quot; data-aura-class=&quot;uiLabel&quot;&gt;...&lt;/label&gt;
-  (Session info: chrome=83.0.4103.61)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;RAVI&apos;, ip: &apos;192.168.1.107&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_202&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.61, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\RAISIG~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:51778}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 2d993ad9db5bb9102ab504033ce2dfda
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at com.sun.proxy.$Proxy10.click(Unknown Source)
-	at com.mirketa.pages.Accountpage.clickonsave(Accountpage.java:243)
-	at OppCreation_Allocation.Opp_Allocation_config1.OpportunityCreation_config1(Opp_Allocation_config1.java:229)
+<td title='Opp_Configuration.Opp_caseconfig1.TestCaseConfig1()'><b>TestCaseConfig1</b><br>Test class: Opp_Configuration.Opp_caseconfig1</td>
+<td><div><pre>java.lang.AssertionError: Opportunity Configuration data was  not submitted successfully expected [true] but found [false]
+	at Opp_Configuration.Opp_caseconfig1.TestCaseConfig1(Opp_caseconfig1.java:109)
 	at java.util.ArrayList.forEach(ArrayList.java:1257)
-... Removed 35 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1388767577", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1388767577'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span class=&quot; label bBody&quot; dir=&quot;ltr&quot; data-aura-rendered-by=&quot;772:1795;a&quot;&gt;...&lt;/span&gt; is not clickable at point (1008, 751). Other element would receive the click: &lt;label class=&quot;label inputLabel uiLabel-top form-element__label uiLabel&quot; for=&quot;591:2364;a&quot; data-aura-rendered-by=&quot;1567:0&quot; data-aura-class=&quot;uiLabel&quot;&gt;...&lt;/label&gt;
-  (Session info: chrome=83.0.4103.61)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;RAVI&apos;, ip: &apos;192.168.1.107&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_202&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.61, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\RAISIG~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:51778}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 2d993ad9db5bb9102ab504033ce2dfda
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at com.sun.proxy.$Proxy10.click(Unknown Source)
-	at com.mirketa.pages.Accountpage.clickonsave(Accountpage.java:243)
-	at OppCreation_Allocation.Opp_Allocation_config1.OpportunityCreation_config1(Opp_Allocation_config1.java:229)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1841440668", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1841440668'><pre>java.lang.AssertionError: Opportunity Configuration data was  not submitted successfully expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:97)
+	at org.testng.Assert.failNotEquals(Assert.java:969)
+	at org.testng.Assert.assertTrue(Assert.java:43)
+	at Opp_Configuration.Opp_caseconfig1.TestCaseConfig1(Opp_caseconfig1.java:109)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -153,8 +114,8 @@ Session ID: 2d993ad9db5bb9102ab504033ce2dfda
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>80</td>
-<td>OppCreation_Allocation.Opp_Allocation_config1@63fd4873</td></tr>
+<td>52</td>
+<td>Opp_Configuration.Opp_caseconfig1@38875e7d</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -164,10 +125,10 @@ Session ID: 2d993ad9db5bb9102ab504033ce2dfda
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Opp_Configuration.Opp_caseconfig1.TestCaseConfig1()'><b>TestCaseConfig1</b><br>Test class: Opp_Configuration.Opp_caseconfig1</td>
+<td title='OppCreation_Allocation.Opp_Allocation_config1.OpportunityCreation_config1()'><b>OpportunityCreation_config1</b><br>Test class: OppCreation_Allocation.Opp_Allocation_config1</td>
 <td></td>
-<td>54</td>
-<td>Opp_Configuration.Opp_caseconfig1@24f43aa3</td></tr>
+<td>565</td>
+<td>OppCreation_Allocation.Opp_Allocation_config1@1e886a5b</td></tr>
 </table><p>
 </body>
 </html>

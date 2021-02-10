@@ -10,6 +10,13 @@
           <include name="setUp"/>
         </methods>
       </class> <!-- CaseCreation_Allocation.CaseAllocation_config8 -->
+      <class name="CaseCreation_Allocation.PreRbaCaseAllocation8Online">
+        <methods>
+          <include name="PreRBAcaseAllocation8"/>
+          <include name="teardown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- CaseCreation_Allocation.PreRbaCaseAllocation8Online -->
     </classes>
   </test> <!-- CaseAllocation_8(failed) -->
 </suite> <!-- Failed suite [CaseAllocation_8] -->

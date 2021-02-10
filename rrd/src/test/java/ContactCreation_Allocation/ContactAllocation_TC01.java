@@ -126,6 +126,13 @@ public class ContactAllocation_TC01 {
 			Thread.sleep(10000);
 
 			driver.navigate().refresh();
+			Thread.sleep(6000);
+			RRD_New_Case_page Leadobj = PageFactory.initElements(driver, RRD_New_Case_page.class);
+			Leadobj.clickOnDetailsTab();
+			logger.log(LogStatus.INFO, "Successfully switched to lead Details page ");
+			Thread.sleep(3000);
+			
+			
 
 			try {
 				System.out.println("Assigned RRD user from sheet - " + Result);

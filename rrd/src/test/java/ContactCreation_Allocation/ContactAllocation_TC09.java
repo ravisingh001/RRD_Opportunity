@@ -315,11 +315,14 @@ public class ContactAllocation_TC09 {
 			ManualDistributionPage manualdistribution = PageFactory.initElements(driver, ManualDistributionPage.class);
 			manualdistribution.clickOnManualdistribution();
 			logger.log(LogStatus.INFO, "Clicked on ManualDistribution");
+			driver.navigate().refresh();
+			Thread.sleep(10000);
+			
 
 			manualdistribution.switchtoframe();
 			logger.log(LogStatus.INFO, "Switch to frame");
 			manualdistribution.countofframe();
-			driver.navigate().refresh();
+			//driver.navigate().refresh();
 			Thread.sleep(4000);
 
 			contactPage Contactobj = PageFactory.initElements(driver, contactPage.class);

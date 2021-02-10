@@ -107,19 +107,21 @@ public class ContactAllocation_TC10 {
 			Contactobj.sendLastname(LastName);
 			logger.log(LogStatus.INFO, "Enter Contact name");
 
-			Accountpage Accobj = PageFactory.initElements(driver, Accountpage.class);
-			
-			Accobj.clicksearchAcc();
-			logger.log(LogStatus.INFO, "Successfully clicked the search Account value ");
-
-			Accobj.clickOnNewAccount();
-			logger.log(LogStatus.INFO, "Successfully clicked on New  Account ");
-
-			Accobj.ClickonContact_AccountName(AccountName);
-			logger.log(LogStatus.INFO, "Enter account name");
-
-			Accobj.clickonContact_Account_save();
-			logger.log(LogStatus.INFO, "Successfully clicked on save");
+			/*
+			 * Accountpage Accobj = PageFactory.initElements(driver, Accountpage.class);
+			 * 
+			 * Accobj.clicksearchAcc(); logger.log(LogStatus.INFO,
+			 * "Successfully clicked the search Account value ");
+			 * 
+			 * Accobj.clickOnNewAccount(); logger.log(LogStatus.INFO,
+			 * "Successfully clicked on New  Account ");
+			 * 
+			 * Accobj.ClickonContact_AccountName(AccountName); logger.log(LogStatus.INFO,
+			 * "Enter account name");
+			 * 
+			 * Accobj.clickonContact_Account_save(); logger.log(LogStatus.INFO,
+			 * "Successfully clicked on save");
+			 */
 			
 			
 			Contactobj.clickonsave();
@@ -217,19 +219,21 @@ public class ContactAllocation_TC10 {
 			Contactobj.sendLastname(LastName);
 			logger.log(LogStatus.INFO, "Enter Contact name");
 
-			Accountpage Accobj = PageFactory.initElements(driver, Accountpage.class);
-			
-			Accobj.clicksearchAcc();
-			logger.log(LogStatus.INFO, "Successfully clicked the search Account value ");
-
-			Accobj.clickOnNewAccount();
-			logger.log(LogStatus.INFO, "Successfully clicked on New  Account ");
-
-			Accobj.ClickonContact_AccountName(AccountName);
-			logger.log(LogStatus.INFO, "Enter account name");
-
-			Accobj.clickonContact_Account_save();
-			logger.log(LogStatus.INFO, "Successfully clicked on save");
+			/*
+			 * Accountpage Accobj = PageFactory.initElements(driver, Accountpage.class);
+			 * 
+			 * Accobj.clicksearchAcc(); logger.log(LogStatus.INFO,
+			 * "Successfully clicked the search Account value ");
+			 * 
+			 * Accobj.clickOnNewAccount(); logger.log(LogStatus.INFO,
+			 * "Successfully clicked on New  Account ");
+			 * 
+			 * Accobj.ClickonContact_AccountName(AccountName); logger.log(LogStatus.INFO,
+			 * "Enter account name");
+			 * 
+			 * Accobj.clickonContact_Account_save(); logger.log(LogStatus.INFO,
+			 * "Successfully clicked on save");
+			 */
 			
 			Contactobj.clickonsave();
 			logger.log(LogStatus.INFO, "Successfully clicked on save");
@@ -294,11 +298,12 @@ public class ContactAllocation_TC10 {
 		ManualDistributionPage manualdistribution = PageFactory.initElements(driver, ManualDistributionPage.class);
 		manualdistribution.clickOnManualdistribution();
 		logger.log(LogStatus.INFO, "Clicked on ManualDistribution");
-
+		driver.navigate().refresh();
+		Thread.sleep(6000);
 		manualdistribution.switchtoframe();
 		logger.log(LogStatus.INFO, "Switch to frame");
 		manualdistribution.countofframe();
-		driver.navigate().refresh();
+		//
 		Thread.sleep(4000);
 		
 		contactPage Contactobj = PageFactory.initElements(driver, contactPage.class);

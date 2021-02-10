@@ -7,7 +7,6 @@
       <class name="AccountCreation_Allocation.AccountAllocation_config11"/>
       <class name="EditTeamSetupAccount.EditTeamAcc_config11"/>
       <class name="AccountDistribution.ManualDistributionAccountt11"/>
-       
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

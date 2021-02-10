@@ -142,8 +142,8 @@ public class Contact_DefineTeams {
 	ExtentReports report;
 	ExtentTest logger;
 	Properties pro;
-	public String Contact_Testdata_sheet_path = System.getProperty("user.dir") + File.separator + "AppData" + File.separator
-			+ "ContactDefineTeam.xlsx";
+	public String Contact_Testdata_sheet_path = System.getProperty("user.dir") + File.separator + "AppData"
+			+ File.separator + "ContactDefineTeam.xlsx";
 
 	@BeforeMethod
 	public void setUp() throws FileNotFoundException, InterruptedException {
@@ -168,7 +168,8 @@ public class Contact_DefineTeams {
 		logger.log(LogStatus.INFO, "Succesfully search the RRD");
 
 		rrdsearch.RRDdrpdwnselection();
-		logger.log(LogStatus.INFO,"Succesfully  RRD selection from Dropdown and Directed to RRDHome page successfully");
+		logger.log(LogStatus.INFO,
+				"Succesfully  RRD selection from Dropdown and Directed to RRDHome page successfully");
 
 	}
 

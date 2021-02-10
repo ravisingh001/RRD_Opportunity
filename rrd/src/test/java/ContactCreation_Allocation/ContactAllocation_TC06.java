@@ -86,6 +86,7 @@ public class ContactAllocation_TC06 {
 			String LastName = reader.getCellData("ContactAllocation6_1", "LastName", rowNum);
 			String Leadsource = reader.getCellData("ContactAllocation6_1", "Lead Source", rowNum);
 			String AccountName = reader.getCellData("ContactAllocation6_1", "AccountName", rowNum);
+			String departmentname = reader.getCellData("ContactAllocation6_1", "Department", rowNum);
 			String Result = reader.getCellData("ContactAllocation6_1", "ExpectedResult", rowNum);
 			String Teamname = reader.getCellData("ContactAllocation6_1", "TeamName", rowNum);
 			String ToBeAssigned = reader.getCellData("ContactAllocation6_1", "ToBeAssigned", rowNum);
@@ -118,6 +119,8 @@ public class ContactAllocation_TC06 {
 //			Accobj.clickonContact_Account_save();
 //			logger.log(LogStatus.INFO, "Successfully clicked on save");
 			
+			Contactobj.sendDepartmenname(departmentname);
+			logger.log(LogStatus.INFO, "Enter department name");
 			
 			Contactobj.pick_LeadSource(Leadsource); 
 			logger.log(LogStatus.INFO,"Successfully picked from Lead Source ");
@@ -184,6 +187,7 @@ public class ContactAllocation_TC06 {
 			String LastName = reader.getCellData("ContactAllocation6_2", "LastName", rowNum);
 			String Leadsource = reader.getCellData("ContactAllocation6_2", "Lead Source", rowNum);
 			String AccountName = reader.getCellData("ContactAllocation6_2", "AccountName", rowNum);
+			String departmentname = reader.getCellData("ContactAllocation6_2", "Department", rowNum);
 			String Result = reader.getCellData("ContactAllocation6_2", "ExpectedResult", rowNum);
 			String Teamname = reader.getCellData("ContactAllocation6_2", "TeamName", rowNum);
 			String ToBeAssigned = reader.getCellData("ContactAllocation6_2", "ToBeAssigned", rowNum);
@@ -228,6 +232,9 @@ public class ContactAllocation_TC06 {
 //
 //			Accobj.clickonContact_Account_save();
 //			logger.log(LogStatus.INFO, "Successfully clicked on save");
+			
+			Contactobj.sendDepartmenname(departmentname);
+			logger.log(LogStatus.INFO, "Enter department name");
 			
 			
 			Contactobj.pick_LeadSource(Leadsource); 
